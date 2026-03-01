@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<iq:manifest xmlns:iq="http://www.garmin.com/xml/connectiq" version="3">
+    <iq:application
+        entry="SmartAlarmApp"
+        id="a3872ef5-6d1e-4c3b-9b2a-1234567890ab"
+        launcherIcon="@Drawables.LauncherIcon"
+        minApiLevel="3.2.0"
+        name="@Strings.AppName"
+        type="watchApp"
+        version="1.0.0">
+        <iq:products>
+            <iq:product id="venu2"/>
+        </iq:products>
+        <iq:permissions>
+            <iq:uses-permission id="iq:permission:sensor_history"/>
+            <iq:uses-permission id="iq:permission:fit"/>
+        </iq:permissions>
+        <iq:languages>
+            <iq:language>eng</iq:language>
+        </iq:languages>
+    </iq:application>
+</iq:manifest>

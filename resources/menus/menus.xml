@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<menus>
+    <menu id="MainMenu" title="@Strings.AppName">
+        <menu-item id="MenuItemSetWakeTime" label="@Strings.MenuSetWakeTime"/>
+        <menu-item id="MenuItemSetWindow" label="@Strings.MenuSetWindow"/>
+        <menu-item id="MenuItemStartAlarm" label="@Strings.MenuStartAlarm"/>
+        <menu-item id="MenuItemCancelAlarm" label="@Strings.MenuCancelAlarm"/>
+    </menu>
+
+    <menu id="WindowMenu" title="@Strings.MenuSetWindow">
+        <menu-item id="WindowItem10" label="@Strings.Min10"/>
+        <menu-item id="WindowItem20" label="@Strings.Min20"/>
+        <menu-item id="WindowItem30" label="@Strings.Min30"/>
+        <menu-item id="WindowItem45" label="@Strings.Min45"/>
+        <menu-item id="WindowItem60" label="@Strings.Min60"/>
+    </menu>
+</menus>

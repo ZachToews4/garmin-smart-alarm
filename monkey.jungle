@@ -1,0 +1,9 @@
+project.manifest = manifest.xml
+
+# Base source and resources
+base.sourcePath = source
+base.resourcePath = resources
+
+# Venu 2 target
+venu2.sourcePath = $(base.sourcePath)
+venu2.resourcePath = $(base.resourcePath)

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<strings>
+    <string id="AppName">Smart Alarm</string>
+    <string id="LabelWakeTime">Wake Time</string>
+    <string id="LabelWindow">Window</string>
+    <string id="LabelAlarmFired">Alarm fired at</string>
+    <string id="LabelSleepDetected">Light sleep detected</string>
+    <string id="LabelMonitoring">Monitoring sleep...</string>
+    <string id="LabelReady">Ready</string>
+    <string id="LabelNoAlarm">No alarm set</string>
+    <string id="MenuSetWakeTime">Set Wake Time</string>
+    <string id="MenuSetWindow">Set Window</string>
+    <string id="MenuStartAlarm">Start Alarm</string>
+    <string id="MenuCancelAlarm">Cancel Alarm</string>
+    <string id="Min10">10 min</string>
+    <string id="Min20">20 min</string>
+    <string id="Min30">30 min</string>
+    <string id="Min45">45 min</string>
+    <string id="Min60">60 min</string>
+</strings>
