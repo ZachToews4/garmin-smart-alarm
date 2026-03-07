@@ -1,16 +1,9 @@
 // TimePickerView.mc
-// Uses WatchUi.TimePicker for native time selection on Venu 2.
+// Native Garmin Picker for selecting wake time (hour + minute).
 
 import Toybox.Graphics;
 import Toybox.Lang;
 import Toybox.WatchUi;
-
-//
-// ─── Shared state ────────────────────────────────────────────────────────────
-//
-
-var gPickedHour   as Number = 6;
-var gPickedMinute as Number = 30;
 
 //
 // ─── TimePickerFactory ───────────────────────────────────────────────────────
@@ -28,11 +21,11 @@ class TimePickerFactory extends WatchUi.PickerFactory {
 
     function getDrawable(index as Number, selected as Boolean) as WatchUi.Drawable? {
         return new WatchUi.Text({
-            :text => _values[index].format(_format),
+            :text  => _values[index].format(_format),
             :color => selected ? Graphics.COLOR_WHITE : Graphics.COLOR_LT_GRAY,
-            :font => Graphics.FONT_NUMBER_HOT,
-            :locX => WatchUi.LAYOUT_HALIGN_CENTER,
-            :locY => WatchUi.LAYOUT_VALIGN_CENTER
+            :font  => Graphics.FONT_NUMBER_HOT,
+            :locX  => WatchUi.LAYOUT_HALIGN_CENTER,
+            :locY  => WatchUi.LAYOUT_VALIGN_CENTER
         });
     }
 
@@ -52,6 +45,8 @@ class TimePickerFactory extends WatchUi.PickerFactory {
 class TimePickerView extends WatchUi.Picker {
 
     function initialize() {
+        var alarmMgr = AlarmManager.getInstance();
+
         var hours = [] as Array<Number>;
         for (var i = 0; i < 24; i++) { hours.add(i); }
 
@@ -59,29 +54,39 @@ class TimePickerView extends WatchUi.Picker {
         for (var i = 0; i < 60; i += 5) { minutes.add(i); }
 
         var title = new WatchUi.Text({
-            :text => "Wake Time",
+            :text  => "Wake Time",
             :color => Graphics.COLOR_WHITE,
-            :font => Graphics.FONT_SMALL,
-            :locX => WatchUi.LAYOUT_HALIGN_CENTER,
-            :locY => WatchUi.LAYOUT_VALIGN_BOTTOM
+            :font  => Graphics.FONT_SMALL,
+            :locX  => WatchUi.LAYOUT_HALIGN_CENTER,
+            :locY  => WatchUi.LAYOUT_VALIGN_BOTTOM
         });
 
         var separator = new WatchUi.Text({
-            :text => ":",
+            :text  => ":",
             :color => Graphics.COLOR_WHITE,
-            :font => Graphics.FONT_NUMBER_HOT,
-            :locX => WatchUi.LAYOUT_HALIGN_CENTER,
-            :locY => WatchUi.LAYOUT_VALIGN_CENTER
+            :font  => Graphics.FONT_NUMBER_HOT,
+            :locX  => WatchUi.LAYOUT_HALIGN_CENTER,
+            :locY  => WatchUi.LAYOUT_VALIGN_CENTER
         });
 
+        // Default to currently configured wake time (persisted), or 6:30 AM
+        var defaultHour   = 6;
+        var defaultMinIdx = 6;  // index of 30 in the 5-min list
+        if (alarmMgr.wakeTimeSet) {
+            defaultHour   = alarmMgr.targetMinutes / 60;
+            var curMin    = alarmMgr.targetMinutes % 60;
+            // Round down to nearest 5-min slot
+            defaultMinIdx = curMin / 5;
+        }
+
         Picker.initialize({
-            :title => title,
+            :title   => title,
             :pattern => [
                 new TimePickerFactory(hours, "%02d"),
                 separator,
                 new TimePickerFactory(minutes, "%02d")
             ],
-            :defaults => [gPickedHour, 0, gPickedMinute / 5]
+            :defaults => [defaultHour, 0, defaultMinIdx]
         });
     }
 }
@@ -102,13 +107,8 @@ class TimePickerDelegate extends WatchUi.PickerDelegate {
     function onAccept(values as Array) as Boolean {
         var h = values[0] as Number;
         var m = values[2] as Number;
-
-        gPickedHour   = h;
-        gPickedMinute = m;
-
-        _alarmMgr.targetMinutes = h * 60 + m;
-        _alarmMgr.wakeTimeSet   = true;
-
+        // Use the setter so the new time is persisted immediately
+        _alarmMgr.setWakeTime(h, m);
         WatchUi.popView(WatchUi.SLIDE_DOWN);
         return true;
     }

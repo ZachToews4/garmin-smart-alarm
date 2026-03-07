@@ -83,10 +83,11 @@ class WindowPickerDelegate extends WatchUi.BehaviorDelegate {
     }
 
     function onSelect() as Boolean {
-        var view     = WatchUi.getCurrentView()[0] as WindowPickerView;
-        var idx      = view.getSelected();
-        var opts     = view.getOptions();
-        _alarmMgr.windowMinutes = opts[idx];
+        var view = WatchUi.getCurrentView()[0] as WindowPickerView;
+        var idx  = view.getSelected();
+        var opts = view.getOptions();
+        // Use the setter so the new window is persisted immediately
+        _alarmMgr.setWindow(opts[idx]);
         WatchUi.popView(WatchUi.SLIDE_DOWN);
         return true;
     }

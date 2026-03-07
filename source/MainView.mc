@@ -124,9 +124,9 @@ class MainView extends WatchUi.View {
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
         dc.drawText(cx, cy - 108, Graphics.FONT_MEDIUM, "Good morning!", Graphics.TEXT_JUSTIFY_CENTER);
 
-        // "Alarm fired at" (FONT_TINY=43px, y=168 → bottom 211)
+        // Fire reason badge e.g. "Smart wake" or "Target time"
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, cy - 40, Graphics.FONT_TINY, "Alarm fired at", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, cy - 40, Graphics.FONT_TINY, _alarmMgr.firedReason, Graphics.TEXT_JUSTIFY_CENTER);
 
         // Fired time (FONT_NUMBER_MEDIUM=105px, y=215 → bottom 320)
         dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
