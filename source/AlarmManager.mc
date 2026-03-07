@@ -28,17 +28,13 @@ class AlarmManager {
     private const POLL_INTERVAL_MS  = 30000;
 
     // Light-sleep thresholds (tunable)
-    // Movement: accel magnitude variance below this → low movement
     private const ACCEL_VAR_THRESH  = 50.0f;   // (mg)^2
-    // HR: within RESTING_HR_OFFSET bpm of a "slightly elevated" baseline
-    // We use the last-known HR; if it's between 40-70 bpm, we assume sleep HR
     private const HR_SLEEP_MIN      = 40;
     private const HR_SLEEP_MAX      = 70;
 
     // Vibration pattern for alarm
-    private const VIBE_DUTY         = 100;  // 0-100%
+    private const VIBE_DUTY         = 100;
     private const VIBE_ON_MS        = 500;
-    private const VIBE_OFF_MS       = 300;
     private const VIBE_REPEATS      = 8;
 
     // ── State ─────────────────────────────────────────────────────────────────
@@ -46,14 +42,11 @@ class AlarmManager {
     var alarmFired      as Boolean = false;
     var firedTime       as String  = "";
 
-    // Target wake time stored as minutes-since-midnight
     var targetMinutes   as Number  = 0;
-    var windowMinutes   as Number  = 20;    // default 20-min window
+    var windowMinutes   as Number  = 20;
 
-    // Has the user configured a wake time?
     var wakeTimeSet     as Boolean = false;
 
-    // Accumulated accel samples for the current poll
     private var _accelSamples as Array<Float> = [] as Array<Float>;
     private var _lastHR       as Number = 0;
 
@@ -66,7 +59,6 @@ class AlarmManager {
 
     // ── Public API ────────────────────────────────────────────────────────────
 
-    // Start monitoring.  Call when user taps "Start Alarm".
     function start() as Void {
         if (isRunning || !wakeTimeSet) { return; }
 
@@ -74,12 +66,8 @@ class AlarmManager {
         alarmFired = false;
         firedTime  = "";
 
-        // Register sensor listeners
-        var options = {
-            :period    => 1,            // 1-second sensor updates
-            :sampleRate => 25           // 25 Hz accel (Venu 2 max)
-        };
-        Sensor.setEnabledSensors([Sensor.SENSOR_HEARTRATE, Sensor.SENSOR_RAWACCEL]);
+        // Enable HR sensor
+        Sensor.setEnabledSensors([Sensor.SENSOR_HEARTRATE]);
         Sensor.enableSensorEvents(method(:onSensorData));
 
         // Schedule first sleep-check poll
@@ -89,7 +77,7 @@ class AlarmManager {
         // Schedule hard deadline at targetMinutes
         var nowMins    = _nowMinutes();
         var minsUntil  = targetMinutes - nowMins;
-        if (minsUntil < 0) { minsUntil += 1440; }  // handles midnight wrap
+        if (minsUntil < 0) { minsUntil += 1440; }
         var deadlineMs = minsUntil * 60000;
         _deadlineTimer = new Timer.Timer();
         (_deadlineTimer as Timer.Timer).start(method(:onDeadline), deadlineMs, false);
@@ -97,7 +85,6 @@ class AlarmManager {
         WatchUi.requestUpdate();
     }
 
-    // Stop monitoring (cancel alarm or post-fire cleanup).
     function stop() as Void {
         isRunning = false;
         _stopTimers();
@@ -107,28 +94,24 @@ class AlarmManager {
 
     // ── Sensor callback ───────────────────────────────────────────────────────
 
-    // Called by the sensor framework with fresh data.
     function onSensorData(sensorInfo as Sensor.Info) as Void {
         // Capture HR
         if (sensorInfo.heartRate != null) {
             _lastHR = sensorInfo.heartRate as Number;
         }
 
-        // Capture accel magnitude
-        if (sensorInfo.rawAccel != null) {
-            var accel = sensorInfo.rawAccel as Array<Number>;
+        // Capture accel magnitude from Sensor.Info.accel ([x,y,z] in milli-g)
+        if (sensorInfo.accel != null) {
+            var accel = sensorInfo.accel as Array<Number>;
             if (accel.size() >= 3) {
                 var x = accel[0].toFloat();
                 var y = accel[1].toFloat();
                 var z = accel[2].toFloat();
-                // Magnitude in mg units; subtract 1 g (1000 mg) along whichever
-                // axis is dominant isn't trivial without a known orientation, so
-                // we just record the raw magnitude for variance purposes.
                 var mag = Math.sqrt(x * x + y * y + z * z).toFloat();
                 _accelSamples.add(mag);
-                // Keep last 750 samples (30 s × 25 Hz)
-                if (_accelSamples.size() > 750) {
-                    _accelSamples = _accelSamples.slice(1, null);
+                // Keep last 30 samples (~30 seconds of data at 1 Hz sensor rate)
+                if (_accelSamples.size() > 30) {
+                    _accelSamples = _accelSamples.slice(1, null) as Array<Float>;
                 }
             }
         }
@@ -136,11 +119,8 @@ class AlarmManager {
 
     // ── Timer callbacks ───────────────────────────────────────────────────────
 
-    // Called every POLL_INTERVAL_MS — evaluate sleep state.
     function onPollTimer() as Void {
         if (!isRunning || alarmFired) { return; }
-
-        // Only check during the wake window
         if (!_inWakeWindow()) { return; }
 
         if (_isLightSleep()) {
@@ -148,7 +128,6 @@ class AlarmManager {
         }
     }
 
-    // Hard deadline — fire regardless.
     function onDeadline() as Void {
         if (!isRunning || alarmFired) { return; }
         _fireAlarm("deadline");
@@ -156,18 +135,12 @@ class AlarmManager {
 
     // ── Sleep inference ───────────────────────────────────────────────────────
 
-    // Returns true when the current window has started.
     private function _inWakeWindow() as Boolean {
-        var nowMins    = _nowMinutes();
-        var windowStart = targetMinutes - windowMinutes;
-        if (windowStart < 0) { windowStart += 1440; }
-
-        // Handle midnight wrap: compare distances
+        var nowMins = _nowMinutes();
         var distToTarget = (targetMinutes - nowMins + 1440) % 1440;
         return distToTarget <= windowMinutes;
     }
 
-    // Simple heuristic: low accel variance AND sleep-range HR.
     private function _isLightSleep() as Boolean {
         var lowMovement = _isLowMovement();
         var sleepHR     = (_lastHR >= HR_SLEEP_MIN && _lastHR <= HR_SLEEP_MAX);
@@ -175,9 +148,8 @@ class AlarmManager {
     }
 
     private function _isLowMovement() as Boolean {
-        if (_accelSamples.size() < 10) { return false; }
+        if (_accelSamples.size() < 5) { return false; }
 
-        // Compute variance of accel magnitudes
         var sum  = 0.0f;
         var size = _accelSamples.size();
         for (var i = 0; i < size; i++) {
@@ -230,7 +202,6 @@ class AlarmManager {
         }
     }
 
-    // Minutes since midnight from the current clock time.
     private function _nowMinutes() as Number {
         var clockTime = System.getClockTime();
         return clockTime.hour * 60 + clockTime.min;
@@ -250,7 +221,6 @@ class AlarmManager {
         return h.format("%02d") + ":" + m.format("%02d");
     }
 
-    // Format targetMinutes as a clock string for display.
     function formatTargetTime() as String {
         if (!wakeTimeSet) { return "--:--"; }
         var h = targetMinutes / 60;

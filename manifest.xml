@@ -6,14 +6,14 @@
         launcherIcon="@Drawables.LauncherIcon"
         minApiLevel="3.2.0"
         name="@Strings.AppName"
-        type="watchApp"
+        type="watch-app"
         version="1.0.0">
         <iq:products>
             <iq:product id="venu2"/>
         </iq:products>
         <iq:permissions>
-            <iq:uses-permission id="iq:permission:sensor_history"/>
-            <iq:uses-permission id="iq:permission:fit"/>
+            <iq:uses-permission id="SensorHistory"/>
+            <iq:uses-permission id="Sensor"/>
         </iq:permissions>
         <iq:languages>
             <iq:language>eng</iq:language>

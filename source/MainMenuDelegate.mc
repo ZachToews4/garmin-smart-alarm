@@ -13,18 +13,7 @@ class MainMenuDelegate extends WatchUi.Menu2InputDelegate {
         _alarmMgr = AlarmManager.getInstance();
     }
 
-    function onOpen() as Void {
-        var menu = WatchUi.getCurrentView()[0] as WatchUi.Menu2;
-        menu.addItem(new WatchUi.MenuItem("Set Wake Time",   null, :setWakeTime,   {}));
-        menu.addItem(new WatchUi.MenuItem("Set Window",      null, :setWindow,     {}));
-        if (_alarmMgr.isRunning) {
-            menu.addItem(new WatchUi.MenuItem("Cancel Alarm", null, :cancelAlarm,  {}));
-        } else {
-            menu.addItem(new WatchUi.MenuItem("Start Alarm",  null, :startAlarm,   {}));
-        }
-    }
-
-    function onSelect(item as WatchUi.MenuItem) as Boolean {
+    function onSelect(item as WatchUi.MenuItem) as Void {
         var id = item.getId();
 
         if (id == :setWakeTime) {
@@ -47,12 +36,10 @@ class MainMenuDelegate extends WatchUi.Menu2InputDelegate {
             _alarmMgr.stop();
         }
 
-        return true;
     }
 
-    function onBack() as Boolean {
+    function onBack() as Void {
         WatchUi.popView(WatchUi.SLIDE_DOWN);
-        return true;
     }
 
     // Push a simple time-picker (hour + minute pickers chained).

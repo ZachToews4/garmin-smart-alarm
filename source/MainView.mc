@@ -68,8 +68,8 @@ class MainView extends WatchUi.View {
 
         // Hint
         dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, height - 40, Graphics.FONT_TINY,
-            "Press menu to configure", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, height - 60, Graphics.FONT_TINY,
+            "Tap to configure", Graphics.TEXT_JUSTIFY_CENTER);
     }
 
     // ── Monitoring screen ─────────────────────────────────────────────────────
