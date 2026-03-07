@@ -3,6 +3,7 @@
 
 import Toybox.Graphics;
 import Toybox.Lang;
+import Toybox.Math;
 import Toybox.System;
 import Toybox.WatchUi;
 
@@ -25,17 +26,71 @@ class MainView extends WatchUi.View {
         var cx     = width  / 2;
         var cy     = height / 2;
 
-        // Background
         dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
         dc.clear();
 
         if (_alarmMgr.alarmFired) {
             _drawFiredScreen(dc, cx, cy, width, height);
+        } else if (_alarmMgr.snoozing) {
+            _drawSnoozeScreen(dc, cx, cy, width, height);
         } else if (_alarmMgr.isRunning) {
             _drawMonitoringScreen(dc, cx, cy, width, height);
         } else {
             _drawIdleScreen(dc, cx, cy, width, height);
         }
+    }
+
+    // ── Shared layout helpers ─────────────────────────────────────────────────
+
+    // Draws wake time + window — identical between idle and monitoring screens.
+    private function _drawCommonInfo(
+        dc     as Graphics.Dc,
+        cx     as Number, cy     as Number,
+        width  as Number, height as Number) as Void {
+
+        // Wake Time label
+        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(cx, cy - (height * 0.30).toNumber(),
+            Graphics.FONT_TINY, "Wake Time", Graphics.TEXT_JUSTIFY_CENTER);
+
+        // Wake Time value
+        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(cx, cy - (height * 0.19).toNumber(),
+            Graphics.FONT_NUMBER_MEDIUM,
+            _alarmMgr.formatTargetTime(), Graphics.TEXT_JUSTIFY_CENTER);
+
+        // Window
+        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(cx, cy + (height * 0.10).toNumber(),
+            Graphics.FONT_SMALL,
+            "Window: " + _alarmMgr.windowMinutes + " min",
+            Graphics.TEXT_JUSTIFY_CENTER);
+    }
+
+    // Formats minutes-of-day respecting the device's 12/24h setting.
+    private function _formatTime(totalMins as Number) as String {
+        var h = totalMins / 60;
+        var m = totalMins % 60;
+        if (!System.getDeviceSettings().is24Hour) {
+            var ampm = (h >= 12) ? "PM" : "AM";
+            if (h > 12)  { h -= 12; }
+            if (h == 0)  { h  = 12; }
+            return h.format("%d") + ":" + m.format("%02d") + " " + ampm;
+        }
+        return h.format("%02d") + ":" + m.format("%02d");
+    }
+
+    // Draws battery percentage in the top-right corner.
+    // Shown in orange when below 20 % as a low-battery warning.
+    private function _drawBattery(dc as Graphics.Dc, width as Number) as Void {
+        var battery = System.getSystemStats().battery;
+        var color   = (battery < 20.0f)
+            ? Graphics.COLOR_ORANGE
+            : Graphics.COLOR_DK_GRAY;
+        dc.setColor(color, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(width - 8, 8, Graphics.FONT_XTINY,
+            battery.toNumber().toString() + "%",
+            Graphics.TEXT_JUSTIFY_RIGHT);
     }
 
     // ── Idle (setup) screen ───────────────────────────────────────────────────
@@ -44,28 +99,19 @@ class MainView extends WatchUi.View {
         cx as Number, cy as Number,
         width as Number, height as Number) as Void {
 
-        // App title  (FONT_TINY = 43px on Venu 2)
+        _drawBattery(dc, width);
+
+        // App title
         dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, 28, Graphics.FONT_TINY, "Smart Alarm", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, (height * 0.07).toNumber(),
+            Graphics.FONT_TINY, "Smart Alarm", Graphics.TEXT_JUSTIFY_CENTER);
 
-        // Wake time label  (y=82, FONT_TINY 43px → bottom 125)
-        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, cy - 126, Graphics.FONT_TINY, "Wake Time", Graphics.TEXT_JUSTIFY_CENTER);
+        _drawCommonInfo(dc, cx, cy, width, height);
 
-        // Wake time value  (y=128, FONT_NUMBER_MEDIUM 105px → bottom 233)
-        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, cy - 80, Graphics.FONT_NUMBER_MEDIUM,
-            _alarmMgr.formatTargetTime(), Graphics.TEXT_JUSTIFY_CENTER);
-
-        // Window label + value on one line  (y=248, FONT_SMALL 49px → bottom 297)
-        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, cy + 40, Graphics.FONT_SMALL,
-            "Window: " + _alarmMgr.windowMinutes + " min", Graphics.TEXT_JUSTIFY_CENTER);
-
-        // Hint  (y=340, FONT_TINY 43px → bottom 383)
+        // Hint
         dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, height - 76, Graphics.FONT_TINY,
-            "Tap to configure", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, height - (height * 0.18).toNumber(),
+            Graphics.FONT_TINY, "Tap to configure", Graphics.TEXT_JUSTIFY_CENTER);
     }
 
     // ── Monitoring screen ─────────────────────────────────────────────────────
@@ -74,31 +120,78 @@ class MainView extends WatchUi.View {
         cx as Number, cy as Number,
         width as Number, height as Number) as Void {
 
-        // Green dot + "Monitoring" label
+        _drawBattery(dc, width);
+
+        // Green status dot + label
         dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_TRANSPARENT);
-        dc.fillCircle(cx, 32, 8);
-        dc.drawText(cx, 44, Graphics.FONT_TINY, "Monitoring", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.fillCircle(cx, (height * 0.08).toNumber(), 8);
+        dc.drawText(cx, (height * 0.11).toNumber(),
+            Graphics.FONT_TINY, "Monitoring", Graphics.TEXT_JUSTIFY_CENTER);
 
-        // Wake time label  (y=82)
-        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, cy - 126, Graphics.FONT_TINY, "Wake Time", Graphics.TEXT_JUSTIFY_CENTER);
+        _drawCommonInfo(dc, cx, cy, width, height);
 
-        // Wake time value  (y=128, 105px → bottom 233)
-        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, cy - 80, Graphics.FONT_NUMBER_MEDIUM,
-            _alarmMgr.formatTargetTime(), Graphics.TEXT_JUSTIFY_CENTER);
+        // ── Sensor status rows ────────────────────────────────────────────────
+        // Row 1: HR + HRV (both on one line if available)
+        var hrStr = _alarmMgr.isHrAvailable()
+            ? ("HR:" + _alarmMgr.getLastHR() + " bpm")
+            : "HR: --";
+        if (_alarmMgr.isHrvAvailable()) {
+            hrStr = hrStr + "  HRV:" + _alarmMgr.getLastHRV() + "ms";
+        }
+        var hrColor = _alarmMgr.isHrAvailable()
+            ? Graphics.COLOR_RED
+            : Graphics.COLOR_DK_GRAY;
+        dc.setColor(hrColor, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(cx, cy + (height * 0.21).toNumber(),
+            Graphics.FONT_XTINY, hrStr, Graphics.TEXT_JUSTIFY_CENTER);
 
-        // Window on one line  (y=248)
-        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, cy + 40, Graphics.FONT_SMALL,
-            "Window: " + _alarmMgr.windowMinutes + " min", Graphics.TEXT_JUSTIFY_CENTER);
+        // Row 2: Respiration (only shown when data is available)
+        if (_alarmMgr.isRespAvailable()) {
+            dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(cx, cy + (height * 0.28).toNumber(),
+                Graphics.FONT_XTINY,
+                "Resp: " + _alarmMgr.getLastResp().toNumber() + " /min",
+                Graphics.TEXT_JUSTIFY_CENTER);
+        }
 
-        // Current time  (y=340)
-        var clk = System.getClockTime();
+        // Current time (bottom) — respects device 12/24h setting
+        var clk     = System.getClockTime();
+        var nowMins = clk.hour * 60 + clk.min;
         dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, height - 76, Graphics.FONT_TINY,
-            clk.hour.format("%02d") + ":" + clk.min.format("%02d"),
+        dc.drawText(cx, height - (height * 0.14).toNumber(),
+            Graphics.FONT_TINY,
+            _formatTime(nowMins), Graphics.TEXT_JUSTIFY_CENTER);
+    }
+
+    // ── Snooze screen ─────────────────────────────────────────────────────────
+    private function _drawSnoozeScreen(
+        dc as Graphics.Dc,
+        cx as Number, cy as Number,
+        width as Number, height as Number) as Void {
+
+        _drawBattery(dc, width);
+
+        // Snooze indicator (three Z's)
+        dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(cx, (height * 0.10).toNumber(),
+            Graphics.FONT_MEDIUM, "z z z", Graphics.TEXT_JUSTIFY_CENTER);
+
+        // "Snoozed" title
+        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(cx, cy - (height * 0.12).toNumber(),
+            Graphics.FONT_MEDIUM, "Snoozed", Graphics.TEXT_JUSTIFY_CENTER);
+
+        // Snooze duration — driven by the actual setting, not a hardcoded string
+        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(cx, cy + (height * 0.04).toNumber(),
+            Graphics.FONT_SMALL,
+            "+ " + _alarmMgr.snoozeMinutes + " min",
             Graphics.TEXT_JUSTIFY_CENTER);
+
+        // Hint
+        dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(cx, height - (height * 0.18).toNumber(),
+            Graphics.FONT_TINY, "Back to cancel", Graphics.TEXT_JUSTIFY_CENTER);
     }
 
     // ── Alarm fired screen ────────────────────────────────────────────────────
@@ -107,35 +200,40 @@ class MainView extends WatchUi.View {
         cx as Number, cy as Number,
         width as Number, height as Number) as Void {
 
-        // Wake icon (simple circle + rays)
+        // Wake icon: sun circle + rays
+        var sunY = (height * 0.13).toNumber();
         dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
-        dc.fillCircle(cx, 50, 18);
-        // Rays
+        dc.fillCircle(cx, sunY, 18);
         for (var i = 0; i < 8; i++) {
             var angle = (i * 45) * Math.PI / 180.0;
-            var x1 = (cx + 24 * Math.cos(angle)).toNumber();
-            var y1 = (50 + 24 * Math.sin(angle)).toNumber();
-            var x2 = (cx + 32 * Math.cos(angle)).toNumber();
-            var y2 = (50 + 32 * Math.sin(angle)).toNumber();
+            var x1 = (cx   + 24 * Math.cos(angle)).toNumber();
+            var y1 = (sunY + 24 * Math.sin(angle)).toNumber();
+            var x2 = (cx   + 32 * Math.cos(angle)).toNumber();
+            var y2 = (sunY + 32 * Math.sin(angle)).toNumber();
             dc.drawLine(x1, y1, x2, y2);
         }
 
-        // "Good morning!" (FONT_MEDIUM=58px, y=100 → bottom 158)
+        // "Good morning!"
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, cy - 108, Graphics.FONT_MEDIUM, "Good morning!", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, cy - (height * 0.26).toNumber(),
+            Graphics.FONT_MEDIUM, "Good morning!", Graphics.TEXT_JUSTIFY_CENTER);
 
-        // Fire reason badge e.g. "Smart wake" or "Target time"
+        // Fire reason badge
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, cy - 40, Graphics.FONT_TINY, _alarmMgr.firedReason, Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, cy - (height * 0.10).toNumber(),
+            Graphics.FONT_TINY, _alarmMgr.firedReason, Graphics.TEXT_JUSTIFY_CENTER);
 
-        // Fired time (FONT_NUMBER_MEDIUM=105px, y=215 → bottom 320)
+        // Fired time
         dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, cy + 7, Graphics.FONT_NUMBER_MEDIUM,
+        dc.drawText(cx, cy + (height * 0.02).toNumber(),
+            Graphics.FONT_NUMBER_MEDIUM,
             _alarmMgr.firedTime, Graphics.TEXT_JUSTIFY_CENTER);
 
-        // Dismiss hint (y=340)
+        // Action hints — snooze duration reflects the actual setting
         dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, height - 76, Graphics.FONT_TINY,
-            "Press back to dismiss", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, height - (height * 0.18).toNumber(),
+            Graphics.FONT_XTINY,
+            "Tap = Snooze " + _alarmMgr.snoozeMinutes + " min  |  Back = Dismiss",
+            Graphics.TEXT_JUSTIFY_CENTER);
     }
 }

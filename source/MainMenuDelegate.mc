@@ -21,28 +21,31 @@ class MainMenuDelegate extends WatchUi.Menu2InputDelegate {
             _pushTimePickerView();
         } else if (id == :setWindow) {
             WatchUi.popView(WatchUi.SLIDE_DOWN);
-            WatchUi.pushView(
-                new WindowPickerView(),
-                new WindowPickerDelegate(),
-                WatchUi.SLIDE_UP
-            );
+            var winView = new WindowPickerView();
+            WatchUi.pushView(winView, new WindowPickerDelegate(winView), WatchUi.SLIDE_UP);
+        } else if (id == :setSnooze) {
+            WatchUi.popView(WatchUi.SLIDE_DOWN);
+            var snzView = new SnoozePickerView();
+            WatchUi.pushView(snzView, new SnoozePickerDelegate(snzView), WatchUi.SLIDE_UP);
         } else if (id == :startAlarm) {
             WatchUi.popView(WatchUi.SLIDE_DOWN);
             if (_alarmMgr.wakeTimeSet) {
                 _alarmMgr.start();
+            } else {
+                // No wake time set — take the user straight to the time picker
+                // rather than failing silently.
+                _pushTimePickerView();
             }
         } else if (id == :cancelAlarm) {
             WatchUi.popView(WatchUi.SLIDE_DOWN);
             _alarmMgr.stop();
         }
-
     }
 
     function onBack() as Void {
         WatchUi.popView(WatchUi.SLIDE_DOWN);
     }
 
-    // Push a simple time-picker (hour + minute pickers chained).
     private function _pushTimePickerView() as Void {
         WatchUi.pushView(
             new TimePickerView(),

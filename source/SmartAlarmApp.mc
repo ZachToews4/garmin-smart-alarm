@@ -17,10 +17,7 @@ class SmartAlarmApp extends Application.AppBase {
 
     // onStop() is called when the app stops — clean up sensors/timers here
     function onStop(state as Dictionary?) as Void {
-        var alarmMgr = AlarmManager.getInstance();
-        if (alarmMgr != null) {
-            alarmMgr.stop();
-        }
+        AlarmManager.getInstance().stop();
     }
 
     // Return the initial view

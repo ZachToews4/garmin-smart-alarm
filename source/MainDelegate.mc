@@ -6,29 +6,39 @@ import Toybox.WatchUi;
 
 class MainDelegate extends WatchUi.BehaviorDelegate {
 
-    private var _view as MainView;
     private var _alarmMgr as AlarmManager;
 
     function initialize(view as MainView) {
         BehaviorDelegate.initialize();
-        _view     = view;
         _alarmMgr = AlarmManager.getInstance();
     }
 
-    // Menu button (long-press upper button) → show main menu
-    function onMenu() as Boolean {
-        _openMenu();
-        return true;
-    }
-
-    // Upper button short press (Start) → show main menu
+    // Upper button short press (Start) / menu button
     function onSelect() as Boolean {
+        if (_alarmMgr.alarmFired) {
+            _alarmMgr.snooze();   // snooze while alarm is firing
+            return true;
+        }
         _openMenu();
         return true;
     }
 
-    // Tap anywhere on screen → show main menu
+    // Long-press upper button
+    function onMenu() as Boolean {
+        if (_alarmMgr.alarmFired) {
+            _alarmMgr.snooze();
+            return true;
+        }
+        _openMenu();
+        return true;
+    }
+
+    // Tap anywhere on screen
     function onTap(clickEvent as WatchUi.ClickEvent) as Boolean {
+        if (_alarmMgr.alarmFired) {
+            _alarmMgr.snooze();   // easiest action while half-asleep
+            return true;
+        }
         _openMenu();
         return true;
     }
@@ -37,6 +47,7 @@ class MainDelegate extends WatchUi.BehaviorDelegate {
         var menu = new WatchUi.Menu2({:title => "Smart Alarm"});
         menu.addItem(new WatchUi.MenuItem("Set Wake Time", null, :setWakeTime, {}));
         menu.addItem(new WatchUi.MenuItem("Set Window",    null, :setWindow,   {}));
+        menu.addItem(new WatchUi.MenuItem("Set Snooze",    null, :setSnooze,   {}));
         if (_alarmMgr.isRunning) {
             menu.addItem(new WatchUi.MenuItem("Cancel Alarm", null, :cancelAlarm, {}));
         } else {
@@ -45,12 +56,15 @@ class MainDelegate extends WatchUi.BehaviorDelegate {
         WatchUi.pushView(menu, new MainMenuDelegate(), WatchUi.SLIDE_UP);
     }
 
-    // Back / ESC — if alarm fired, reset; otherwise exit
+    // Back / ESC
     function onBack() as Boolean {
         if (_alarmMgr.alarmFired) {
-            _alarmMgr.alarmFired = false;
-            _alarmMgr.firedTime  = "";
-            WatchUi.requestUpdate();
+            _alarmMgr.dismiss();
+            return true;
+        }
+        if (_alarmMgr.snoozing) {
+            // Cancel snooze entirely
+            _alarmMgr.stop();
             return true;
         }
         return false;    // let the system handle (exit app)
