@@ -1,0 +1,1076 @@
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 10; @symbol_importdef<0> = [Toybox,10,7,13]; @symbol_importdef<1> = [Application,10,14,25]; ]
+import Toybox.Application;
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 11; @symbol_importdef<0> = [Toybox,11,7,13]; @symbol_importdef<1> = [Attention,11,14,23]; ]
+import Toybox.Attention;
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 12; @symbol_importdef<0> = [Toybox,12,7,13]; @symbol_importdef<1> = [Background,12,14,24]; ]
+import Toybox.Background;
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 13; @symbol_importdef<0> = [Toybox,13,7,13]; @symbol_importdef<1> = [Lang,13,14,18]; ]
+import Toybox.Lang;
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 14; @symbol_importdef<0> = [Toybox,14,7,13]; @symbol_importdef<1> = [SensorHistory,14,14,27]; ]
+import Toybox.SensorHistory;
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 15; @symbol_importdef<0> = [Toybox,15,7,13]; @symbol_importdef<1> = [System,15,14,20]; ]
+import Toybox.System;
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 16; @symbol_importdef<0> = [Toybox,16,7,13]; @symbol_importdef<1> = [Time,16,14,18]; ]
+import Toybox.Time;
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 19; background = true; @symbol_classdef = [AlarmBackground,19,6,21]; @symbol_extends<0> = [System,19,30,36]; @symbol_extends<1> = [ServiceDelegate,19,37,52]; ]
+class AlarmBackground extends System.ServiceDelegate {
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 19; ]
+    <init> {
+    }
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 19; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 22; @position = 18; @symbol_constdef = [KEY_TARGET,22,18,28]; ]
+    private
+    const KEY_TARGET = "targetMinutes";
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 23; @position = 18; @symbol_constdef = [KEY_WINDOW,23,18,28]; ]
+    private
+    const KEY_WINDOW = "windowMinutes";
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 24; @position = 18; @symbol_constdef = [KEY_RUNNING,24,18,29]; ]
+    private
+    const KEY_RUNNING = "isRunning";
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 25; @position = 18; @symbol_constdef = [KEY_BG_FIRED,25,18,30]; ]
+    private
+    const KEY_BG_FIRED = "bgFired";
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 26; @position = 18; @symbol_constdef = [KEY_BG_FIRED_MINS,26,18,35]; ]
+    private
+    const KEY_BG_FIRED_MINS = "bgFiredTimeMins";
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 27; @position = 18; @symbol_constdef = [KEY_BG_FIRED_REASON,27,18,37]; ]
+    private
+    const KEY_BG_FIRED_REASON = "bgFiredReason";
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 30; @position = 18; @symbol_constdef = [HR_SLEEP_MIN,30,18,30]; ]
+    private
+    const HR_SLEEP_MIN = 40;
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 31; @position = 18; @symbol_constdef = [HR_SLEEP_MAX,31,18,30]; ]
+    private
+    const HR_SLEEP_MAX = 70;
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 32; @position = 18; @symbol_constdef = [HRV_LIGHT_MIN,32,18,31]; ]
+    private
+    const HRV_LIGHT_MIN = 20;
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 33; @position = 18; @symbol_constdef = [HRV_LIGHT_MAX,33,18,31]; ]
+    private
+    const HRV_LIGHT_MAX = 75;
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 34; @position = 18; @symbol_constdef = [RESP_SLEEP_MIN,34,18,32]; ]
+    private
+    const RESP_SLEEP_MIN = 8.0f;
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 35; @position = 18; @symbol_constdef = [RESP_SLEEP_MAX,35,18,32]; ]
+    private
+    const RESP_SLEEP_MAX = 16.0f;
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 38; @position = 18; @symbol_constdef = [VIBE_DUTY,38,18,27]; ]
+    private
+    const VIBE_DUTY = 100;
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 39; @position = 18; @symbol_constdef = [VIBE_ON_MS,39,18,28]; ]
+    private
+    const VIBE_ON_MS = 500;
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 40; @position = 18; @symbol_constdef = [VIBE_OFF_MS,40,18,29]; ]
+    private
+    const VIBE_OFF_MS = 300;
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 41; @position = 18; @symbol_constdef = [VIBE_REPEATS,41,18,30]; ]
+    private
+    const VIBE_REPEATS = 8;
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 43; @symbol_functiondef = [initialize,43,13,23]; ]
+    function initialize() as Void {
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_43_26_45_4_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 44 8 ]
+        symbol [ ServiceDelegate %tmp.2 44 8 23 ];
+        %tmp.2 = getv ? :ServiceDelegate;
+        symbol [ initialize %tmp.3 44 24 34 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_43_26_45_4_stop:
+    }
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 48; @symbol_functiondef = [onTemporalEvent,48,13,28]; ]
+    function onTemporalEvent() as Void {
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_48_39_85_4_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 50 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_48_39_85_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_48_39_85_4_stop" ]
+        %running.1 = local;
+        symbol [ running %running.1 50 12 19 ];
+        symbol [ Application %tmp.1 50 22 33 ];
+        %tmp.1 = getm $.Toybox.Application;
+        symbol [ Storage %tmp.2 50 34 41 ];
+        %tmp.2 = getv %tmp.1 :Storage;
+        symbol [ getValue %tmp.3 50 42 50 ];
+        %tmp.3 = getv function %tmp.2 :getValue;
+        symbol [ KEY_RUNNING %tmp.5 50 51 62 ];
+        %tmp.5 = getv ? :KEY_RUNNING;
+        %tmp.6 = invoke %tmp.2 %tmp.3(%tmp.5);
+        lputv %running.1 %tmp.6;
+        symbol [ running %running.1 50 12 19 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 51 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_51_8_53_8_if_stmt:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_51_12_51_51_begin:
+        %tmp.7 = lgetv %running.1;
+        symbol [ running %tmp.7 51 12 19 ];
+        %tmp.8 = null;
+        %tmp.9 = eq %tmp.7 %tmp.8;
+        bt %tmp.9 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_51_8_53_8_if_true;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_51_31_51_51_false:
+        %tmp.10 = lgetv %running.1;
+        symbol [ running %tmp.10 51 33 40 ];
+        %tmp.11 = as %tmp.10 { (!Null) };
+        %tmp.12 = as %tmp.11 Boolean;
+        symbol [ Boolean %tmp.12 51 44 51 ];
+        %tmp.13 = not %tmp.12;
+        push %tmp.13;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_51_31_51_51_end:
+        %tmp.14 = phi [%tmp.9 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_51_12_51_51_begin] [%tmp.13 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_51_31_51_51_false] [%tmp.14 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_51_31_51_51_end];
+        bf %tmp.14 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_51_8_53_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_51_8_53_8_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_51_54_53_8_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 52 12 ]
+        ret ?;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_51_54_53_8_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_51_8_53_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_51_8_53_8_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 55 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_48_39_85_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_48_39_85_4_stop" ]
+        %targetVal.2 = local;
+        symbol [ targetVal %targetVal.2 55 12 21 ];
+        symbol [ Application %tmp.15 55 24 35 ];
+        %tmp.15 = getm $.Toybox.Application;
+        symbol [ Storage %tmp.16 55 36 43 ];
+        %tmp.16 = getv %tmp.15 :Storage;
+        symbol [ getValue %tmp.17 55 44 52 ];
+        %tmp.17 = getv function %tmp.16 :getValue;
+        symbol [ KEY_TARGET %tmp.19 55 53 63 ];
+        %tmp.19 = getv ? :KEY_TARGET;
+        %tmp.20 = invoke %tmp.16 %tmp.17(%tmp.19);
+        lputv %targetVal.2 %tmp.20;
+        symbol [ targetVal %targetVal.2 55 12 21 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 56 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_56_8_56_41_if_stmt:
+        %tmp.21 = lgetv %targetVal.2;
+        symbol [ targetVal %tmp.21 56 12 21 ];
+        %tmp.22 = null;
+        %tmp.23 = eq %tmp.21 %tmp.22;
+        bf %tmp.23 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_56_8_56_41_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_56_8_56_41_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_56_31_56_41_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 56 33 ]
+        ret ?;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_56_31_56_41_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_56_8_56_41_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_56_8_56_41_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 58 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_48_39_85_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_48_39_85_4_stop" ]
+        %target.3 = local;
+        symbol [ target %target.3 58 12 18 ];
+        %tmp.24 = lgetv %targetVal.2;
+        symbol [ targetVal %tmp.24 58 21 30 ];
+        %tmp.25 = as %tmp.24 Number;
+        symbol [ Number %tmp.25 58 34 40 ];
+        lputv %target.3 %tmp.25;
+        symbol [ target %target.3 58 12 18 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 59 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_48_39_85_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_48_39_85_4_stop" ]
+        %windowVal.4 = local;
+        symbol [ windowVal %windowVal.4 59 12 21 ];
+        symbol [ Application %tmp.26 59 24 35 ];
+        %tmp.26 = getm $.Toybox.Application;
+        symbol [ Storage %tmp.27 59 36 43 ];
+        %tmp.27 = getv %tmp.26 :Storage;
+        symbol [ getValue %tmp.28 59 44 52 ];
+        %tmp.28 = getv function %tmp.27 :getValue;
+        symbol [ KEY_WINDOW %tmp.30 59 53 63 ];
+        %tmp.30 = getv ? :KEY_WINDOW;
+        %tmp.31 = invoke %tmp.27 %tmp.28(%tmp.30);
+        lputv %windowVal.4 %tmp.31;
+        symbol [ windowVal %windowVal.4 59 12 21 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 60 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_48_39_85_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_48_39_85_4_stop" ]
+        %window.5 = local;
+        symbol [ window %window.5 60 12 18 ];
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_60_21_60_65_begin:
+        %tmp.32 = lgetv %windowVal.4;
+        symbol [ windowVal %tmp.32 60 22 31 ];
+        %tmp.33 = null;
+        %tmp.34 = ne %tmp.32 %tmp.33;
+        bf %tmp.34 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_60_21_60_65_else_false;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_60_21_60_65_true:
+        %tmp.35 = lgetv %windowVal.4;
+        symbol [ windowVal %tmp.35 60 43 52 ];
+        %tmp.36 = as %tmp.35 { (!Null) };
+        %tmp.37 = as %tmp.36 Number;
+        symbol [ Number %tmp.37 60 56 62 ];
+        push %tmp.37;
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_60_21_60_65_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_60_21_60_65_else_false:
+        %tmp.38 = 20;
+        push %tmp.38;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_60_21_60_65_end:
+        %tmp.39 = phi [%tmp.34 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_60_21_60_65_begin] [%tmp.37 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_60_21_60_65_true] [%tmp.38 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_60_21_60_65_else_false] [%tmp.39 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_60_21_60_65_end];
+        lputv %window.5 %tmp.39;
+        symbol [ window %window.5 60 12 18 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 62 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_48_39_85_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_48_39_85_4_stop" ]
+        %nowMins.6 = local;
+        symbol [ nowMins %nowMins.6 62 12 19 ];
+        %tmp.40 = self;
+        symbol [ _nowMinutes %tmp.41 62 22 33 ];
+        %tmp.41 = getv function %tmp.40 :_nowMinutes;
+        %tmp.42 = invoke %tmp.40 %tmp.41();
+        lputv %nowMins.6 %tmp.42;
+        symbol [ nowMins %nowMins.6 62 12 19 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 65 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_48_39_85_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_48_39_85_4_stop" ]
+        %dist.7 = local;
+        symbol [ dist %dist.7 65 12 16 ];
+        %tmp.43 = lgetv %target.3;
+        symbol [ target %tmp.43 65 20 26 ];
+        %tmp.44 = lgetv %nowMins.6;
+        symbol [ nowMins %tmp.44 65 29 36 ];
+        %tmp.45 = sub %tmp.43 %tmp.44;
+        %tmp.46 = 1440;
+        %tmp.47 = add %tmp.45 %tmp.46;
+        %tmp.48 = 1440;
+        %tmp.49 = mod %tmp.47 %tmp.48;
+        lputv %dist.7 %tmp.49;
+        symbol [ dist %dist.7 65 12 16 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 68 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_68_8_71_8_if_stmt:
+        %tmp.50 = lgetv %dist.7;
+        symbol [ dist %tmp.50 68 12 16 ];
+        %tmp.51 = 1;
+        %tmp.52 = lte %tmp.50 %tmp.51;
+        bf %tmp.52 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_68_8_71_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_68_8_71_8_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_68_23_71_8_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 69 12 ]
+        %tmp.53 = self;
+        symbol [ _fireAlarm %tmp.54 69 12 22 ];
+        %tmp.54 = getv function %tmp.53 :_fireAlarm;
+        %tmp.55 = "Target time";
+        invoke %tmp.53 %tmp.54(%tmp.55);
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 70 12 ]
+        ret ?;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_68_23_71_8_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_68_8_71_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_68_8_71_8_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 74 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_74_8_77_8_if_stmt:
+        %tmp.56 = lgetv %dist.7;
+        symbol [ dist %tmp.56 74 12 16 ];
+        %tmp.57 = lgetv %window.5;
+        symbol [ window %tmp.57 74 19 25 ];
+        %tmp.58 = gt %tmp.56 %tmp.57;
+        bf %tmp.58 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_74_8_77_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_74_8_77_8_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_74_27_77_8_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 75 12 ]
+        %tmp.59 = self;
+        symbol [ _reschedule %tmp.60 75 12 23 ];
+        %tmp.60 = getv function %tmp.59 :_reschedule;
+        invoke %tmp.59 %tmp.60();
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 76 12 ]
+        ret ?;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_74_27_77_8_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_74_8_77_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_74_8_77_8_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 80 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_80_8_84_8_if_stmt:
+        %tmp.61 = self;
+        symbol [ _isLightSleep %tmp.62 80 12 25 ];
+        %tmp.62 = getv function %tmp.61 :_isLightSleep;
+        %tmp.63 = invoke %tmp.61 %tmp.62();
+        bf %tmp.63 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_80_8_84_8_if_else_false;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_80_8_84_8_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_80_29_82_8_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 81 12 ]
+        %tmp.64 = self;
+        symbol [ _fireAlarm %tmp.65 81 12 22 ];
+        %tmp.65 = getv function %tmp.64 :_fireAlarm;
+        %tmp.66 = "Smart wake";
+        invoke %tmp.64 %tmp.65(%tmp.66);
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_80_29_82_8_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_80_8_84_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_80_8_84_8_if_else_false:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_82_15_84_8_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 83 12 ]
+        %tmp.67 = self;
+        symbol [ _reschedule %tmp.68 83 12 23 ];
+        %tmp.68 = getv function %tmp.67 :_reschedule;
+        invoke %tmp.67 %tmp.68();
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_82_15_84_8_stop:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_80_8_84_8_if_end:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_48_39_85_4_stop:
+    }
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 91; @symbol_functiondef = [_isLightSleep,91,21,34]; @symbol_return<0> = [Boolean,91,40,47]; ]
+    private
+    function _isLightSleep() as Boolean {
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_91_48_152_4_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 92 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_91_48_152_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_91_48_152_4_stop" ]
+        %signals.1 = local;
+        symbol [ signals %signals.1 92 12 19 ];
+        %tmp.1 = 0;
+        lputv %signals.1 %tmp.1;
+        symbol [ signals %signals.1 92 12 19 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 93 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_91_48_152_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_91_48_152_4_stop" ]
+        %confirmed.2 = local;
+        symbol [ confirmed %confirmed.2 93 12 21 ];
+        %tmp.2 = 0;
+        lputv %confirmed.2 %tmp.2;
+        symbol [ confirmed %confirmed.2 93 12 21 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 96 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_96_8_107_8_if_stmt:
+        symbol [ SensorHistory %tmp.3 96 12 25 ];
+        %tmp.3 = getm $.Toybox.SensorHistory;
+        %tmp.5 = const :getHeartRateHistory;
+        symbol [ getHeartRateHistory %tmp.5 96 31 50 const ];
+        %tmp.6 = canhazplz %tmp.3 %tmp.5;
+        bf %tmp.6 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_96_8_107_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_96_8_107_8_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_96_52_107_8_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 97 12 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_96_52_107_8_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_96_52_107_8_stop" ]
+        %hrIter.3 = local;
+        symbol [ hrIter %hrIter.3 97 16 22 ];
+        symbol [ SensorHistory %tmp.7 97 25 38 ];
+        %tmp.7 = getm $.Toybox.SensorHistory;
+        symbol [ getHeartRateHistory %tmp.8 97 39 58 ];
+        %tmp.8 = getv function %tmp.7 :getHeartRateHistory;
+        %tmp.9 = newd 2;
+        %tmp.11 = const :period;
+        symbol [ period %tmp.11 98 18 24 const ];
+        %tmp.12 = 2;
+        %tmp.13 = dup %tmp.9;
+        %tmp.14 = aputv %tmp.13 %tmp.11 %tmp.12;
+        %tmp.16 = const :order;
+        symbol [ order %tmp.16 98 32 37 const ];
+        symbol [ SensorHistory %tmp.17 98 41 54 ];
+        %tmp.17 = getm $.Toybox.SensorHistory;
+        symbol [ ORDER_NEWEST_FIRST %tmp.18 98 55 73 ];
+        %tmp.18 = getv %tmp.17 :ORDER_NEWEST_FIRST;
+        %tmp.19 = dup %tmp.14;
+        %tmp.20 = aputv %tmp.19 %tmp.16 %tmp.18;
+        %tmp.21 = invoke %tmp.7 %tmp.8(%tmp.20);
+        lputv %hrIter.3 %tmp.21;
+        symbol [ hrIter %hrIter.3 97 16 22 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 99 12 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_99_12_106_12_if_stmt:
+        %tmp.22 = lgetv %hrIter.3;
+        symbol [ hrIter %tmp.22 99 16 22 ];
+        %tmp.23 = null;
+        %tmp.24 = ne %tmp.22 %tmp.23;
+        bf %tmp.24 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_99_12_106_12_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_99_12_106_12_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_99_32_106_12_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 100 16 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_99_32_106_12_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_99_32_106_12_stop" ]
+        %sample.4 = local;
+        symbol [ sample %sample.4 100 20 26 ];
+        %tmp.25 = lgetv %hrIter.3;
+        symbol [ hrIter %tmp.25 100 29 35 ];
+        %tmp.26 = as %tmp.25 { (!Null) };
+        symbol [ next %tmp.27 100 36 40 ];
+        %tmp.27 = getv function %tmp.26 :next;
+        %tmp.28 = invoke %tmp.26 %tmp.27();
+        lputv %sample.4 %tmp.28;
+        symbol [ sample %sample.4 100 20 26 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 101 16 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_101_16_105_16_if_stmt:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_101_20_101_53_begin:
+        %tmp.29 = lgetv %sample.4;
+        symbol [ sample %tmp.29 101 20 26 ];
+        %tmp.30 = null;
+        %tmp.31 = ne %tmp.29 %tmp.30;
+        bf %tmp.31 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_101_16_105_16_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_101_38_101_53_true:
+        %tmp.32 = lgetv %sample.4;
+        symbol [ sample %tmp.32 101 38 44 ];
+        %tmp.33 = as %tmp.32 { (!Null) };
+        symbol [ data %tmp.34 101 45 49 ];
+        %tmp.34 = getv %tmp.33 :data;
+        %tmp.35 = null;
+        %tmp.36 = ne %tmp.34 %tmp.35;
+        push %tmp.36;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_101_38_101_53_end:
+        %tmp.37 = phi [%tmp.31 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_101_20_101_53_begin] [%tmp.36 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_101_38_101_53_true] [%tmp.37 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_101_38_101_53_end];
+        bf %tmp.37 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_101_16_105_16_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_101_16_105_16_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_101_59_105_16_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 102 20 ]
+        %tmp.40 = lgetv %signals.1;
+        symbol [ signals %tmp.40 102 20 27 ];
+        %tmp.41 = add %tmp.40 1;
+        lputv %signals.1 %tmp.41;
+        symbol [ signals %signals.1 102 20 27 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 103 20 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_101_59_105_16_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_101_59_105_16_stop" ]
+        %hr.5 = local;
+        symbol [ hr %hr.5 103 24 26 ];
+        %tmp.42 = lgetv %sample.4;
+        symbol [ sample %tmp.42 103 29 35 ];
+        %tmp.43 = as %tmp.42 { (!Null) };
+        symbol [ data %tmp.44 103 36 40 ];
+        %tmp.44 = getv %tmp.43 :data;
+        %tmp.45 = as %tmp.44 Number;
+        symbol [ Number %tmp.45 103 44 50 ];
+        lputv %hr.5 %tmp.45;
+        symbol [ hr %hr.5 103 24 26 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 104 20 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_104_20_104_81_if_stmt:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_104_24_104_52_begin:
+        %tmp.46 = lgetv %hr.5;
+        symbol [ hr %tmp.46 104 24 26 ];
+        symbol [ HR_SLEEP_MIN %tmp.48 104 30 42 ];
+        %tmp.48 = getv ? :HR_SLEEP_MIN;
+        %tmp.49 = gte %tmp.46 %tmp.48;
+        bf %tmp.49 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_104_20_104_81_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_104_46_104_52_true:
+        %tmp.50 = lgetv %hr.5;
+        symbol [ hr %tmp.50 104 46 48 ];
+        symbol [ HR_SLEEP_MAX %tmp.52 104 52 64 ];
+        %tmp.52 = getv ? :HR_SLEEP_MAX;
+        %tmp.53 = lte %tmp.50 %tmp.52;
+        push %tmp.53;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_104_46_104_52_end:
+        %tmp.54 = phi [%tmp.49 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_104_24_104_52_begin] [%tmp.53 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_104_46_104_52_true] [%tmp.54 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_104_46_104_52_end];
+        bf %tmp.54 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_104_20_104_81_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_104_20_104_81_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_104_66_104_81_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 104 68 ]
+        %tmp.57 = lgetv %confirmed.2;
+        symbol [ confirmed %tmp.57 104 68 77 ];
+        %tmp.58 = add %tmp.57 1;
+        lputv %confirmed.2 %tmp.58;
+        symbol [ confirmed %confirmed.2 104 68 77 ];
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_104_66_104_81_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_104_20_104_81_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_104_20_104_81_if_end:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_101_59_105_16_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_101_16_105_16_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_101_16_105_16_if_end:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_99_32_106_12_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_99_12_106_12_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_99_12_106_12_if_end:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_96_52_107_8_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_96_8_107_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_96_8_107_8_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 110 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_110_8_126_8_if_stmt:
+        symbol [ SensorHistory %tmp.59 110 12 25 ];
+        %tmp.59 = getm $.Toybox.SensorHistory;
+        %tmp.61 = const :getHeartRateVariabilityHistory;
+        symbol [ getHeartRateVariabilityHistory %tmp.61 110 31 61 const ];
+        %tmp.62 = canhazplz %tmp.59 %tmp.61;
+        bf %tmp.62 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_110_8_126_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_110_8_126_8_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_110_63_126_8_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 111 12 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_110_63_126_8_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_110_63_126_8_stop" ]
+        %hrvIter.6 = local;
+        symbol [ hrvIter %hrvIter.6 111 16 23 ];
+        symbol [ SensorHistory %tmp.63 111 26 39 ];
+        %tmp.63 = getm $.Toybox.SensorHistory;
+        symbol [ getHeartRateVariabilityHistory %tmp.64 111 40 70 ];
+        %tmp.64 = getv function %tmp.63 :getHeartRateVariabilityHistory;
+        %tmp.65 = newd 2;
+        %tmp.67 = const :period;
+        symbol [ period %tmp.67 112 18 24 const ];
+        %tmp.68 = 2;
+        %tmp.69 = dup %tmp.65;
+        %tmp.70 = aputv %tmp.69 %tmp.67 %tmp.68;
+        %tmp.72 = const :order;
+        symbol [ order %tmp.72 112 32 37 const ];
+        symbol [ SensorHistory %tmp.73 112 41 54 ];
+        %tmp.73 = getm $.Toybox.SensorHistory;
+        symbol [ ORDER_NEWEST_FIRST %tmp.74 112 55 73 ];
+        %tmp.74 = getv %tmp.73 :ORDER_NEWEST_FIRST;
+        %tmp.75 = dup %tmp.70;
+        %tmp.76 = aputv %tmp.75 %tmp.72 %tmp.74;
+        %tmp.77 = invoke %tmp.63 %tmp.64(%tmp.76);
+        lputv %hrvIter.6 %tmp.77;
+        symbol [ hrvIter %hrvIter.6 111 16 23 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 113 12 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_113_12_125_12_if_stmt:
+        %tmp.78 = lgetv %hrvIter.6;
+        symbol [ hrvIter %tmp.78 113 16 23 ];
+        %tmp.79 = null;
+        %tmp.80 = ne %tmp.78 %tmp.79;
+        bf %tmp.80 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_113_12_125_12_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_113_12_125_12_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_113_33_125_12_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 114 16 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_113_33_125_12_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_113_33_125_12_stop" ]
+        %sample.7 = local;
+        symbol [ sample %sample.7 114 20 26 ];
+        %tmp.81 = lgetv %hrvIter.6;
+        symbol [ hrvIter %tmp.81 114 29 36 ];
+        %tmp.82 = as %tmp.81 { (!Null) };
+        symbol [ next %tmp.83 114 37 41 ];
+        %tmp.83 = getv function %tmp.82 :next;
+        %tmp.84 = invoke %tmp.82 %tmp.83();
+        lputv %sample.7 %tmp.84;
+        symbol [ sample %sample.7 114 20 26 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 115 16 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_115_16_124_16_if_stmt:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_115_20_115_53_begin:
+        %tmp.85 = lgetv %sample.7;
+        symbol [ sample %tmp.85 115 20 26 ];
+        %tmp.86 = null;
+        %tmp.87 = ne %tmp.85 %tmp.86;
+        bf %tmp.87 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_115_16_124_16_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_115_38_115_53_true:
+        %tmp.88 = lgetv %sample.7;
+        symbol [ sample %tmp.88 115 38 44 ];
+        %tmp.89 = as %tmp.88 { (!Null) };
+        symbol [ data %tmp.90 115 45 49 ];
+        %tmp.90 = getv %tmp.89 :data;
+        %tmp.91 = null;
+        %tmp.92 = ne %tmp.90 %tmp.91;
+        push %tmp.92;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_115_38_115_53_end:
+        %tmp.93 = phi [%tmp.87 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_115_20_115_53_begin] [%tmp.92 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_115_38_115_53_true] [%tmp.93 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_115_38_115_53_end];
+        bf %tmp.93 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_115_16_124_16_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_115_16_124_16_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_115_59_124_16_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 116 20 ]
+        %tmp.96 = lgetv %signals.1;
+        symbol [ signals %tmp.96 116 20 27 ];
+        %tmp.97 = add %tmp.96 1;
+        lputv %signals.1 %tmp.97;
+        symbol [ signals %signals.1 116 20 27 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 117 20 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_115_59_124_16_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_115_59_124_16_stop" ]
+        %hrv.8 = local;
+        symbol [ hrv %hrv.8 117 24 27 ];
+        %tmp.98 = 0;
+        lputv %hrv.8 %tmp.98;
+        symbol [ hrv %hrv.8 117 24 27 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 118 20 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_118_20_122_20_if_stmt:
+        %tmp.99 = lgetv %sample.7;
+        symbol [ sample %tmp.99 118 24 30 ];
+        %tmp.100 = as %tmp.99 { (!Null) };
+        symbol [ data %tmp.101 118 31 35 ];
+        %tmp.101 = getv %tmp.100 :data;
+        symbol [ Float %tmp.103 118 47 52 ];
+        %tmp.103 = getv ? :Float;
+        %tmp.104 = isa %tmp.101 %tmp.103;
+        bf %tmp.104 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_118_20_122_20_if_else_false;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_118_20_122_20_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_118_54_120_20_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 119 24 ]
+        %tmp.105 = lgetv %sample.7;
+        symbol [ sample %tmp.105 119 31 37 ];
+        %tmp.106 = as %tmp.105 { (!Null) };
+        symbol [ data %tmp.107 119 38 42 ];
+        %tmp.107 = getv %tmp.106 :data;
+        %tmp.108 = as %tmp.107 Float;
+        symbol [ Float %tmp.108 119 46 51 ];
+        symbol [ toNumber %tmp.109 119 53 61 ];
+        %tmp.109 = getv function %tmp.108 :toNumber;
+        %tmp.110 = invoke %tmp.108 %tmp.109();
+        lputv %hrv.8 %tmp.110;
+        symbol [ hrv %hrv.8 119 24 27 ];
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_118_54_120_20_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_118_20_122_20_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_118_20_122_20_if_else_false:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_120_27_122_20_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 121 24 ]
+        %tmp.111 = lgetv %sample.7;
+        symbol [ sample %tmp.111 121 30 36 ];
+        %tmp.112 = as %tmp.111 { (!Null) };
+        symbol [ data %tmp.113 121 37 41 ];
+        %tmp.113 = getv %tmp.112 :data;
+        %tmp.114 = as %tmp.113 Number;
+        symbol [ Number %tmp.114 121 45 51 ];
+        lputv %hrv.8 %tmp.114;
+        symbol [ hrv %hrv.8 121 24 27 ];
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_120_27_122_20_stop:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_118_20_122_20_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 123 20 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_123_20_123_85_if_stmt:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_123_24_123_55_begin:
+        %tmp.115 = lgetv %hrv.8;
+        symbol [ hrv %tmp.115 123 24 27 ];
+        symbol [ HRV_LIGHT_MIN %tmp.117 123 31 44 ];
+        %tmp.117 = getv ? :HRV_LIGHT_MIN;
+        %tmp.118 = gte %tmp.115 %tmp.117;
+        bf %tmp.118 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_123_20_123_85_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_123_48_123_55_true:
+        %tmp.119 = lgetv %hrv.8;
+        symbol [ hrv %tmp.119 123 48 51 ];
+        symbol [ HRV_LIGHT_MAX %tmp.121 123 55 68 ];
+        %tmp.121 = getv ? :HRV_LIGHT_MAX;
+        %tmp.122 = lte %tmp.119 %tmp.121;
+        push %tmp.122;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_123_48_123_55_end:
+        %tmp.123 = phi [%tmp.118 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_123_24_123_55_begin] [%tmp.122 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_123_48_123_55_true] [%tmp.123 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_123_48_123_55_end];
+        bf %tmp.123 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_123_20_123_85_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_123_20_123_85_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_123_70_123_85_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 123 72 ]
+        %tmp.126 = lgetv %confirmed.2;
+        symbol [ confirmed %tmp.126 123 72 81 ];
+        %tmp.127 = add %tmp.126 1;
+        lputv %confirmed.2 %tmp.127;
+        symbol [ confirmed %confirmed.2 123 72 81 ];
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_123_70_123_85_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_123_20_123_85_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_123_20_123_85_if_end:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_115_59_124_16_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_115_16_124_16_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_115_16_124_16_if_end:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_113_33_125_12_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_113_12_125_12_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_113_12_125_12_if_end:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_110_63_126_8_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_110_8_126_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_110_8_126_8_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 129 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_129_8_145_8_if_stmt:
+        symbol [ SensorHistory %tmp.128 129 12 25 ];
+        %tmp.128 = getm $.Toybox.SensorHistory;
+        %tmp.130 = const :getRespirationRateHistory;
+        symbol [ getRespirationRateHistory %tmp.130 129 31 56 const ];
+        %tmp.131 = canhazplz %tmp.128 %tmp.130;
+        bf %tmp.131 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_129_8_145_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_129_8_145_8_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_129_58_145_8_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 130 12 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_129_58_145_8_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_129_58_145_8_stop" ]
+        %respIter.9 = local;
+        symbol [ respIter %respIter.9 130 16 24 ];
+        symbol [ SensorHistory %tmp.132 130 27 40 ];
+        %tmp.132 = getm $.Toybox.SensorHistory;
+        symbol [ getRespirationRateHistory %tmp.133 130 41 66 ];
+        %tmp.133 = getv function %tmp.132 :getRespirationRateHistory;
+        %tmp.134 = newd 2;
+        %tmp.136 = const :period;
+        symbol [ period %tmp.136 131 18 24 const ];
+        %tmp.137 = 2;
+        %tmp.138 = dup %tmp.134;
+        %tmp.139 = aputv %tmp.138 %tmp.136 %tmp.137;
+        %tmp.141 = const :order;
+        symbol [ order %tmp.141 131 32 37 const ];
+        symbol [ SensorHistory %tmp.142 131 41 54 ];
+        %tmp.142 = getm $.Toybox.SensorHistory;
+        symbol [ ORDER_NEWEST_FIRST %tmp.143 131 55 73 ];
+        %tmp.143 = getv %tmp.142 :ORDER_NEWEST_FIRST;
+        %tmp.144 = dup %tmp.139;
+        %tmp.145 = aputv %tmp.144 %tmp.141 %tmp.143;
+        %tmp.146 = invoke %tmp.132 %tmp.133(%tmp.145);
+        lputv %respIter.9 %tmp.146;
+        symbol [ respIter %respIter.9 130 16 24 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 132 12 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_132_12_144_12_if_stmt:
+        %tmp.147 = lgetv %respIter.9;
+        symbol [ respIter %tmp.147 132 16 24 ];
+        %tmp.148 = null;
+        %tmp.149 = ne %tmp.147 %tmp.148;
+        bf %tmp.149 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_132_12_144_12_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_132_12_144_12_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_132_34_144_12_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 133 16 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_132_34_144_12_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_132_34_144_12_stop" ]
+        %sample.10 = local;
+        symbol [ sample %sample.10 133 20 26 ];
+        %tmp.150 = lgetv %respIter.9;
+        symbol [ respIter %tmp.150 133 29 37 ];
+        %tmp.151 = as %tmp.150 { (!Null) };
+        symbol [ next %tmp.152 133 38 42 ];
+        %tmp.152 = getv function %tmp.151 :next;
+        %tmp.153 = invoke %tmp.151 %tmp.152();
+        lputv %sample.10 %tmp.153;
+        symbol [ sample %sample.10 133 20 26 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 134 16 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_134_16_143_16_if_stmt:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_134_20_134_53_begin:
+        %tmp.154 = lgetv %sample.10;
+        symbol [ sample %tmp.154 134 20 26 ];
+        %tmp.155 = null;
+        %tmp.156 = ne %tmp.154 %tmp.155;
+        bf %tmp.156 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_134_16_143_16_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_134_38_134_53_true:
+        %tmp.157 = lgetv %sample.10;
+        symbol [ sample %tmp.157 134 38 44 ];
+        %tmp.158 = as %tmp.157 { (!Null) };
+        symbol [ data %tmp.159 134 45 49 ];
+        %tmp.159 = getv %tmp.158 :data;
+        %tmp.160 = null;
+        %tmp.161 = ne %tmp.159 %tmp.160;
+        push %tmp.161;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_134_38_134_53_end:
+        %tmp.162 = phi [%tmp.156 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_134_20_134_53_begin] [%tmp.161 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_134_38_134_53_true] [%tmp.162 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_134_38_134_53_end];
+        bf %tmp.162 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_134_16_143_16_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_134_16_143_16_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_134_59_143_16_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 135 20 ]
+        %tmp.165 = lgetv %signals.1;
+        symbol [ signals %tmp.165 135 20 27 ];
+        %tmp.166 = add %tmp.165 1;
+        lputv %signals.1 %tmp.166;
+        symbol [ signals %signals.1 135 20 27 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 136 20 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_134_59_143_16_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_134_59_143_16_stop" ]
+        %resp.11 = local;
+        symbol [ resp %resp.11 136 24 28 ];
+        %tmp.167 = 0.0f;
+        lputv %resp.11 %tmp.167;
+        symbol [ resp %resp.11 136 24 28 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 137 20 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_137_20_141_20_if_stmt:
+        %tmp.168 = lgetv %sample.10;
+        symbol [ sample %tmp.168 137 24 30 ];
+        %tmp.169 = as %tmp.168 { (!Null) };
+        symbol [ data %tmp.170 137 31 35 ];
+        %tmp.170 = getv %tmp.169 :data;
+        symbol [ Float %tmp.172 137 47 52 ];
+        %tmp.172 = getv ? :Float;
+        %tmp.173 = isa %tmp.170 %tmp.172;
+        bf %tmp.173 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_137_20_141_20_if_else_false;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_137_20_141_20_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_137_54_139_20_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 138 24 ]
+        %tmp.174 = lgetv %sample.10;
+        symbol [ sample %tmp.174 138 31 37 ];
+        %tmp.175 = as %tmp.174 { (!Null) };
+        symbol [ data %tmp.176 138 38 42 ];
+        %tmp.176 = getv %tmp.175 :data;
+        %tmp.177 = as %tmp.176 Float;
+        symbol [ Float %tmp.177 138 46 51 ];
+        lputv %resp.11 %tmp.177;
+        symbol [ resp %resp.11 138 24 28 ];
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_137_54_139_20_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_137_20_141_20_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_137_20_141_20_if_else_false:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_139_27_141_20_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 140 24 ]
+        %tmp.178 = lgetv %sample.10;
+        symbol [ sample %tmp.178 140 32 38 ];
+        %tmp.179 = as %tmp.178 { (!Null) };
+        symbol [ data %tmp.180 140 39 43 ];
+        %tmp.180 = getv %tmp.179 :data;
+        %tmp.181 = as %tmp.180 Number;
+        symbol [ Number %tmp.181 140 47 53 ];
+        symbol [ toFloat %tmp.182 140 55 62 ];
+        %tmp.182 = getv function %tmp.181 :toFloat;
+        %tmp.183 = invoke %tmp.181 %tmp.182();
+        lputv %resp.11 %tmp.183;
+        symbol [ resp %resp.11 140 24 28 ];
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_139_27_141_20_stop:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_137_20_141_20_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 142 20 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_142_20_142_89_if_stmt:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_142_24_142_58_begin:
+        %tmp.184 = lgetv %resp.11;
+        symbol [ resp %tmp.184 142 24 28 ];
+        symbol [ RESP_SLEEP_MIN %tmp.186 142 32 46 ];
+        %tmp.186 = getv ? :RESP_SLEEP_MIN;
+        %tmp.187 = gte %tmp.184 %tmp.186;
+        bf %tmp.187 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_142_20_142_89_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_142_50_142_58_true:
+        %tmp.188 = lgetv %resp.11;
+        symbol [ resp %tmp.188 142 50 54 ];
+        symbol [ RESP_SLEEP_MAX %tmp.190 142 58 72 ];
+        %tmp.190 = getv ? :RESP_SLEEP_MAX;
+        %tmp.191 = lte %tmp.188 %tmp.190;
+        push %tmp.191;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_142_50_142_58_end:
+        %tmp.192 = phi [%tmp.187 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_142_24_142_58_begin] [%tmp.191 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_142_50_142_58_true] [%tmp.192 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_142_50_142_58_end];
+        bf %tmp.192 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_142_20_142_89_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_142_20_142_89_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_142_74_142_89_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 142 76 ]
+        %tmp.195 = lgetv %confirmed.2;
+        symbol [ confirmed %tmp.195 142 76 85 ];
+        %tmp.196 = add %tmp.195 1;
+        lputv %confirmed.2 %tmp.196;
+        symbol [ confirmed %confirmed.2 142 76 85 ];
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_142_74_142_89_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_142_20_142_89_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_142_20_142_89_if_end:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_134_59_143_16_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_134_16_143_16_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_134_16_143_16_if_end:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_132_34_144_12_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_132_12_144_12_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_132_12_144_12_if_end:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_129_58_145_8_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_129_8_145_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_129_8_145_8_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 148 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_148_8_148_42_if_stmt:
+        %tmp.197 = lgetv %signals.1;
+        symbol [ signals %tmp.197 148 12 19 ];
+        %tmp.198 = 0;
+        %tmp.199 = eq %tmp.197 %tmp.198;
+        bf %tmp.199 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_148_8_148_42_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_148_8_148_42_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_148_26_148_42_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 148 28 ]
+        %tmp.200 = false;
+        ret %tmp.200;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_148_26_148_42_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_148_8_148_42_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_148_8_148_42_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 151 8 ]
+        %tmp.201 = lgetv %confirmed.2;
+        symbol [ confirmed %tmp.201 151 15 24 ];
+        %tmp.202 = 2;
+        %tmp.203 = mul %tmp.201 %tmp.202;
+        %tmp.204 = lgetv %signals.1;
+        symbol [ signals %tmp.204 151 32 39 ];
+        %tmp.205 = gte %tmp.203 %tmp.204;
+        ret %tmp.205;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_91_48_152_4_stop:
+    }
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 156; @symbol_functiondef = [_fireAlarm,156,21,31]; @symbol_param<0> = [reason,156,32,38]; @symbol_param<0>_type<0> = [String,156,42,48]; ]
+    private
+    function _fireAlarm(reason as String) as Void {
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_156_58_185_4_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 158 8 ]
+        symbol [ Application %tmp.1 158 8 19 ];
+        %tmp.1 = getm $.Toybox.Application;
+        symbol [ Storage %tmp.2 158 20 27 ];
+        %tmp.2 = getv %tmp.1 :Storage;
+        symbol [ deleteValue %tmp.3 158 28 39 ];
+        %tmp.3 = getv function %tmp.2 :deleteValue;
+        symbol [ KEY_RUNNING %tmp.5 158 40 51 ];
+        %tmp.5 = getv ? :KEY_RUNNING;
+        invoke %tmp.2 %tmp.3(%tmp.5);
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 161 8 ]
+        symbol [ Application %tmp.6 161 8 19 ];
+        %tmp.6 = getm $.Toybox.Application;
+        symbol [ Storage %tmp.7 161 20 27 ];
+        %tmp.7 = getv %tmp.6 :Storage;
+        symbol [ setValue %tmp.8 161 28 36 ];
+        %tmp.8 = getv function %tmp.7 :setValue;
+        symbol [ KEY_BG_FIRED %tmp.10 161 37 49 ];
+        %tmp.10 = getv ? :KEY_BG_FIRED;
+        %tmp.11 = true;
+        invoke %tmp.7 %tmp.8(%tmp.10, %tmp.11);
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 162 8 ]
+        symbol [ Application %tmp.12 162 8 19 ];
+        %tmp.12 = getm $.Toybox.Application;
+        symbol [ Storage %tmp.13 162 20 27 ];
+        %tmp.13 = getv %tmp.12 :Storage;
+        symbol [ setValue %tmp.14 162 28 36 ];
+        %tmp.14 = getv function %tmp.13 :setValue;
+        symbol [ KEY_BG_FIRED_MINS %tmp.16 162 37 54 ];
+        %tmp.16 = getv ? :KEY_BG_FIRED_MINS;
+        %tmp.17 = self;
+        symbol [ _nowMinutes %tmp.18 162 56 67 ];
+        %tmp.18 = getv function %tmp.17 :_nowMinutes;
+        %tmp.19 = invoke %tmp.17 %tmp.18();
+        invoke %tmp.13 %tmp.14(%tmp.16, %tmp.19);
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 163 8 ]
+        symbol [ Application %tmp.20 163 8 19 ];
+        %tmp.20 = getm $.Toybox.Application;
+        symbol [ Storage %tmp.21 163 20 27 ];
+        %tmp.21 = getv %tmp.20 :Storage;
+        symbol [ setValue %tmp.22 163 28 36 ];
+        %tmp.22 = getv function %tmp.21 :setValue;
+        symbol [ KEY_BG_FIRED_REASON %tmp.24 163 37 56 ];
+        %tmp.24 = getv ? :KEY_BG_FIRED_REASON;
+        %tmp.25 = lgetv %reason;
+        symbol [ reason %tmp.25 163 58 64 ];
+        invoke %tmp.21 %tmp.22(%tmp.24, %tmp.25);
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 166 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_166_8_177_8_if_stmt:
+        symbol [ Attention %tmp.26 166 12 21 ];
+        %tmp.26 = getm $.Toybox.Attention;
+        %tmp.28 = const :vibrate;
+        symbol [ vibrate %tmp.28 166 27 34 const ];
+        %tmp.29 = canhazplz %tmp.26 %tmp.28;
+        bf %tmp.29 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_166_8_177_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_166_8_177_8_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_166_36_177_8_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 167 12 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_166_36_177_8_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_166_36_177_8_stop" ]
+        %patternSize.1 = local;
+        symbol [ patternSize %patternSize.1 167 16 27 ];
+        symbol [ VIBE_REPEATS %tmp.31 167 30 42 ];
+        %tmp.31 = getv ? :VIBE_REPEATS;
+        %tmp.32 = 2;
+        %tmp.33 = mul %tmp.31 %tmp.32;
+        %tmp.34 = 1;
+        %tmp.35 = sub %tmp.33 %tmp.34;
+        lputv %patternSize.1 %tmp.35;
+        symbol [ patternSize %patternSize.1 167 16 27 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 168 12 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_166_36_177_8_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_166_36_177_8_stop" ]
+        %pattern.2 = local;
+        symbol [ pattern %pattern.2 168 16 23 ];
+        %tmp.37 = lgetv %patternSize.1;
+        symbol [ patternSize %tmp.37 168 30 41 ];
+        %tmp.36 = newa %tmp.37;
+        %tmp.38 = as %tmp.36 Array<Attention.VibeProfile>;
+        symbol [ Array %tmp.38 168 46 51 ];
+        symbol [ Attention %tmp.38 168 52 61 ];
+        symbol [ VibeProfile %tmp.38 168 62 73 ];
+        lputv %pattern.2 %tmp.38;
+        symbol [ pattern %pattern.2 168 16 23 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 169 12 ]
+        for @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_169_12_175_12_for_test @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_169_12_175_12_for_incr @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_169_12_175_12_for_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_169_12_175_12_for_init:
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_169_12_175_12_for_begin" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_169_12_175_12_for_end" ]
+        %i.3 = local;
+        symbol [ i %i.3 169 21 22 ];
+        %tmp.39 = 0;
+        lputv %i.3 %tmp.39;
+        symbol [ i %i.3 169 21 22 ];
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_169_12_175_12_for_test:
+        %tmp.40 = lgetv %i.3;
+        symbol [ i %tmp.40 169 28 29 ];
+        %tmp.41 = lgetv %patternSize.1;
+        symbol [ patternSize %tmp.41 169 32 43 ];
+        %tmp.42 = lt %tmp.40 %tmp.41;
+        bf %tmp.42 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_169_12_175_12_for_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_169_12_175_12_for_begin:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_169_50_175_12_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 170 16 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_170_16_174_16_if_stmt:
+        %tmp.43 = lgetv %i.3;
+        symbol [ i %tmp.43 170 20 21 ];
+        %tmp.44 = 2;
+        %tmp.45 = mod %tmp.43 %tmp.44;
+        %tmp.46 = 0;
+        %tmp.47 = eq %tmp.45 %tmp.46;
+        bf %tmp.47 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_170_16_174_16_if_else_false;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_170_16_174_16_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_170_32_172_16_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 171 20 ]
+        %tmp.48 = lgetv %pattern.2;
+        symbol [ pattern %tmp.48 171 20 27 ];
+        symbol [ Attention %tmp.51 171 37 46 ];
+        %tmp.51 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.52 171 47 58 ];
+        %tmp.52 = getv function ? %tmp.51 :VibeProfile;
+        symbol [ VIBE_DUTY %tmp.54 171 59 68 ];
+        %tmp.54 = getv ? :VIBE_DUTY;
+        symbol [ VIBE_ON_MS %tmp.56 171 70 80 ];
+        %tmp.56 = getv ? :VIBE_ON_MS;
+        %tmp.49 = newc %tmp.52 (%tmp.54, %tmp.56);
+        %tmp.57 = lgetv %i.3;
+        symbol [ i %tmp.57 171 28 29 ];
+        aputv %tmp.48 %tmp.57 %tmp.49;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_170_32_172_16_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_170_16_174_16_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_170_16_174_16_if_else_false:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_172_23_174_16_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 173 20 ]
+        %tmp.58 = lgetv %pattern.2;
+        symbol [ pattern %tmp.58 173 20 27 ];
+        symbol [ Attention %tmp.61 173 37 46 ];
+        %tmp.61 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.62 173 47 58 ];
+        %tmp.62 = getv function ? %tmp.61 :VibeProfile;
+        %tmp.63 = 0;
+        symbol [ VIBE_OFF_MS %tmp.65 173 62 73 ];
+        %tmp.65 = getv ? :VIBE_OFF_MS;
+        %tmp.59 = newc %tmp.62 (%tmp.63, %tmp.65);
+        %tmp.66 = lgetv %i.3;
+        symbol [ i %tmp.66 173 28 29 ];
+        aputv %tmp.58 %tmp.66 %tmp.59;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_172_23_174_16_stop:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_170_16_174_16_if_end:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_169_50_175_12_stop:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_169_12_175_12_for_incr:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 169 ]
+        %tmp.69 = lgetv %i.3;
+        symbol [ i %tmp.69 169 45 46 ];
+        %tmp.70 = add %tmp.69 1;
+        lputv %i.3 %tmp.70;
+        symbol [ i %i.3 169 45 46 ];
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_169_12_175_12_for_test;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_169_12_175_12_for_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 176 12 ]
+        symbol [ Attention %tmp.71 176 12 21 ];
+        %tmp.71 = getm $.Toybox.Attention;
+        symbol [ vibrate %tmp.72 176 22 29 ];
+        %tmp.72 = getv function %tmp.71 :vibrate;
+        %tmp.73 = lgetv %pattern.2;
+        symbol [ pattern %tmp.73 176 30 37 ];
+        invoke %tmp.71 %tmp.72(%tmp.73);
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_166_36_177_8_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_166_8_177_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_166_8_177_8_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 179 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_179_8_181_8_if_stmt:
+        symbol [ Attention %tmp.74 179 12 21 ];
+        %tmp.74 = getm $.Toybox.Attention;
+        %tmp.76 = const :playTone;
+        symbol [ playTone %tmp.76 179 27 35 const ];
+        %tmp.77 = canhazplz %tmp.74 %tmp.76;
+        bf %tmp.77 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_179_8_181_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_179_8_181_8_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_179_37_181_8_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 180 12 ]
+        symbol [ Attention %tmp.78 180 12 21 ];
+        %tmp.78 = getm $.Toybox.Attention;
+        symbol [ playTone %tmp.79 180 22 30 ];
+        %tmp.79 = getv function %tmp.78 :playTone;
+        symbol [ Attention %tmp.80 180 31 40 ];
+        %tmp.80 = getm $.Toybox.Attention;
+        symbol [ TONE_ALERT_HI %tmp.81 180 41 54 ];
+        %tmp.81 = getv %tmp.80 :TONE_ALERT_HI;
+        invoke %tmp.78 %tmp.79(%tmp.81);
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_179_37_181_8_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_179_8_181_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_179_8_181_8_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 184 8 ]
+        symbol [ Background %tmp.82 184 8 18 ];
+        %tmp.82 = getm $.Toybox.Background;
+        symbol [ deleteTemporalEvent %tmp.83 184 19 38 ];
+        %tmp.83 = getv function %tmp.82 :deleteTemporalEvent;
+        invoke %tmp.82 %tmp.83();
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_156_58_185_4_stop:
+    }
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 189; @symbol_functiondef = [_reschedule,189,21,32]; ]
+    private
+    function _reschedule() as Void {
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_189_43_192_4_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 191 8 ]
+        symbol [ Background %tmp.1 191 8 18 ];
+        %tmp.1 = getm $.Toybox.Background;
+        symbol [ registerForTemporalEvent %tmp.2 191 19 43 ];
+        %tmp.2 = getv function %tmp.1 :registerForTemporalEvent;
+        symbol [ Time %tmp.5 191 48 52 ];
+        %tmp.5 = getm $.Toybox.Time;
+        symbol [ Duration %tmp.6 191 53 61 ];
+        %tmp.6 = getv function ? %tmp.5 :Duration;
+        %tmp.7 = 60;
+        %tmp.3 = newc %tmp.6 (%tmp.7);
+        invoke %tmp.1 %tmp.2(%tmp.3);
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_189_43_192_4_stop:
+    }
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 194; @symbol_functiondef = [_nowMinutes,194,21,32]; @symbol_return<0> = [Number,194,38,44]; ]
+    private
+    function _nowMinutes() as Number {
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_194_45_197_4_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 195 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_194_45_197_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_194_45_197_4_stop" ]
+        %t.1 = local;
+        symbol [ t %t.1 195 12 13 ];
+        symbol [ System %tmp.1 195 16 22 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ getClockTime %tmp.2 195 23 35 ];
+        %tmp.2 = getv function %tmp.1 :getClockTime;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %t.1 %tmp.3;
+        symbol [ t %t.1 195 12 13 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc" 196 8 ]
+        %tmp.4 = lgetv %t.1;
+        symbol [ t %tmp.4 196 15 16 ];
+        symbol [ hour %tmp.5 196 17 21 ];
+        %tmp.5 = getv %tmp.4 :hour;
+        %tmp.6 = 60;
+        %tmp.7 = mul %tmp.5 %tmp.6;
+        %tmp.8 = lgetv %t.1;
+        symbol [ t %tmp.8 196 29 30 ];
+        symbol [ min %tmp.9 196 31 34 ];
+        %tmp.9 = getv %tmp.8 :min;
+        %tmp.10 = add %tmp.7 %tmp.9;
+        ret %tmp.10;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_AlarmBackground_mc_194_45_197_4_stop:
+    }
+}
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmBackground.mc"; @line = 10; ]
+<init> {
+}

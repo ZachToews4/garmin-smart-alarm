@@ -3,11 +3,13 @@
 
 import Toybox.Application;
 import Toybox.Attention;
+import Toybox.Background;
 import Toybox.Lang;
 import Toybox.Math;
 import Toybox.Sensor;
 import Toybox.SensorHistory;
 import Toybox.System;
+import Toybox.Time;
 import Toybox.Timer;
 import Toybox.WatchUi;
 
@@ -64,12 +66,16 @@ class AlarmManager {
     // Pre-monitor delay
     private const PRE_MONITOR_DELAY_MIN = 30;     // min elapsed after start() before sleep detection
 
-    // Storage keys
-    private const KEY_TARGET     = "targetMinutes";
-    private const KEY_WINDOW     = "windowMinutes";
-    private const KEY_SNOOZE     = "snoozeMinutes";
-    private const KEY_RUNNING    = "isRunning";
-    private const KEY_START_MINS = "startMinutes";
+    // Storage keys — must also match AlarmBackground.mc for the BG_* keys
+    private const KEY_TARGET          = "targetMinutes";
+    private const KEY_WINDOW          = "windowMinutes";
+    private const KEY_SNOOZE          = "snoozeMinutes";
+    private const KEY_RUNNING         = "isRunning";
+    private const KEY_START_MINS      = "startMinutes";
+    // Set by AlarmBackground when it fires the alarm while app is closed
+    private const KEY_BG_FIRED        = "bgFired";
+    private const KEY_BG_FIRED_MINS   = "bgFiredTimeMins";
+    private const KEY_BG_FIRED_REASON = "bgFiredReason";
 
     // ── Public state (read-only by convention) ────────────────────────────────
     var isRunning   as Boolean = false;
@@ -164,7 +170,21 @@ class AlarmManager {
         _stopTimers();
         Sensor.enableSensorEvents(null);
         Application.Storage.deleteValue(KEY_RUNNING);
+        // Cancel background service — alarm is fully stopped
+        if (Background has :deleteTemporalEvent) {
+            Background.deleteTemporalEvent();
+        }
         WatchUi.requestUpdate();
+    }
+
+    // Called by SmartAlarmApp.onStop() when the user exits the app while the
+    // alarm is still running. Stops foreground-only resources (live sensor,
+    // timers) but leaves Storage intact so AlarmBackground can take over.
+    function suspendForeground() as Void {
+        _stopTimers();
+        Sensor.enableSensorEvents(null);
+        // KEY_RUNNING stays true in Storage — background service monitors it.
+        // Background temporal event stays registered.
     }
 
     function dismiss() as Void {
@@ -203,6 +223,11 @@ class AlarmManager {
         Application.Storage.setValue(KEY_RUNNING,    true);
         Application.Storage.setValue(KEY_START_MINS, startMins);
 
+        // Register background service to keep alarm alive when app is closed
+        if (Background has :registerForTemporalEvent) {
+            Background.registerForTemporalEvent(new Time.Duration(60));
+        }
+
         _resetSensorState();
         Sensor.enableSensorEvents(method(:onSensorData));
 
@@ -229,6 +254,27 @@ class AlarmManager {
     }
 
     private function _restoreIfRunning() as Void {
+        // Check if AlarmBackground fired the alarm while the app was closed.
+        // If so, restore the fired state for display — don't re-activate.
+        var bgFired = Application.Storage.getValue(KEY_BG_FIRED);
+        if (bgFired != null && (bgFired as Boolean)) {
+            var firedMinsVal   = Application.Storage.getValue(KEY_BG_FIRED_MINS);
+            var firedReasonVal = Application.Storage.getValue(KEY_BG_FIRED_REASON);
+            alarmFired  = true;
+            firedTime   = (firedMinsVal   != null)
+                ? _formatMinutesOfDay(firedMinsVal as Number)
+                : "--:--";
+            firedReason = (firedReasonVal != null)
+                ? firedReasonVal as String
+                : "Alarm";
+            // Clear background fired flags — foreground has picked them up
+            Application.Storage.deleteValue(KEY_BG_FIRED);
+            Application.Storage.deleteValue(KEY_BG_FIRED_MINS);
+            Application.Storage.deleteValue(KEY_BG_FIRED_REASON);
+            return;
+        }
+
+        // Normal case: alarm was running when the user exited the app
         var wasRunning = Application.Storage.getValue(KEY_RUNNING);
         if (wasRunning == null || !(wasRunning as Boolean)) { return; }
         if (!wakeTimeSet) {
@@ -550,6 +596,10 @@ class AlarmManager {
         _stopTimers();
         Sensor.enableSensorEvents(null);
         Application.Storage.deleteValue(KEY_RUNNING);
+        // Cancel background service — foreground already fired the alarm
+        if (Background has :deleteTemporalEvent) {
+            Background.deleteTemporalEvent();
+        }
 
         if (Attention has :vibrate) {
             var patternSize = VIBE_REPEATS * 2 - 1;
