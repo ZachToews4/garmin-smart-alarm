@@ -194,6 +194,13 @@ class AlarmManager {
         WatchUi.requestUpdate();
     }
 
+    // Immediately fires the alarm without any sleep-detection conditions.
+    // Used for testing — confirms vibration and the fired screen both work.
+    function testFire() as Void {
+        if (!isRunning) { return; }
+        _fireAlarm("Test");
+    }
+
     function snooze() as Void {
         if (!alarmFired) { return; }
         alarmFired  = false;

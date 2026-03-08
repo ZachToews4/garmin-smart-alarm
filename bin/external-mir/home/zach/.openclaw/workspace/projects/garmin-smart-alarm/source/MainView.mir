@@ -686,7 +686,7 @@ _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_10
     [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc"; @line = 118; @symbol_functiondef = [_drawMonitoringScreen,118,21,42]; @symbol_param<0> = [dc,119,8,10]; @symbol_param<0>_type<0> = [Graphics,119,14,22]; @symbol_param<0>_type<1> = [Dc,119,23,25]; @symbol_param<1> = [cx,120,8,10]; @symbol_param<1>_type<0> = [Number,120,14,20]; @symbol_param<2> = [cy,120,22,24]; @symbol_param<2>_type<0> = [Number,120,28,34]; @symbol_param<3> = [width,121,8,13]; @symbol_param<3>_type<0> = [Number,121,17,23]; @symbol_param<4> = [height,121,25,31]; @symbol_param<4>_type<0> = [Number,121,35,41]; ]
     private
     function _drawMonitoringScreen(dc as Graphics.Dc, cx as Number, cy as Number, width as Number, height as Number) as Void {
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_121_51_164_4_start:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_121_51_169_4_start:
 [ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 123 8 ]
         %tmp.1 = self;
         symbol [ _drawBattery %tmp.2 123 8 20 ];
@@ -766,7 +766,7 @@ _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_12
         symbol [ height %tmp.39 131 43 49 ];
         invoke %tmp.33 %tmp.34(%tmp.35, %tmp.36, %tmp.37, %tmp.38, %tmp.39);
 [ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 135 8 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_121_51_164_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_121_51_164_4_stop" ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_121_51_169_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_121_51_169_4_stop" ]
         %hrStr.1 = local;
         symbol [ hrStr %hrStr.1 135 12 17 ];
 _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_135_20_137_14_begin:
@@ -824,7 +824,7 @@ _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_13
         goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_138_8_140_8_if_end;
 _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_138_8_140_8_if_end:
 [ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 141 8 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_121_51_164_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_121_51_164_4_stop" ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_121_51_169_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_121_51_169_4_stop" ]
         %hrColor.2 = local;
         symbol [ hrColor %hrColor.2 141 12 19 ];
 _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_141_22_143_23_begin:
@@ -957,7 +957,7 @@ _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_14
         goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_149_8_155_8_if_end;
 _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_149_8_155_8_if_end:
 [ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 158 8 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_121_51_164_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_121_51_164_4_stop" ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_121_51_169_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_121_51_169_4_stop" ]
         %clk.3 = local;
         symbol [ clk %clk.3 158 12 15 ];
         symbol [ System %tmp.131 158 22 28 ];
@@ -968,7 +968,7 @@ _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_14
         lputv %clk.3 %tmp.133;
         symbol [ clk %clk.3 158 12 15 ];
 [ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 159 8 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_121_51_164_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_121_51_164_4_stop" ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_121_51_169_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_121_51_169_4_stop" ]
         %nowMins.4 = local;
         symbol [ nowMins %nowMins.4 159 12 19 ];
         %tmp.134 = lgetv %clk.3;
@@ -1030,553 +1030,591 @@ _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_14
         symbol [ TEXT_JUSTIFY_CENTER %tmp.164 163 43 62 ];
         %tmp.164 = getv %tmp.163 :TEXT_JUSTIFY_CENTER;
         invoke %tmp.147 %tmp.148(%tmp.149, %tmp.156, %tmp.158, %tmp.162, %tmp.164);
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_121_51_164_4_stop:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 166 8 ]
+        %tmp.165 = lgetv %dc;
+        symbol [ dc %tmp.165 166 8 10 ];
+        symbol [ setColor %tmp.166 166 11 19 ];
+        %tmp.166 = getv function %tmp.165 :setColor;
+        %tmp.167 = 0x333333;
+        symbol [ Graphics %tmp.168 166 30 38 ];
+        %tmp.168 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.169 166 39 56 ];
+        %tmp.169 = getv %tmp.168 :COLOR_TRANSPARENT;
+        invoke %tmp.165 %tmp.166(%tmp.167, %tmp.169);
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 167 8 ]
+        %tmp.170 = lgetv %dc;
+        symbol [ dc %tmp.170 167 8 10 ];
+        symbol [ drawText %tmp.171 167 11 19 ];
+        %tmp.171 = getv function %tmp.170 :drawText;
+        %tmp.172 = lgetv %cx;
+        symbol [ cx %tmp.172 167 20 22 ];
+        %tmp.173 = lgetv %height;
+        symbol [ height %tmp.173 167 24 30 ];
+        %tmp.174 = lgetv %height;
+        symbol [ height %tmp.174 167 34 40 ];
+        %tmp.175 = 0.05;
+        %tmp.176 = mul %tmp.174 %tmp.175;
+        symbol [ toNumber %tmp.177 167 49 57 ];
+        %tmp.177 = getv function %tmp.176 :toNumber;
+        %tmp.178 = invoke %tmp.176 %tmp.177();
+        %tmp.179 = sub %tmp.173 %tmp.178;
+        symbol [ Graphics %tmp.180 168 12 20 ];
+        %tmp.180 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.181 168 21 31 ];
+        %tmp.181 = getv %tmp.180 :FONT_XTINY;
+        %tmp.182 = "Press \u25CF to cancel";
+        symbol [ Graphics %tmp.183 168 59 67 ];
+        %tmp.183 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.184 168 68 87 ];
+        %tmp.184 = getv %tmp.183 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.170 %tmp.171(%tmp.172, %tmp.179, %tmp.181, %tmp.182, %tmp.184);
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_121_51_169_4_stop:
     }
-    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc"; @line = 167; @symbol_functiondef = [_drawSnoozeScreen,167,21,38]; @symbol_param<0> = [dc,168,8,10]; @symbol_param<0>_type<0> = [Graphics,168,14,22]; @symbol_param<0>_type<1> = [Dc,168,23,25]; @symbol_param<1> = [cx,169,8,10]; @symbol_param<1>_type<0> = [Number,169,14,20]; @symbol_param<2> = [cy,169,22,24]; @symbol_param<2>_type<0> = [Number,169,28,34]; @symbol_param<3> = [width,170,8,13]; @symbol_param<3>_type<0> = [Number,170,17,23]; @symbol_param<4> = [height,170,25,31]; @symbol_param<4>_type<0> = [Number,170,35,41]; ]
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc"; @line = 172; @symbol_functiondef = [_drawSnoozeScreen,172,21,38]; @symbol_param<0> = [dc,173,8,10]; @symbol_param<0>_type<0> = [Graphics,173,14,22]; @symbol_param<0>_type<1> = [Dc,173,23,25]; @symbol_param<1> = [cx,174,8,10]; @symbol_param<1>_type<0> = [Number,174,14,20]; @symbol_param<2> = [cy,174,22,24]; @symbol_param<2>_type<0> = [Number,174,28,34]; @symbol_param<3> = [width,175,8,13]; @symbol_param<3>_type<0> = [Number,175,17,23]; @symbol_param<4> = [height,175,25,31]; @symbol_param<4>_type<0> = [Number,175,35,41]; ]
     private
     function _drawSnoozeScreen(dc as Graphics.Dc, cx as Number, cy as Number, width as Number, height as Number) as Void {
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_170_51_195_4_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 172 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_175_51_200_4_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 177 8 ]
         %tmp.1 = self;
-        symbol [ _drawBattery %tmp.2 172 8 20 ];
+        symbol [ _drawBattery %tmp.2 177 8 20 ];
         %tmp.2 = getv function %tmp.1 :_drawBattery;
         %tmp.3 = lgetv %dc;
-        symbol [ dc %tmp.3 172 21 23 ];
+        symbol [ dc %tmp.3 177 21 23 ];
         %tmp.4 = lgetv %width;
-        symbol [ width %tmp.4 172 25 30 ];
+        symbol [ width %tmp.4 177 25 30 ];
         invoke %tmp.1 %tmp.2(%tmp.3, %tmp.4);
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 175 8 ]
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 180 8 ]
         %tmp.5 = lgetv %dc;
-        symbol [ dc %tmp.5 175 8 10 ];
-        symbol [ setColor %tmp.6 175 11 19 ];
+        symbol [ dc %tmp.5 180 8 10 ];
+        symbol [ setColor %tmp.6 180 11 19 ];
         %tmp.6 = getv function %tmp.5 :setColor;
-        symbol [ Graphics %tmp.7 175 20 28 ];
+        symbol [ Graphics %tmp.7 180 20 28 ];
         %tmp.7 = getm $.Toybox.Graphics;
-        symbol [ COLOR_BLUE %tmp.8 175 29 39 ];
+        symbol [ COLOR_BLUE %tmp.8 180 29 39 ];
         %tmp.8 = getv %tmp.7 :COLOR_BLUE;
-        symbol [ Graphics %tmp.9 175 41 49 ];
+        symbol [ Graphics %tmp.9 180 41 49 ];
         %tmp.9 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.10 175 50 67 ];
+        symbol [ COLOR_TRANSPARENT %tmp.10 180 50 67 ];
         %tmp.10 = getv %tmp.9 :COLOR_TRANSPARENT;
         invoke %tmp.5 %tmp.6(%tmp.8, %tmp.10);
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 176 8 ]
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 181 8 ]
         %tmp.11 = lgetv %dc;
-        symbol [ dc %tmp.11 176 8 10 ];
-        symbol [ drawText %tmp.12 176 11 19 ];
+        symbol [ dc %tmp.11 181 8 10 ];
+        symbol [ drawText %tmp.12 181 11 19 ];
         %tmp.12 = getv function %tmp.11 :drawText;
         %tmp.13 = lgetv %cx;
-        symbol [ cx %tmp.13 176 20 22 ];
+        symbol [ cx %tmp.13 181 20 22 ];
         %tmp.14 = lgetv %height;
-        symbol [ height %tmp.14 176 25 31 ];
+        symbol [ height %tmp.14 181 25 31 ];
         %tmp.15 = 0.10;
         %tmp.16 = mul %tmp.14 %tmp.15;
-        symbol [ toNumber %tmp.17 176 40 48 ];
+        symbol [ toNumber %tmp.17 181 40 48 ];
         %tmp.17 = getv function %tmp.16 :toNumber;
         %tmp.18 = invoke %tmp.16 %tmp.17();
-        symbol [ Graphics %tmp.19 177 12 20 ];
+        symbol [ Graphics %tmp.19 182 12 20 ];
         %tmp.19 = getm $.Toybox.Graphics;
-        symbol [ FONT_MEDIUM %tmp.20 177 21 32 ];
+        symbol [ FONT_MEDIUM %tmp.20 182 21 32 ];
         %tmp.20 = getv %tmp.19 :FONT_MEDIUM;
         %tmp.21 = "z z z";
-        symbol [ Graphics %tmp.22 177 43 51 ];
+        symbol [ Graphics %tmp.22 182 43 51 ];
         %tmp.22 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.23 177 52 71 ];
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.23 182 52 71 ];
         %tmp.23 = getv %tmp.22 :TEXT_JUSTIFY_CENTER;
         invoke %tmp.11 %tmp.12(%tmp.13, %tmp.18, %tmp.20, %tmp.21, %tmp.23);
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 180 8 ]
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 185 8 ]
         %tmp.24 = lgetv %dc;
-        symbol [ dc %tmp.24 180 8 10 ];
-        symbol [ setColor %tmp.25 180 11 19 ];
+        symbol [ dc %tmp.24 185 8 10 ];
+        symbol [ setColor %tmp.25 185 11 19 ];
         %tmp.25 = getv function %tmp.24 :setColor;
-        symbol [ Graphics %tmp.26 180 20 28 ];
+        symbol [ Graphics %tmp.26 185 20 28 ];
         %tmp.26 = getm $.Toybox.Graphics;
-        symbol [ COLOR_WHITE %tmp.27 180 29 40 ];
+        symbol [ COLOR_WHITE %tmp.27 185 29 40 ];
         %tmp.27 = getv %tmp.26 :COLOR_WHITE;
-        symbol [ Graphics %tmp.28 180 42 50 ];
+        symbol [ Graphics %tmp.28 185 42 50 ];
         %tmp.28 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.29 180 51 68 ];
+        symbol [ COLOR_TRANSPARENT %tmp.29 185 51 68 ];
         %tmp.29 = getv %tmp.28 :COLOR_TRANSPARENT;
         invoke %tmp.24 %tmp.25(%tmp.27, %tmp.29);
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 181 8 ]
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 186 8 ]
         %tmp.30 = lgetv %dc;
-        symbol [ dc %tmp.30 181 8 10 ];
-        symbol [ drawText %tmp.31 181 11 19 ];
+        symbol [ dc %tmp.30 186 8 10 ];
+        symbol [ drawText %tmp.31 186 11 19 ];
         %tmp.31 = getv function %tmp.30 :drawText;
         %tmp.32 = lgetv %cx;
-        symbol [ cx %tmp.32 181 20 22 ];
+        symbol [ cx %tmp.32 186 20 22 ];
         %tmp.33 = lgetv %cy;
-        symbol [ cy %tmp.33 181 24 26 ];
+        symbol [ cy %tmp.33 186 24 26 ];
         %tmp.34 = lgetv %height;
-        symbol [ height %tmp.34 181 30 36 ];
+        symbol [ height %tmp.34 186 30 36 ];
         %tmp.35 = 0.12;
         %tmp.36 = mul %tmp.34 %tmp.35;
-        symbol [ toNumber %tmp.37 181 45 53 ];
+        symbol [ toNumber %tmp.37 186 45 53 ];
         %tmp.37 = getv function %tmp.36 :toNumber;
         %tmp.38 = invoke %tmp.36 %tmp.37();
         %tmp.39 = sub %tmp.33 %tmp.38;
-        symbol [ Graphics %tmp.40 182 12 20 ];
+        symbol [ Graphics %tmp.40 187 12 20 ];
         %tmp.40 = getm $.Toybox.Graphics;
-        symbol [ FONT_MEDIUM %tmp.41 182 21 32 ];
+        symbol [ FONT_MEDIUM %tmp.41 187 21 32 ];
         %tmp.41 = getv %tmp.40 :FONT_MEDIUM;
         %tmp.42 = "Snoozed";
-        symbol [ Graphics %tmp.43 182 45 53 ];
+        symbol [ Graphics %tmp.43 187 45 53 ];
         %tmp.43 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.44 182 54 73 ];
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.44 187 54 73 ];
         %tmp.44 = getv %tmp.43 :TEXT_JUSTIFY_CENTER;
         invoke %tmp.30 %tmp.31(%tmp.32, %tmp.39, %tmp.41, %tmp.42, %tmp.44);
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 185 8 ]
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 190 8 ]
         %tmp.45 = lgetv %dc;
-        symbol [ dc %tmp.45 185 8 10 ];
-        symbol [ setColor %tmp.46 185 11 19 ];
+        symbol [ dc %tmp.45 190 8 10 ];
+        symbol [ setColor %tmp.46 190 11 19 ];
         %tmp.46 = getv function %tmp.45 :setColor;
-        symbol [ Graphics %tmp.47 185 20 28 ];
+        symbol [ Graphics %tmp.47 190 20 28 ];
         %tmp.47 = getm $.Toybox.Graphics;
-        symbol [ COLOR_LT_GRAY %tmp.48 185 29 42 ];
+        symbol [ COLOR_LT_GRAY %tmp.48 190 29 42 ];
         %tmp.48 = getv %tmp.47 :COLOR_LT_GRAY;
-        symbol [ Graphics %tmp.49 185 44 52 ];
+        symbol [ Graphics %tmp.49 190 44 52 ];
         %tmp.49 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.50 185 53 70 ];
+        symbol [ COLOR_TRANSPARENT %tmp.50 190 53 70 ];
         %tmp.50 = getv %tmp.49 :COLOR_TRANSPARENT;
         invoke %tmp.45 %tmp.46(%tmp.48, %tmp.50);
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 186 8 ]
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 191 8 ]
         %tmp.51 = lgetv %dc;
-        symbol [ dc %tmp.51 186 8 10 ];
-        symbol [ drawText %tmp.52 186 11 19 ];
+        symbol [ dc %tmp.51 191 8 10 ];
+        symbol [ drawText %tmp.52 191 11 19 ];
         %tmp.52 = getv function %tmp.51 :drawText;
         %tmp.53 = lgetv %cx;
-        symbol [ cx %tmp.53 186 20 22 ];
+        symbol [ cx %tmp.53 191 20 22 ];
         %tmp.54 = lgetv %cy;
-        symbol [ cy %tmp.54 186 24 26 ];
+        symbol [ cy %tmp.54 191 24 26 ];
         %tmp.55 = lgetv %height;
-        symbol [ height %tmp.55 186 30 36 ];
+        symbol [ height %tmp.55 191 30 36 ];
         %tmp.56 = 0.04;
         %tmp.57 = mul %tmp.55 %tmp.56;
-        symbol [ toNumber %tmp.58 186 45 53 ];
+        symbol [ toNumber %tmp.58 191 45 53 ];
         %tmp.58 = getv function %tmp.57 :toNumber;
         %tmp.59 = invoke %tmp.57 %tmp.58();
         %tmp.60 = add %tmp.54 %tmp.59;
-        symbol [ Graphics %tmp.61 187 12 20 ];
+        symbol [ Graphics %tmp.61 192 12 20 ];
         %tmp.61 = getm $.Toybox.Graphics;
-        symbol [ FONT_SMALL %tmp.62 187 21 31 ];
+        symbol [ FONT_SMALL %tmp.62 192 21 31 ];
         %tmp.62 = getv %tmp.61 :FONT_SMALL;
         %tmp.63 = "+ ";
-        symbol [ _alarmMgr %tmp.65 188 19 28 ];
+        symbol [ _alarmMgr %tmp.65 193 19 28 ];
         %tmp.65 = getv ? :_alarmMgr;
-        symbol [ snoozeMinutes %tmp.66 188 29 42 ];
+        symbol [ snoozeMinutes %tmp.66 193 29 42 ];
         %tmp.66 = getv %tmp.65 :snoozeMinutes;
         %tmp.67 = add %tmp.63 %tmp.66;
         %tmp.68 = " min";
         %tmp.69 = add %tmp.67 %tmp.68;
-        symbol [ Graphics %tmp.70 189 12 20 ];
+        symbol [ Graphics %tmp.70 194 12 20 ];
         %tmp.70 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.71 189 21 40 ];
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.71 194 21 40 ];
         %tmp.71 = getv %tmp.70 :TEXT_JUSTIFY_CENTER;
         invoke %tmp.51 %tmp.52(%tmp.53, %tmp.60, %tmp.62, %tmp.69, %tmp.71);
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 192 8 ]
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 197 8 ]
         %tmp.72 = lgetv %dc;
-        symbol [ dc %tmp.72 192 8 10 ];
-        symbol [ setColor %tmp.73 192 11 19 ];
+        symbol [ dc %tmp.72 197 8 10 ];
+        symbol [ setColor %tmp.73 197 11 19 ];
         %tmp.73 = getv function %tmp.72 :setColor;
-        symbol [ Graphics %tmp.74 192 20 28 ];
+        symbol [ Graphics %tmp.74 197 20 28 ];
         %tmp.74 = getm $.Toybox.Graphics;
-        symbol [ COLOR_DK_GRAY %tmp.75 192 29 42 ];
+        symbol [ COLOR_DK_GRAY %tmp.75 197 29 42 ];
         %tmp.75 = getv %tmp.74 :COLOR_DK_GRAY;
-        symbol [ Graphics %tmp.76 192 44 52 ];
+        symbol [ Graphics %tmp.76 197 44 52 ];
         %tmp.76 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.77 192 53 70 ];
+        symbol [ COLOR_TRANSPARENT %tmp.77 197 53 70 ];
         %tmp.77 = getv %tmp.76 :COLOR_TRANSPARENT;
         invoke %tmp.72 %tmp.73(%tmp.75, %tmp.77);
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 193 8 ]
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 198 8 ]
         %tmp.78 = lgetv %dc;
-        symbol [ dc %tmp.78 193 8 10 ];
-        symbol [ drawText %tmp.79 193 11 19 ];
+        symbol [ dc %tmp.78 198 8 10 ];
+        symbol [ drawText %tmp.79 198 11 19 ];
         %tmp.79 = getv function %tmp.78 :drawText;
         %tmp.80 = lgetv %cx;
-        symbol [ cx %tmp.80 193 20 22 ];
+        symbol [ cx %tmp.80 198 20 22 ];
         %tmp.81 = lgetv %height;
-        symbol [ height %tmp.81 193 24 30 ];
+        symbol [ height %tmp.81 198 24 30 ];
         %tmp.82 = lgetv %height;
-        symbol [ height %tmp.82 193 34 40 ];
+        symbol [ height %tmp.82 198 34 40 ];
         %tmp.83 = 0.18;
         %tmp.84 = mul %tmp.82 %tmp.83;
-        symbol [ toNumber %tmp.85 193 49 57 ];
+        symbol [ toNumber %tmp.85 198 49 57 ];
         %tmp.85 = getv function %tmp.84 :toNumber;
         %tmp.86 = invoke %tmp.84 %tmp.85();
         %tmp.87 = sub %tmp.81 %tmp.86;
-        symbol [ Graphics %tmp.88 194 12 20 ];
+        symbol [ Graphics %tmp.88 199 12 20 ];
         %tmp.88 = getm $.Toybox.Graphics;
-        symbol [ FONT_TINY %tmp.89 194 21 30 ];
+        symbol [ FONT_TINY %tmp.89 199 21 30 ];
         %tmp.89 = getv %tmp.88 :FONT_TINY;
         %tmp.90 = "Back to cancel";
-        symbol [ Graphics %tmp.91 194 50 58 ];
+        symbol [ Graphics %tmp.91 199 50 58 ];
         %tmp.91 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.92 194 59 78 ];
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.92 199 59 78 ];
         %tmp.92 = getv %tmp.91 :TEXT_JUSTIFY_CENTER;
         invoke %tmp.78 %tmp.79(%tmp.80, %tmp.87, %tmp.89, %tmp.90, %tmp.92);
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_170_51_195_4_stop:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_175_51_200_4_stop:
     }
-    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc"; @line = 198; @symbol_functiondef = [_drawFiredScreen,198,21,37]; @symbol_param<0> = [dc,199,8,10]; @symbol_param<0>_type<0> = [Graphics,199,14,22]; @symbol_param<0>_type<1> = [Dc,199,23,25]; @symbol_param<1> = [cx,200,8,10]; @symbol_param<1>_type<0> = [Number,200,14,20]; @symbol_param<2> = [cy,200,22,24]; @symbol_param<2>_type<0> = [Number,200,28,34]; @symbol_param<3> = [width,201,8,13]; @symbol_param<3>_type<0> = [Number,201,17,23]; @symbol_param<4> = [height,201,25,31]; @symbol_param<4>_type<0> = [Number,201,35,41]; ]
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc"; @line = 203; @symbol_functiondef = [_drawFiredScreen,203,21,37]; @symbol_param<0> = [dc,204,8,10]; @symbol_param<0>_type<0> = [Graphics,204,14,22]; @symbol_param<0>_type<1> = [Dc,204,23,25]; @symbol_param<1> = [cx,205,8,10]; @symbol_param<1>_type<0> = [Number,205,14,20]; @symbol_param<2> = [cy,205,22,24]; @symbol_param<2>_type<0> = [Number,205,28,34]; @symbol_param<3> = [width,206,8,13]; @symbol_param<3>_type<0> = [Number,206,17,23]; @symbol_param<4> = [height,206,25,31]; @symbol_param<4>_type<0> = [Number,206,35,41]; ]
     private
     function _drawFiredScreen(dc as Graphics.Dc, cx as Number, cy as Number, width as Number, height as Number) as Void {
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_201_51_238_4_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 204 8 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_201_51_238_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_201_51_238_4_stop" ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_206_51_243_4_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 209 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_206_51_243_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_206_51_243_4_stop" ]
         %sunY.1 = local;
-        symbol [ sunY %sunY.1 204 12 16 ];
+        symbol [ sunY %sunY.1 209 12 16 ];
         %tmp.1 = lgetv %height;
-        symbol [ height %tmp.1 204 20 26 ];
+        symbol [ height %tmp.1 209 20 26 ];
         %tmp.2 = 0.13;
         %tmp.3 = mul %tmp.1 %tmp.2;
-        symbol [ toNumber %tmp.4 204 35 43 ];
+        symbol [ toNumber %tmp.4 209 35 43 ];
         %tmp.4 = getv function %tmp.3 :toNumber;
         %tmp.5 = invoke %tmp.3 %tmp.4();
         lputv %sunY.1 %tmp.5;
-        symbol [ sunY %sunY.1 204 12 16 ];
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 205 8 ]
+        symbol [ sunY %sunY.1 209 12 16 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 210 8 ]
         %tmp.6 = lgetv %dc;
-        symbol [ dc %tmp.6 205 8 10 ];
-        symbol [ setColor %tmp.7 205 11 19 ];
+        symbol [ dc %tmp.6 210 8 10 ];
+        symbol [ setColor %tmp.7 210 11 19 ];
         %tmp.7 = getv function %tmp.6 :setColor;
-        symbol [ Graphics %tmp.8 205 20 28 ];
+        symbol [ Graphics %tmp.8 210 20 28 ];
         %tmp.8 = getm $.Toybox.Graphics;
-        symbol [ COLOR_YELLOW %tmp.9 205 29 41 ];
+        symbol [ COLOR_YELLOW %tmp.9 210 29 41 ];
         %tmp.9 = getv %tmp.8 :COLOR_YELLOW;
-        symbol [ Graphics %tmp.10 205 43 51 ];
+        symbol [ Graphics %tmp.10 210 43 51 ];
         %tmp.10 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.11 205 52 69 ];
+        symbol [ COLOR_TRANSPARENT %tmp.11 210 52 69 ];
         %tmp.11 = getv %tmp.10 :COLOR_TRANSPARENT;
         invoke %tmp.6 %tmp.7(%tmp.9, %tmp.11);
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 206 8 ]
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 211 8 ]
         %tmp.12 = lgetv %dc;
-        symbol [ dc %tmp.12 206 8 10 ];
-        symbol [ fillCircle %tmp.13 206 11 21 ];
+        symbol [ dc %tmp.12 211 8 10 ];
+        symbol [ fillCircle %tmp.13 211 11 21 ];
         %tmp.13 = getv function %tmp.12 :fillCircle;
         %tmp.14 = lgetv %cx;
-        symbol [ cx %tmp.14 206 22 24 ];
+        symbol [ cx %tmp.14 211 22 24 ];
         %tmp.15 = lgetv %sunY.1;
-        symbol [ sunY %tmp.15 206 26 30 ];
+        symbol [ sunY %tmp.15 211 26 30 ];
         %tmp.16 = 18;
         invoke %tmp.12 %tmp.13(%tmp.14, %tmp.15, %tmp.16);
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 207 8 ]
-        for @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_207_8_214_8_for_test @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_207_8_214_8_for_incr @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_207_8_214_8_for_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_207_8_214_8_for_init:
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_207_8_214_8_for_begin" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_207_8_214_8_for_end" ]
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 212 8 ]
+        for @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_212_8_219_8_for_test @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_212_8_219_8_for_incr @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_212_8_219_8_for_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_212_8_219_8_for_init:
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_212_8_219_8_for_begin" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_212_8_219_8_for_end" ]
         %i.2 = local;
-        symbol [ i %i.2 207 17 18 ];
+        symbol [ i %i.2 212 17 18 ];
         %tmp.17 = 0;
         lputv %i.2 %tmp.17;
-        symbol [ i %i.2 207 17 18 ];
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_207_8_214_8_for_test:
+        symbol [ i %i.2 212 17 18 ];
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_212_8_219_8_for_test:
         %tmp.18 = lgetv %i.2;
-        symbol [ i %tmp.18 207 24 25 ];
+        symbol [ i %tmp.18 212 24 25 ];
         %tmp.19 = 8;
         %tmp.20 = lt %tmp.18 %tmp.19;
-        bf %tmp.20 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_207_8_214_8_for_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_207_8_214_8_for_begin:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_207_36_214_8_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 208 12 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_207_36_214_8_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_207_36_214_8_stop" ]
+        bf %tmp.20 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_212_8_219_8_for_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_212_8_219_8_for_begin:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_212_36_219_8_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 213 12 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_212_36_219_8_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_212_36_219_8_stop" ]
         %angle.3 = local;
-        symbol [ angle %angle.3 208 16 21 ];
+        symbol [ angle %angle.3 213 16 21 ];
         %tmp.21 = lgetv %i.2;
-        symbol [ i %tmp.21 208 25 26 ];
+        symbol [ i %tmp.21 213 25 26 ];
         %tmp.22 = 45;
         %tmp.23 = mul %tmp.21 %tmp.22;
-        symbol [ Math %tmp.24 208 35 39 ];
+        symbol [ Math %tmp.24 213 35 39 ];
         %tmp.24 = getm $.Toybox.Math;
-        symbol [ PI %tmp.25 208 40 42 ];
+        symbol [ PI %tmp.25 213 40 42 ];
         %tmp.25 = getv %tmp.24 :PI;
         %tmp.26 = mul %tmp.23 %tmp.25;
         %tmp.27 = 180.0;
         %tmp.28 = div %tmp.26 %tmp.27;
         lputv %angle.3 %tmp.28;
-        symbol [ angle %angle.3 208 16 21 ];
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 209 12 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_207_36_214_8_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_207_36_214_8_stop" ]
+        symbol [ angle %angle.3 213 16 21 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 214 12 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_212_36_219_8_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_212_36_219_8_stop" ]
         %x1.4 = local;
-        symbol [ x1 %x1.4 209 16 18 ];
+        symbol [ x1 %x1.4 214 16 18 ];
         %tmp.29 = lgetv %cx;
-        symbol [ cx %tmp.29 209 22 24 ];
+        symbol [ cx %tmp.29 214 22 24 ];
         %tmp.30 = 24;
-        symbol [ Math %tmp.31 209 34 38 ];
+        symbol [ Math %tmp.31 214 34 38 ];
         %tmp.31 = getm $.Toybox.Math;
-        symbol [ cos %tmp.32 209 39 42 ];
+        symbol [ cos %tmp.32 214 39 42 ];
         %tmp.32 = getv function %tmp.31 :cos;
         %tmp.33 = lgetv %angle.3;
-        symbol [ angle %tmp.33 209 43 48 ];
+        symbol [ angle %tmp.33 214 43 48 ];
         %tmp.34 = invoke %tmp.31 %tmp.32(%tmp.33);
         %tmp.35 = mul %tmp.30 %tmp.34;
         %tmp.36 = add %tmp.29 %tmp.35;
-        symbol [ toNumber %tmp.37 209 51 59 ];
+        symbol [ toNumber %tmp.37 214 51 59 ];
         %tmp.37 = getv function %tmp.36 :toNumber;
         %tmp.38 = invoke %tmp.36 %tmp.37();
         lputv %x1.4 %tmp.38;
-        symbol [ x1 %x1.4 209 16 18 ];
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 210 12 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_207_36_214_8_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_207_36_214_8_stop" ]
+        symbol [ x1 %x1.4 214 16 18 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 215 12 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_212_36_219_8_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_212_36_219_8_stop" ]
         %y1.5 = local;
-        symbol [ y1 %y1.5 210 16 18 ];
+        symbol [ y1 %y1.5 215 16 18 ];
         %tmp.39 = lgetv %sunY.1;
-        symbol [ sunY %tmp.39 210 22 26 ];
+        symbol [ sunY %tmp.39 215 22 26 ];
         %tmp.40 = 24;
-        symbol [ Math %tmp.41 210 34 38 ];
+        symbol [ Math %tmp.41 215 34 38 ];
         %tmp.41 = getm $.Toybox.Math;
-        symbol [ sin %tmp.42 210 39 42 ];
+        symbol [ sin %tmp.42 215 39 42 ];
         %tmp.42 = getv function %tmp.41 :sin;
         %tmp.43 = lgetv %angle.3;
-        symbol [ angle %tmp.43 210 43 48 ];
+        symbol [ angle %tmp.43 215 43 48 ];
         %tmp.44 = invoke %tmp.41 %tmp.42(%tmp.43);
         %tmp.45 = mul %tmp.40 %tmp.44;
         %tmp.46 = add %tmp.39 %tmp.45;
-        symbol [ toNumber %tmp.47 210 51 59 ];
+        symbol [ toNumber %tmp.47 215 51 59 ];
         %tmp.47 = getv function %tmp.46 :toNumber;
         %tmp.48 = invoke %tmp.46 %tmp.47();
         lputv %y1.5 %tmp.48;
-        symbol [ y1 %y1.5 210 16 18 ];
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 211 12 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_207_36_214_8_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_207_36_214_8_stop" ]
+        symbol [ y1 %y1.5 215 16 18 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 216 12 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_212_36_219_8_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_212_36_219_8_stop" ]
         %x2.6 = local;
-        symbol [ x2 %x2.6 211 16 18 ];
+        symbol [ x2 %x2.6 216 16 18 ];
         %tmp.49 = lgetv %cx;
-        symbol [ cx %tmp.49 211 22 24 ];
+        symbol [ cx %tmp.49 216 22 24 ];
         %tmp.50 = 32;
-        symbol [ Math %tmp.51 211 34 38 ];
+        symbol [ Math %tmp.51 216 34 38 ];
         %tmp.51 = getm $.Toybox.Math;
-        symbol [ cos %tmp.52 211 39 42 ];
+        symbol [ cos %tmp.52 216 39 42 ];
         %tmp.52 = getv function %tmp.51 :cos;
         %tmp.53 = lgetv %angle.3;
-        symbol [ angle %tmp.53 211 43 48 ];
+        symbol [ angle %tmp.53 216 43 48 ];
         %tmp.54 = invoke %tmp.51 %tmp.52(%tmp.53);
         %tmp.55 = mul %tmp.50 %tmp.54;
         %tmp.56 = add %tmp.49 %tmp.55;
-        symbol [ toNumber %tmp.57 211 51 59 ];
+        symbol [ toNumber %tmp.57 216 51 59 ];
         %tmp.57 = getv function %tmp.56 :toNumber;
         %tmp.58 = invoke %tmp.56 %tmp.57();
         lputv %x2.6 %tmp.58;
-        symbol [ x2 %x2.6 211 16 18 ];
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 212 12 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_207_36_214_8_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_207_36_214_8_stop" ]
+        symbol [ x2 %x2.6 216 16 18 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 217 12 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_212_36_219_8_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_212_36_219_8_stop" ]
         %y2.7 = local;
-        symbol [ y2 %y2.7 212 16 18 ];
+        symbol [ y2 %y2.7 217 16 18 ];
         %tmp.59 = lgetv %sunY.1;
-        symbol [ sunY %tmp.59 212 22 26 ];
+        symbol [ sunY %tmp.59 217 22 26 ];
         %tmp.60 = 32;
-        symbol [ Math %tmp.61 212 34 38 ];
+        symbol [ Math %tmp.61 217 34 38 ];
         %tmp.61 = getm $.Toybox.Math;
-        symbol [ sin %tmp.62 212 39 42 ];
+        symbol [ sin %tmp.62 217 39 42 ];
         %tmp.62 = getv function %tmp.61 :sin;
         %tmp.63 = lgetv %angle.3;
-        symbol [ angle %tmp.63 212 43 48 ];
+        symbol [ angle %tmp.63 217 43 48 ];
         %tmp.64 = invoke %tmp.61 %tmp.62(%tmp.63);
         %tmp.65 = mul %tmp.60 %tmp.64;
         %tmp.66 = add %tmp.59 %tmp.65;
-        symbol [ toNumber %tmp.67 212 51 59 ];
+        symbol [ toNumber %tmp.67 217 51 59 ];
         %tmp.67 = getv function %tmp.66 :toNumber;
         %tmp.68 = invoke %tmp.66 %tmp.67();
         lputv %y2.7 %tmp.68;
-        symbol [ y2 %y2.7 212 16 18 ];
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 213 12 ]
+        symbol [ y2 %y2.7 217 16 18 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 218 12 ]
         %tmp.69 = lgetv %dc;
-        symbol [ dc %tmp.69 213 12 14 ];
-        symbol [ drawLine %tmp.70 213 15 23 ];
+        symbol [ dc %tmp.69 218 12 14 ];
+        symbol [ drawLine %tmp.70 218 15 23 ];
         %tmp.70 = getv function %tmp.69 :drawLine;
         %tmp.71 = lgetv %x1.4;
-        symbol [ x1 %tmp.71 213 24 26 ];
+        symbol [ x1 %tmp.71 218 24 26 ];
         %tmp.72 = lgetv %y1.5;
-        symbol [ y1 %tmp.72 213 28 30 ];
+        symbol [ y1 %tmp.72 218 28 30 ];
         %tmp.73 = lgetv %x2.6;
-        symbol [ x2 %tmp.73 213 32 34 ];
+        symbol [ x2 %tmp.73 218 32 34 ];
         %tmp.74 = lgetv %y2.7;
-        symbol [ y2 %tmp.74 213 36 38 ];
+        symbol [ y2 %tmp.74 218 36 38 ];
         invoke %tmp.69 %tmp.70(%tmp.71, %tmp.72, %tmp.73, %tmp.74);
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_207_36_214_8_stop:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_207_8_214_8_for_incr:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 207 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_212_36_219_8_stop:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_212_8_219_8_for_incr:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 212 ]
         %tmp.77 = lgetv %i.2;
-        symbol [ i %tmp.77 207 31 32 ];
+        symbol [ i %tmp.77 212 31 32 ];
         %tmp.78 = add %tmp.77 1;
         lputv %i.2 %tmp.78;
-        symbol [ i %i.2 207 31 32 ];
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_207_8_214_8_for_test;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_207_8_214_8_for_end:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 217 8 ]
+        symbol [ i %i.2 212 31 32 ];
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_212_8_219_8_for_test;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_212_8_219_8_for_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 222 8 ]
         %tmp.79 = lgetv %dc;
-        symbol [ dc %tmp.79 217 8 10 ];
-        symbol [ setColor %tmp.80 217 11 19 ];
+        symbol [ dc %tmp.79 222 8 10 ];
+        symbol [ setColor %tmp.80 222 11 19 ];
         %tmp.80 = getv function %tmp.79 :setColor;
-        symbol [ Graphics %tmp.81 217 20 28 ];
+        symbol [ Graphics %tmp.81 222 20 28 ];
         %tmp.81 = getm $.Toybox.Graphics;
-        symbol [ COLOR_WHITE %tmp.82 217 29 40 ];
+        symbol [ COLOR_WHITE %tmp.82 222 29 40 ];
         %tmp.82 = getv %tmp.81 :COLOR_WHITE;
-        symbol [ Graphics %tmp.83 217 42 50 ];
+        symbol [ Graphics %tmp.83 222 42 50 ];
         %tmp.83 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.84 217 51 68 ];
+        symbol [ COLOR_TRANSPARENT %tmp.84 222 51 68 ];
         %tmp.84 = getv %tmp.83 :COLOR_TRANSPARENT;
         invoke %tmp.79 %tmp.80(%tmp.82, %tmp.84);
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 218 8 ]
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 223 8 ]
         %tmp.85 = lgetv %dc;
-        symbol [ dc %tmp.85 218 8 10 ];
-        symbol [ drawText %tmp.86 218 11 19 ];
+        symbol [ dc %tmp.85 223 8 10 ];
+        symbol [ drawText %tmp.86 223 11 19 ];
         %tmp.86 = getv function %tmp.85 :drawText;
         %tmp.87 = lgetv %cx;
-        symbol [ cx %tmp.87 218 20 22 ];
+        symbol [ cx %tmp.87 223 20 22 ];
         %tmp.88 = lgetv %cy;
-        symbol [ cy %tmp.88 218 24 26 ];
+        symbol [ cy %tmp.88 223 24 26 ];
         %tmp.89 = lgetv %height;
-        symbol [ height %tmp.89 218 30 36 ];
+        symbol [ height %tmp.89 223 30 36 ];
         %tmp.90 = 0.26;
         %tmp.91 = mul %tmp.89 %tmp.90;
-        symbol [ toNumber %tmp.92 218 45 53 ];
+        symbol [ toNumber %tmp.92 223 45 53 ];
         %tmp.92 = getv function %tmp.91 :toNumber;
         %tmp.93 = invoke %tmp.91 %tmp.92();
         %tmp.94 = sub %tmp.88 %tmp.93;
-        symbol [ Graphics %tmp.95 219 12 20 ];
+        symbol [ Graphics %tmp.95 224 12 20 ];
         %tmp.95 = getm $.Toybox.Graphics;
-        symbol [ FONT_MEDIUM %tmp.96 219 21 32 ];
+        symbol [ FONT_MEDIUM %tmp.96 224 21 32 ];
         %tmp.96 = getv %tmp.95 :FONT_MEDIUM;
         %tmp.97 = "Good morning!";
-        symbol [ Graphics %tmp.98 219 51 59 ];
+        symbol [ Graphics %tmp.98 224 51 59 ];
         %tmp.98 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.99 219 60 79 ];
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.99 224 60 79 ];
         %tmp.99 = getv %tmp.98 :TEXT_JUSTIFY_CENTER;
         invoke %tmp.85 %tmp.86(%tmp.87, %tmp.94, %tmp.96, %tmp.97, %tmp.99);
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 222 8 ]
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 227 8 ]
         %tmp.100 = lgetv %dc;
-        symbol [ dc %tmp.100 222 8 10 ];
-        symbol [ setColor %tmp.101 222 11 19 ];
+        symbol [ dc %tmp.100 227 8 10 ];
+        symbol [ setColor %tmp.101 227 11 19 ];
         %tmp.101 = getv function %tmp.100 :setColor;
-        symbol [ Graphics %tmp.102 222 20 28 ];
+        symbol [ Graphics %tmp.102 227 20 28 ];
         %tmp.102 = getm $.Toybox.Graphics;
-        symbol [ COLOR_LT_GRAY %tmp.103 222 29 42 ];
+        symbol [ COLOR_LT_GRAY %tmp.103 227 29 42 ];
         %tmp.103 = getv %tmp.102 :COLOR_LT_GRAY;
-        symbol [ Graphics %tmp.104 222 44 52 ];
+        symbol [ Graphics %tmp.104 227 44 52 ];
         %tmp.104 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.105 222 53 70 ];
+        symbol [ COLOR_TRANSPARENT %tmp.105 227 53 70 ];
         %tmp.105 = getv %tmp.104 :COLOR_TRANSPARENT;
         invoke %tmp.100 %tmp.101(%tmp.103, %tmp.105);
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 223 8 ]
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 228 8 ]
         %tmp.106 = lgetv %dc;
-        symbol [ dc %tmp.106 223 8 10 ];
-        symbol [ drawText %tmp.107 223 11 19 ];
+        symbol [ dc %tmp.106 228 8 10 ];
+        symbol [ drawText %tmp.107 228 11 19 ];
         %tmp.107 = getv function %tmp.106 :drawText;
         %tmp.108 = lgetv %cx;
-        symbol [ cx %tmp.108 223 20 22 ];
+        symbol [ cx %tmp.108 228 20 22 ];
         %tmp.109 = lgetv %cy;
-        symbol [ cy %tmp.109 223 24 26 ];
+        symbol [ cy %tmp.109 228 24 26 ];
         %tmp.110 = lgetv %height;
-        symbol [ height %tmp.110 223 30 36 ];
+        symbol [ height %tmp.110 228 30 36 ];
         %tmp.111 = 0.10;
         %tmp.112 = mul %tmp.110 %tmp.111;
-        symbol [ toNumber %tmp.113 223 45 53 ];
+        symbol [ toNumber %tmp.113 228 45 53 ];
         %tmp.113 = getv function %tmp.112 :toNumber;
         %tmp.114 = invoke %tmp.112 %tmp.113();
         %tmp.115 = sub %tmp.109 %tmp.114;
-        symbol [ Graphics %tmp.116 224 12 20 ];
+        symbol [ Graphics %tmp.116 229 12 20 ];
         %tmp.116 = getm $.Toybox.Graphics;
-        symbol [ FONT_TINY %tmp.117 224 21 30 ];
+        symbol [ FONT_TINY %tmp.117 229 21 30 ];
         %tmp.117 = getv %tmp.116 :FONT_TINY;
-        symbol [ _alarmMgr %tmp.119 224 32 41 ];
+        symbol [ _alarmMgr %tmp.119 229 32 41 ];
         %tmp.119 = getv ? :_alarmMgr;
-        symbol [ firedReason %tmp.120 224 42 53 ];
+        symbol [ firedReason %tmp.120 229 42 53 ];
         %tmp.120 = getv %tmp.119 :firedReason;
-        symbol [ Graphics %tmp.121 224 55 63 ];
+        symbol [ Graphics %tmp.121 229 55 63 ];
         %tmp.121 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.122 224 64 83 ];
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.122 229 64 83 ];
         %tmp.122 = getv %tmp.121 :TEXT_JUSTIFY_CENTER;
         invoke %tmp.106 %tmp.107(%tmp.108, %tmp.115, %tmp.117, %tmp.120, %tmp.122);
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 227 8 ]
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 232 8 ]
         %tmp.123 = lgetv %dc;
-        symbol [ dc %tmp.123 227 8 10 ];
-        symbol [ setColor %tmp.124 227 11 19 ];
+        symbol [ dc %tmp.123 232 8 10 ];
+        symbol [ setColor %tmp.124 232 11 19 ];
         %tmp.124 = getv function %tmp.123 :setColor;
-        symbol [ Graphics %tmp.125 227 20 28 ];
+        symbol [ Graphics %tmp.125 232 20 28 ];
         %tmp.125 = getm $.Toybox.Graphics;
-        symbol [ COLOR_YELLOW %tmp.126 227 29 41 ];
+        symbol [ COLOR_YELLOW %tmp.126 232 29 41 ];
         %tmp.126 = getv %tmp.125 :COLOR_YELLOW;
-        symbol [ Graphics %tmp.127 227 43 51 ];
+        symbol [ Graphics %tmp.127 232 43 51 ];
         %tmp.127 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.128 227 52 69 ];
+        symbol [ COLOR_TRANSPARENT %tmp.128 232 52 69 ];
         %tmp.128 = getv %tmp.127 :COLOR_TRANSPARENT;
         invoke %tmp.123 %tmp.124(%tmp.126, %tmp.128);
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 228 8 ]
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 233 8 ]
         %tmp.129 = lgetv %dc;
-        symbol [ dc %tmp.129 228 8 10 ];
-        symbol [ drawText %tmp.130 228 11 19 ];
+        symbol [ dc %tmp.129 233 8 10 ];
+        symbol [ drawText %tmp.130 233 11 19 ];
         %tmp.130 = getv function %tmp.129 :drawText;
         %tmp.131 = lgetv %cx;
-        symbol [ cx %tmp.131 228 20 22 ];
+        symbol [ cx %tmp.131 233 20 22 ];
         %tmp.132 = lgetv %cy;
-        symbol [ cy %tmp.132 228 24 26 ];
+        symbol [ cy %tmp.132 233 24 26 ];
         %tmp.133 = lgetv %height;
-        symbol [ height %tmp.133 228 30 36 ];
+        symbol [ height %tmp.133 233 30 36 ];
         %tmp.134 = 0.02;
         %tmp.135 = mul %tmp.133 %tmp.134;
-        symbol [ toNumber %tmp.136 228 45 53 ];
+        symbol [ toNumber %tmp.136 233 45 53 ];
         %tmp.136 = getv function %tmp.135 :toNumber;
         %tmp.137 = invoke %tmp.135 %tmp.136();
         %tmp.138 = add %tmp.132 %tmp.137;
-        symbol [ Graphics %tmp.139 229 12 20 ];
+        symbol [ Graphics %tmp.139 234 12 20 ];
         %tmp.139 = getm $.Toybox.Graphics;
-        symbol [ FONT_NUMBER_MEDIUM %tmp.140 229 21 39 ];
+        symbol [ FONT_NUMBER_MEDIUM %tmp.140 234 21 39 ];
         %tmp.140 = getv %tmp.139 :FONT_NUMBER_MEDIUM;
-        symbol [ _alarmMgr %tmp.142 230 12 21 ];
+        symbol [ _alarmMgr %tmp.142 235 12 21 ];
         %tmp.142 = getv ? :_alarmMgr;
-        symbol [ firedTime %tmp.143 230 22 31 ];
+        symbol [ firedTime %tmp.143 235 22 31 ];
         %tmp.143 = getv %tmp.142 :firedTime;
-        symbol [ Graphics %tmp.144 230 33 41 ];
+        symbol [ Graphics %tmp.144 235 33 41 ];
         %tmp.144 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.145 230 42 61 ];
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.145 235 42 61 ];
         %tmp.145 = getv %tmp.144 :TEXT_JUSTIFY_CENTER;
         invoke %tmp.129 %tmp.130(%tmp.131, %tmp.138, %tmp.140, %tmp.143, %tmp.145);
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 233 8 ]
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 238 8 ]
         %tmp.146 = lgetv %dc;
-        symbol [ dc %tmp.146 233 8 10 ];
-        symbol [ setColor %tmp.147 233 11 19 ];
+        symbol [ dc %tmp.146 238 8 10 ];
+        symbol [ setColor %tmp.147 238 11 19 ];
         %tmp.147 = getv function %tmp.146 :setColor;
-        symbol [ Graphics %tmp.148 233 20 28 ];
+        symbol [ Graphics %tmp.148 238 20 28 ];
         %tmp.148 = getm $.Toybox.Graphics;
-        symbol [ COLOR_DK_GRAY %tmp.149 233 29 42 ];
+        symbol [ COLOR_DK_GRAY %tmp.149 238 29 42 ];
         %tmp.149 = getv %tmp.148 :COLOR_DK_GRAY;
-        symbol [ Graphics %tmp.150 233 44 52 ];
+        symbol [ Graphics %tmp.150 238 44 52 ];
         %tmp.150 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.151 233 53 70 ];
+        symbol [ COLOR_TRANSPARENT %tmp.151 238 53 70 ];
         %tmp.151 = getv %tmp.150 :COLOR_TRANSPARENT;
         invoke %tmp.146 %tmp.147(%tmp.149, %tmp.151);
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 234 8 ]
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc" 239 8 ]
         %tmp.152 = lgetv %dc;
-        symbol [ dc %tmp.152 234 8 10 ];
-        symbol [ drawText %tmp.153 234 11 19 ];
+        symbol [ dc %tmp.152 239 8 10 ];
+        symbol [ drawText %tmp.153 239 11 19 ];
         %tmp.153 = getv function %tmp.152 :drawText;
         %tmp.154 = lgetv %cx;
-        symbol [ cx %tmp.154 234 20 22 ];
+        symbol [ cx %tmp.154 239 20 22 ];
         %tmp.155 = lgetv %height;
-        symbol [ height %tmp.155 234 24 30 ];
+        symbol [ height %tmp.155 239 24 30 ];
         %tmp.156 = lgetv %height;
-        symbol [ height %tmp.156 234 34 40 ];
+        symbol [ height %tmp.156 239 34 40 ];
         %tmp.157 = 0.18;
         %tmp.158 = mul %tmp.156 %tmp.157;
-        symbol [ toNumber %tmp.159 234 49 57 ];
+        symbol [ toNumber %tmp.159 239 49 57 ];
         %tmp.159 = getv function %tmp.158 :toNumber;
         %tmp.160 = invoke %tmp.158 %tmp.159();
         %tmp.161 = sub %tmp.155 %tmp.160;
-        symbol [ Graphics %tmp.162 235 12 20 ];
+        symbol [ Graphics %tmp.162 240 12 20 ];
         %tmp.162 = getm $.Toybox.Graphics;
-        symbol [ FONT_XTINY %tmp.163 235 21 31 ];
+        symbol [ FONT_XTINY %tmp.163 240 21 31 ];
         %tmp.163 = getv %tmp.162 :FONT_XTINY;
         %tmp.164 = "Tap = Snooze ";
-        symbol [ _alarmMgr %tmp.166 236 30 39 ];
+        symbol [ _alarmMgr %tmp.166 241 30 39 ];
         %tmp.166 = getv ? :_alarmMgr;
-        symbol [ snoozeMinutes %tmp.167 236 40 53 ];
+        symbol [ snoozeMinutes %tmp.167 241 40 53 ];
         %tmp.167 = getv %tmp.166 :snoozeMinutes;
         %tmp.168 = add %tmp.164 %tmp.167;
         %tmp.169 = " min  |  Back = Dismiss";
         %tmp.170 = add %tmp.168 %tmp.169;
-        symbol [ Graphics %tmp.171 237 12 20 ];
+        symbol [ Graphics %tmp.171 242 12 20 ];
         %tmp.171 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.172 237 21 40 ];
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.172 242 21 40 ];
         %tmp.172 = getv %tmp.171 :TEXT_JUSTIFY_CENTER;
         invoke %tmp.152 %tmp.153(%tmp.154, %tmp.161, %tmp.163, %tmp.170, %tmp.172);
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_201_51_238_4_stop:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainView_mc_206_51_243_4_stop:
     }
 }
 [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainView.mc"; @line = 4; ]

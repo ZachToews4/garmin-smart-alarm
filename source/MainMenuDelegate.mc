@@ -36,6 +36,9 @@ class MainMenuDelegate extends WatchUi.Menu2InputDelegate {
                 // rather than failing silently.
                 _pushTimePickerView();
             }
+        } else if (id == :testAlarm) {
+            WatchUi.popView(WatchUi.SLIDE_DOWN);
+            _alarmMgr.testFire();
         } else if (id == :cancelAlarm) {
             WatchUi.popView(WatchUi.SLIDE_DOWN);
             _alarmMgr.stop();

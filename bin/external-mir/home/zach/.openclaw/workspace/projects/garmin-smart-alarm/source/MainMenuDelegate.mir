@@ -35,9 +35,9 @@ _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelega
     }
     [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc"; @line = 16; @symbol_functiondef = [onSelect,16,13,21]; @symbol_param<0> = [item,16,22,26]; @symbol_param<0>_type<0> = [WatchUi,16,30,37]; @symbol_param<0>_type<1> = [MenuItem,16,38,46]; ]
     function onSelect(item as WatchUi.MenuItem) as Void {
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_16_56_43_4_start:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_16_56_46_4_start:
 [ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc" 17 8 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_16_56_43_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_16_56_43_4_stop" ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_16_56_46_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_16_56_46_4_stop" ]
         %id.1 = local;
         symbol [ id %id.1 17 12 14 ];
         %tmp.1 = lgetv %item;
@@ -48,14 +48,14 @@ _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelega
         lputv %id.1 %tmp.3;
         symbol [ id %id.1 17 12 14 ];
 [ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc" 19 8 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_19_8_42_8_if_stmt:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_19_8_45_8_if_stmt:
         %tmp.4 = lgetv %id.1;
         symbol [ id %tmp.4 19 12 14 ];
         %tmp.6 = const :setWakeTime;
         symbol [ setWakeTime %tmp.6 19 19 30 const ];
         %tmp.7 = eq %tmp.4 %tmp.6;
-        bf %tmp.7 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_19_8_42_8_if_false;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_19_8_42_8_if_true:
+        bf %tmp.7 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_19_8_45_8_if_false;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_19_8_45_8_if_true:
 _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_19_32_22_8_start:
 [ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc" 20 12 ]
         symbol [ WatchUi %tmp.8 20 12 19 ];
@@ -73,17 +73,17 @@ _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelega
         %tmp.13 = getv function %tmp.12 :_pushTimePickerView;
         invoke %tmp.12 %tmp.13();
 _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_19_32_22_8_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_19_8_42_8_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_19_8_42_8_if_false:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_19_8_45_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_19_8_45_8_if_false:
 [ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc" 22 15 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_22_15_42_8_if_stmt:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_22_15_45_8_if_stmt:
         %tmp.14 = lgetv %id.1;
         symbol [ id %tmp.14 22 19 21 ];
         %tmp.16 = const :setWindow;
         symbol [ setWindow %tmp.16 22 26 35 const ];
         %tmp.17 = eq %tmp.14 %tmp.16;
-        bf %tmp.17 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_22_15_42_8_if_false;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_22_15_42_8_if_true:
+        bf %tmp.17 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_22_15_45_8_if_false;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_22_15_45_8_if_true:
 _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_22_37_26_8_start:
 [ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc" 23 12 ]
         symbol [ WatchUi %tmp.18 23 12 19 ];
@@ -122,17 +122,17 @@ _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelega
         %tmp.35 = getv %tmp.34 :SLIDE_UP;
         invoke %tmp.26 %tmp.27(%tmp.28, %tmp.29, %tmp.35);
 _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_22_37_26_8_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_22_15_42_8_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_22_15_42_8_if_false:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_22_15_45_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_22_15_45_8_if_false:
 [ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc" 26 15 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_26_15_42_8_if_stmt:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_26_15_45_8_if_stmt:
         %tmp.36 = lgetv %id.1;
         symbol [ id %tmp.36 26 19 21 ];
         %tmp.38 = const :setSnooze;
         symbol [ setSnooze %tmp.38 26 26 35 const ];
         %tmp.39 = eq %tmp.36 %tmp.38;
-        bf %tmp.39 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_26_15_42_8_if_false;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_26_15_42_8_if_true:
+        bf %tmp.39 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_26_15_45_8_if_false;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_26_15_45_8_if_true:
 _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_26_37_30_8_start:
 [ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc" 27 12 ]
         symbol [ WatchUi %tmp.40 27 12 19 ];
@@ -171,17 +171,17 @@ _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelega
         %tmp.57 = getv %tmp.56 :SLIDE_UP;
         invoke %tmp.48 %tmp.49(%tmp.50, %tmp.51, %tmp.57);
 _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_26_37_30_8_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_26_15_42_8_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_26_15_42_8_if_false:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_26_15_45_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_26_15_45_8_if_false:
 [ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc" 30 15 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_30_15_42_8_if_stmt:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_30_15_45_8_if_stmt:
         %tmp.58 = lgetv %id.1;
         symbol [ id %tmp.58 30 19 21 ];
         %tmp.60 = const :startAlarm;
         symbol [ startAlarm %tmp.60 30 26 36 const ];
         %tmp.61 = eq %tmp.58 %tmp.60;
-        bf %tmp.61 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_30_15_42_8_if_false;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_30_15_42_8_if_true:
+        bf %tmp.61 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_30_15_45_8_if_false;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_30_15_45_8_if_true:
 _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_30_38_39_8_start:
 [ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc" 31 12 ]
         symbol [ WatchUi %tmp.62 31 12 19 ];
@@ -220,18 +220,18 @@ _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelega
 _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_34_19_38_12_stop:
 _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_32_12_38_12_if_end:
 _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_30_38_39_8_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_30_15_42_8_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_30_15_42_8_if_false:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_30_15_45_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_30_15_45_8_if_false:
 [ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc" 39 15 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_39_15_42_8_if_stmt:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_39_15_45_8_if_stmt:
         %tmp.74 = lgetv %id.1;
         symbol [ id %tmp.74 39 19 21 ];
-        %tmp.76 = const :cancelAlarm;
-        symbol [ cancelAlarm %tmp.76 39 26 37 const ];
+        %tmp.76 = const :testAlarm;
+        symbol [ testAlarm %tmp.76 39 26 35 const ];
         %tmp.77 = eq %tmp.74 %tmp.76;
-        bf %tmp.77 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_39_15_42_8_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_39_15_42_8_if_true:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_39_39_42_8_start:
+        bf %tmp.77 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_39_15_45_8_if_false;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_39_15_45_8_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_39_37_42_8_start:
 [ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc" 40 12 ]
         symbol [ WatchUi %tmp.78 40 12 19 ];
         %tmp.78 = getm $.Toybox.WatchUi;
@@ -245,54 +245,84 @@ _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelega
 [ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc" 41 12 ]
         symbol [ _alarmMgr %tmp.83 41 12 21 ];
         %tmp.83 = getv ? :_alarmMgr;
-        symbol [ stop %tmp.84 41 22 26 ];
-        %tmp.84 = getv function %tmp.83 :stop;
+        symbol [ testFire %tmp.84 41 22 30 ];
+        %tmp.84 = getv function %tmp.83 :testFire;
         invoke %tmp.83 %tmp.84();
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_39_39_42_8_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_39_15_42_8_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_39_15_42_8_if_end:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_30_15_42_8_if_end:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_26_15_42_8_if_end:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_22_15_42_8_if_end:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_19_8_42_8_if_end:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_16_56_43_4_stop:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_39_37_42_8_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_39_15_45_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_39_15_45_8_if_false:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc" 42 15 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_42_15_45_8_if_stmt:
+        %tmp.85 = lgetv %id.1;
+        symbol [ id %tmp.85 42 19 21 ];
+        %tmp.87 = const :cancelAlarm;
+        symbol [ cancelAlarm %tmp.87 42 26 37 const ];
+        %tmp.88 = eq %tmp.85 %tmp.87;
+        bf %tmp.88 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_42_15_45_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_42_15_45_8_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_42_39_45_8_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc" 43 12 ]
+        symbol [ WatchUi %tmp.89 43 12 19 ];
+        %tmp.89 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.90 43 20 27 ];
+        %tmp.90 = getv function %tmp.89 :popView;
+        symbol [ WatchUi %tmp.91 43 28 35 ];
+        %tmp.91 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_DOWN %tmp.92 43 36 46 ];
+        %tmp.92 = getv %tmp.91 :SLIDE_DOWN;
+        invoke %tmp.89 %tmp.90(%tmp.92);
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc" 44 12 ]
+        symbol [ _alarmMgr %tmp.94 44 12 21 ];
+        %tmp.94 = getv ? :_alarmMgr;
+        symbol [ stop %tmp.95 44 22 26 ];
+        %tmp.95 = getv function %tmp.94 :stop;
+        invoke %tmp.94 %tmp.95();
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_42_39_45_8_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_42_15_45_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_42_15_45_8_if_end:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_39_15_45_8_if_end:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_30_15_45_8_if_end:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_26_15_45_8_if_end:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_22_15_45_8_if_end:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_19_8_45_8_if_end:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_16_56_46_4_stop:
     }
-    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc"; @line = 45; @symbol_functiondef = [onBack,45,13,19]; ]
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc"; @line = 48; @symbol_functiondef = [onBack,48,13,19]; ]
     function onBack() as Void {
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_45_30_47_4_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc" 46 8 ]
-        symbol [ WatchUi %tmp.1 46 8 15 ];
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_48_30_50_4_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc" 49 8 ]
+        symbol [ WatchUi %tmp.1 49 8 15 ];
         %tmp.1 = getm $.Toybox.WatchUi;
-        symbol [ popView %tmp.2 46 16 23 ];
+        symbol [ popView %tmp.2 49 16 23 ];
         %tmp.2 = getv function %tmp.1 :popView;
-        symbol [ WatchUi %tmp.3 46 24 31 ];
+        symbol [ WatchUi %tmp.3 49 24 31 ];
         %tmp.3 = getm $.Toybox.WatchUi;
-        symbol [ SLIDE_DOWN %tmp.4 46 32 42 ];
+        symbol [ SLIDE_DOWN %tmp.4 49 32 42 ];
         %tmp.4 = getv %tmp.3 :SLIDE_DOWN;
         invoke %tmp.1 %tmp.2(%tmp.4);
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_45_30_47_4_stop:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_48_30_50_4_stop:
     }
-    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc"; @line = 49; @symbol_functiondef = [_pushTimePickerView,49,21,40]; ]
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc"; @line = 52; @symbol_functiondef = [_pushTimePickerView,52,21,40]; ]
     private
     function _pushTimePickerView() as Void {
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_49_51_55_4_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc" 50 8 ]
-        symbol [ WatchUi %tmp.1 50 8 15 ];
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_52_51_58_4_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc" 53 8 ]
+        symbol [ WatchUi %tmp.1 53 8 15 ];
         %tmp.1 = getm $.Toybox.WatchUi;
-        symbol [ pushView %tmp.2 50 16 24 ];
+        symbol [ pushView %tmp.2 53 16 24 ];
         %tmp.2 = getv function %tmp.1 :pushView;
-        symbol [ TimePickerView %tmp.6 51 16 30 ];
+        symbol [ TimePickerView %tmp.6 54 16 30 ];
         %tmp.6 = getv ? :TimePickerView;
         %tmp.3 = newc %tmp.6 ();
-        symbol [ TimePickerDelegate %tmp.10 52 16 34 ];
+        symbol [ TimePickerDelegate %tmp.10 55 16 34 ];
         %tmp.10 = getv ? :TimePickerDelegate;
         %tmp.7 = newc %tmp.10 ();
-        symbol [ WatchUi %tmp.11 53 12 19 ];
+        symbol [ WatchUi %tmp.11 56 12 19 ];
         %tmp.11 = getm $.Toybox.WatchUi;
-        symbol [ SLIDE_UP %tmp.12 53 20 28 ];
+        symbol [ SLIDE_UP %tmp.12 56 20 28 ];
         %tmp.12 = getv %tmp.11 :SLIDE_UP;
         invoke %tmp.1 %tmp.2(%tmp.3, %tmp.7, %tmp.12);
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_49_51_55_4_stop:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainMenuDelegate_mc_52_51_58_4_stop:
     }
 }
 [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainMenuDelegate.mc"; @line = 4; ]

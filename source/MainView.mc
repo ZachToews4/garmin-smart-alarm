@@ -161,6 +161,11 @@ class MainView extends WatchUi.View {
         dc.drawText(cx, height - (height * 0.14).toNumber(),
             Graphics.FONT_TINY,
             _formatTime(nowMins), Graphics.TEXT_JUSTIFY_CENTER);
+
+        // Subtle hint: Back is blocked, menu is the only way to cancel
+        dc.setColor(0x333333, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(cx, height - (height * 0.05).toNumber(),
+            Graphics.FONT_XTINY, "Press \u25CF to cancel", Graphics.TEXT_JUSTIFY_CENTER);
     }
 
     // ── Snooze screen ─────────────────────────────────────────────────────────

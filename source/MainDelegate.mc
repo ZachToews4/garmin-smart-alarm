@@ -49,6 +49,7 @@ class MainDelegate extends WatchUi.BehaviorDelegate {
         menu.addItem(new WatchUi.MenuItem("Set Window",    null, :setWindow,   {}));
         menu.addItem(new WatchUi.MenuItem("Set Snooze",    null, :setSnooze,   {}));
         if (_alarmMgr.isRunning) {
+            menu.addItem(new WatchUi.MenuItem("Test Alarm",   null, :testAlarm,   {}));
             menu.addItem(new WatchUi.MenuItem("Cancel Alarm", null, :cancelAlarm, {}));
         } else {
             menu.addItem(new WatchUi.MenuItem("Start Alarm",  null, :startAlarm,  {}));
@@ -65,6 +66,11 @@ class MainDelegate extends WatchUi.BehaviorDelegate {
         if (_alarmMgr.snoozing) {
             // Cancel snooze entirely
             _alarmMgr.stop();
+            return true;
+        }
+        if (_alarmMgr.isRunning) {
+            // Block accidental exit while monitoring — use menu → Cancel Alarm to stop.
+            // Returning true eats the back press without exiting the app.
             return true;
         }
         return false;    // let the system handle (exit app)

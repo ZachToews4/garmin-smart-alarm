@@ -64,8 +64,9 @@ class AlarmBackground extends System.ServiceDelegate {
         // Minutes until target time (wraps correctly across midnight)
         var dist = (target - nowMins + 1440) % 1440;
 
-        // At or just past target time (allow 1-min overshoot due to bg granularity)
-        if (dist <= 1) {
+        // At target time, 1 min early (bg fires slightly early), or 1 min late
+        // (bg skipped a beat and dist wrapped to ~1439). All within tolerance.
+        if (dist <= 1 || dist >= 1439) {
             _fireAlarm("Target time");
             return;
         }
