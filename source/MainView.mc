@@ -75,7 +75,7 @@ class MainView extends WatchUi.View {
             ? Graphics.COLOR_ORANGE
             : Graphics.COLOR_DK_GRAY;
         dc.setColor(color, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(width - 8, 8, Graphics.FONT_XTINY,
+        dc.drawText(width - 8, 8, Graphics.FONT_TINY,
             battery.toNumber().toString() + "%",
             Graphics.TEXT_JUSTIFY_RIGHT);
     }
@@ -130,13 +130,13 @@ class MainView extends WatchUi.View {
             : Graphics.COLOR_DK_GRAY;
         dc.setColor(hrColor, Graphics.COLOR_TRANSPARENT);
         dc.drawText(cx, cy + (height * 0.21).toNumber(),
-            Graphics.FONT_XTINY, hrStr, Graphics.TEXT_JUSTIFY_CENTER);
+            Graphics.FONT_TINY, hrStr, Graphics.TEXT_JUSTIFY_CENTER);
 
         // Row 2: Respiration (only shown when data is available)
         if (_alarmMgr.isRespAvailable()) {
             dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
             dc.drawText(cx, cy + (height * 0.28).toNumber(),
-                Graphics.FONT_XTINY,
+                Graphics.FONT_TINY,
                 "Resp: " + _alarmMgr.getLastResp().toNumber() + " /min",
                 Graphics.TEXT_JUSTIFY_CENTER);
         }
@@ -152,7 +152,7 @@ class MainView extends WatchUi.View {
         // Subtle hint: Back is blocked, menu is the only way to cancel
         dc.setColor(0x333333, Graphics.COLOR_TRANSPARENT);
         dc.drawText(cx, height - (height * 0.05).toNumber(),
-            Graphics.FONT_XTINY, "Press \u25CF to cancel", Graphics.TEXT_JUSTIFY_CENTER);
+            Graphics.FONT_TINY, "Press \u25CF to cancel", Graphics.TEXT_JUSTIFY_CENTER);
     }
 
     // ── Snooze screen ─────────────────────────────────────────────────────────
@@ -224,7 +224,7 @@ class MainView extends WatchUi.View {
         // Action hints — snooze duration reflects the actual setting
         dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
         dc.drawText(cx, height - (height * 0.18).toNumber(),
-            Graphics.FONT_XTINY,
+            Graphics.FONT_TINY,
             "Tap = Snooze " + _alarmMgr.snoozeMinutes + " min  |  Back = Dismiss",
             Graphics.TEXT_JUSTIFY_CENTER);
     }

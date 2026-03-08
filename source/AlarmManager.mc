@@ -125,7 +125,9 @@ class AlarmManager {
 
         _cancelBackground();
         _stopDisplayTimer();
-        WatchUi.requestUpdate();
+        // Note: no WatchUi.requestUpdate() here — callers that need a redraw
+        // (e.g. menu cancel) will trigger it themselves. Calling requestUpdate()
+        // from onStop() crashes because the view stack is already being torn down.
     }
 
     function dismiss() as Void {

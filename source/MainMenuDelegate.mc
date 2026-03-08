@@ -42,6 +42,7 @@ class MainMenuDelegate extends WatchUi.Menu2InputDelegate {
         } else if (id == :cancelAlarm) {
             WatchUi.popView(WatchUi.SLIDE_DOWN);
             _alarmMgr.stop();
+            WatchUi.requestUpdate();
         }
     }
 

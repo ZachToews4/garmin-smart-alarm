@@ -23,12 +23,28 @@ class SmartAlarmApp extends Application.AppBase {
     // instead of killing everything. The background will keep monitoring
     // and fire the alarm even while the app is closed.
     function onStop(state as Dictionary?) as Void {
-        var mgr = AlarmManager.getInstance();
-        if (mgr.isRunning) {
-            mgr.suspendForeground();  // stops live sensors/timers; background takes over
-        } else {
-            mgr.stop();  // full stop — clears Storage and cancels background event
+        // IMPORTANT: This method runs in BOTH foreground and background contexts
+        // because SmartAlarmApp is (:background). AlarmManager and WatchUi are
+        // foreground-only and CANNOT be referenced here at all.
+        //
+        // Logic: if KEY_RUNNING is false/absent → clean up storage + cancel
+        // background event. If true → leave everything intact so AlarmBackground
+        // can continue monitoring (or already has: background onStop fires AFTER
+        // onTemporalEvent completes).
+        //
+        // In the foreground case where the user cancelled the alarm, AlarmManager.stop()
+        // has already deleted KEY_RUNNING before onStop() is called, so we arrive
+        // here with KEY_RUNNING = null → we do nothing extra (already clean).
+        var running = Application.Storage.getValue(KEY_RUNNING);
+        if (running == null || !(running as Boolean)) {
+            Application.Storage.deleteValue(KEY_RUNNING);
+            Application.Storage.deleteValue(KEY_SLEEP_ONSET);
+            Application.Storage.deleteValue(KEY_ONSET_COUNT);
+            Application.Storage.deleteValue(KEY_SNOOZE_MODE);
+            Application.Storage.deleteValue(KEY_SNOOZE_TARGET);
+            Background.deleteTemporalEvent();
         }
+        // If running: leave Storage + temporal event intact — background continues.
     }
 
     // Register the background service delegate.
