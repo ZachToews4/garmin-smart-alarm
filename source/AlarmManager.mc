@@ -187,12 +187,12 @@ class AlarmManager {
         _stopDisplayTimer();
 
         if (Attention has :vibrate) {
-            var patternSize = Vibe.REPEATS * 2 - 1;
+            var patternSize = VIBE_REPEATS * 2 - 1;
             var pattern = new[patternSize] as Array<Attention.VibeProfile>;
             for (var i = 0; i < patternSize; i++) {
                 pattern[i] = new Attention.VibeProfile(
-                    i % 2 == 0 ? Vibe.DUTY : 0,
-                    i % 2 == 0 ? Vibe.ON_MS : Vibe.OFF_MS
+                    i % 2 == 0 ? VIBE_DUTY : 0,
+                    i % 2 == 0 ? VIBE_ON_MS : VIBE_OFF_MS
                 );
             }
             Attention.vibrate(pattern);
@@ -243,7 +243,9 @@ class AlarmManager {
 
     private function _startDisplayTimer() as Void {
         _stopDisplayTimer();
-        onDisplayRefresh();  // immediate first read
+        // Note: do NOT call onDisplayRefresh() here — this runs inside
+        // initialize() before the view stack is set up. Let the timer fire
+        // naturally; the display shows defaults until the first tick.
         _displayTimer = new Timer.Timer();
         (_displayTimer as Timer.Timer).start(method(:onDisplayRefresh), DISPLAY_INTERVAL_MS, true);
     }
@@ -256,7 +258,7 @@ class AlarmManager {
     }
 
     // Public so the timer callback can resolve it via method(:onDisplayRefresh).
-    // Reads SensorHistory directly — does NOT call SleepDetector ((:background) only).
+    // Reads SensorHistory directly — does NOT call SleepDetector (background use only).
     function onDisplayRefresh() as Void {
         if (SensorHistory has :getHeartRateHistory) {
             var hrIter = SensorHistory.getHeartRateHistory(

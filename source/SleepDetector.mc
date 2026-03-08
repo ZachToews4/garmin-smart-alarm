@@ -1,15 +1,13 @@
 // SleepDetector.mc
 // Reads biometric data from SensorHistory and determines sleep stage.
-// Annotated (:background) so it can be used by both AlarmBackground and
-// AlarmManager (foreground display refresh).
+// Called exclusively by AlarmBackground (background context).
 //
 // Design: pure SensorHistory reads — no live sensor callbacks, no in-memory
-// state. Safe to call from any context.
+// state. All constants sourced from Constants.mc global declarations.
 
 import Toybox.Lang;
 import Toybox.SensorHistory;
 
-(:background)
 class SleepDetector {
 
     // ── Biometric readers ─────────────────────────────────────────────────────
@@ -66,7 +64,7 @@ class SleepDetector {
         var resp = readResp();
 
         // Hard gate: strong HRV evidence of deep sleep → hold off
-        if (hrv >= 0 && hrv > Thresholds.HRV_DEEP_THRESH) { return false; }
+        if (hrv >= 0 && hrv > HRV_DEEP_THRESH) { return false; }
 
         // Score available signals
         var signals   = 0;
@@ -74,19 +72,19 @@ class SleepDetector {
 
         if (hr >= 0) {
             signals++;
-            if (hr >= Thresholds.HR_SLEEP_MIN && hr <= Thresholds.HR_SLEEP_MAX) {
+            if (hr >= HR_SLEEP_MIN && hr <= HR_SLEEP_MAX) {
                 confirmed++;
             }
         }
         if (hrv >= 0) {
             signals++;
-            if (hrv >= Thresholds.HRV_LIGHT_MIN && hrv <= Thresholds.HRV_LIGHT_MAX) {
+            if (hrv >= HRV_LIGHT_MIN && hrv <= HRV_LIGHT_MAX) {
                 confirmed++;
             }
         }
         if (resp >= 0.0f) {
             signals++;
-            if (resp >= Thresholds.RESP_SLEEP_MIN && resp <= Thresholds.RESP_SLEEP_MAX) {
+            if (resp >= RESP_SLEEP_MIN && resp <= RESP_SLEEP_MAX) {
                 confirmed++;
             }
         }
@@ -116,9 +114,9 @@ class SleepDetector {
         if (sleepOnsetMins < 0) { return true; }  // onset unknown → no constraint
 
         var elapsed  = (nowMins - sleepOnsetMins + 1440) % 1440;
-        var cyclePos = elapsed % Thresholds.CYCLE_MIN;
+        var cyclePos = elapsed % CYCLE_MIN;
 
-        return cyclePos <= Thresholds.CYCLE_WINDOW_MIN ||
-               cyclePos >= (Thresholds.CYCLE_MIN - Thresholds.CYCLE_WINDOW_MIN);
+        return cyclePos <= CYCLE_WINDOW_MIN ||
+               cyclePos >= (CYCLE_MIN - CYCLE_WINDOW_MIN);
     }
 }

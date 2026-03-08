@@ -62,8 +62,8 @@ class AlarmBackground extends System.ServiceDelegate {
             var startMins = (startVal != null) ? startVal as Number : nowMins;
             var elapsed   = (nowMins - startMins + 1440) % 1440;
             var halfWindow = window / 2;
-            var delay = (Thresholds.PRE_MONITOR_DELAY_MIN < halfWindow)
-                ? Thresholds.PRE_MONITOR_DELAY_MIN
+            var delay = (PRE_MONITOR_DELAY_MIN < halfWindow)
+                ? PRE_MONITOR_DELAY_MIN
                 : halfWindow;
             if (elapsed < delay) {
                 _reschedule();
@@ -96,15 +96,15 @@ class AlarmBackground extends System.ServiceDelegate {
         var signals = 0; var sleepSigs = 0;
         if (hr >= 0) {
             signals++;
-            if (hr >= Thresholds.HR_SLEEP_MIN && hr <= Thresholds.HR_SLEEP_MAX) { sleepSigs++; }
+            if (hr >= HR_SLEEP_MIN && hr <= HR_SLEEP_MAX) { sleepSigs++; }
         }
         if (hrv >= 0) {
             signals++;
-            if (hrv >= Thresholds.HRV_LIGHT_MIN && hrv <= Thresholds.HRV_LIGHT_MAX) { sleepSigs++; }
+            if (hrv >= HRV_LIGHT_MIN && hrv <= HRV_LIGHT_MAX) { sleepSigs++; }
         }
         if (resp >= 0.0f) {
             signals++;
-            if (resp >= Thresholds.RESP_SLEEP_MIN && resp <= Thresholds.RESP_SLEEP_MAX) { sleepSigs++; }
+            if (resp >= RESP_SLEEP_MIN && resp <= RESP_SLEEP_MAX) { sleepSigs++; }
         }
 
         if (signals == 0) { return; }
@@ -113,7 +113,7 @@ class AlarmBackground extends System.ServiceDelegate {
             // Looks like sleep — increment confirmation counter
             var count = _getInt(KEY_ONSET_COUNT);
             var n     = (count >= 0 ? count : 0) + 1;
-            if (n >= Thresholds.ONSET_CONFIRM_BG) {
+            if (n >= ONSET_CONFIRM_BG) {
                 Application.Storage.setValue(KEY_SLEEP_ONSET, nowMins);
                 Application.Storage.deleteValue(KEY_ONSET_COUNT);
             } else {
@@ -144,12 +144,12 @@ class AlarmBackground extends System.ServiceDelegate {
 
         // Vibrate
         if (Attention has :vibrate) {
-            var patternSize = Vibe.REPEATS * 2 - 1;
+            var patternSize = VIBE_REPEATS * 2 - 1;
             var pattern = new[patternSize] as Array<Attention.VibeProfile>;
             for (var i = 0; i < patternSize; i++) {
                 pattern[i] = new Attention.VibeProfile(
-                    i % 2 == 0 ? Vibe.DUTY : 0,
-                    i % 2 == 0 ? Vibe.ON_MS : Vibe.OFF_MS
+                    i % 2 == 0 ? VIBE_DUTY : 0,
+                    i % 2 == 0 ? VIBE_ON_MS : VIBE_OFF_MS
                 );
             }
             Attention.vibrate(pattern);
