@@ -8,7 +8,7 @@ class MainDelegate extends WatchUi.BehaviorDelegate {
 
     private var _alarmMgr as AlarmManager;
 
-    function initialize(view as MainView) {
+    function initialize() {
         BehaviorDelegate.initialize();
         _alarmMgr = AlarmManager.getInstance();
     }

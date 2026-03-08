@@ -40,11 +40,7 @@ class SmartAlarmApp extends Application.AppBase {
     // Return the initial view
     function getInitialView() as [Views] or [Views, InputDelegates] {
         var view = new MainView();
-        var delegate = new MainDelegate(view);
+        var delegate = new MainDelegate();
         return [view, delegate];
     }
-}
-
-function getApp() as SmartAlarmApp {
-    return Application.getApp() as SmartAlarmApp;
 }

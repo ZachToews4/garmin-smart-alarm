@@ -14,9 +14,9 @@ class MainDelegate extends WatchUi.BehaviorDelegate {
     [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainDelegate.mc"; @line = 9; @position = 16; @symbol_vardef = [_alarmMgr,9,16,25]; @symbol_type<0> = [AlarmManager,9,29,41]; ]
     private
     var _alarmMgr as AlarmManager;
-    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainDelegate.mc"; @line = 11; @symbol_functiondef = [initialize,11,13,23]; @symbol_param<0> = [view,11,24,28]; @symbol_param<0>_type<0> = [MainView,11,32,40]; ]
-    function initialize(view as MainView) as Void {
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainDelegate_mc_11_42_14_4_start:
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainDelegate.mc"; @line = 11; @symbol_functiondef = [initialize,11,13,23]; ]
+    function initialize() as Void {
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainDelegate_mc_11_26_14_4_start:
 [ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainDelegate.mc" 12 8 ]
         symbol [ BehaviorDelegate %tmp.2 12 8 24 ];
         %tmp.2 = getv ? :BehaviorDelegate;
@@ -31,7 +31,7 @@ _home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainDelegate_m
         %tmp.7 = invoke %tmp.5 %tmp.6();
         symbol [ _alarmMgr ? 13 8 17 ];
         putv self :_alarmMgr %tmp.7;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainDelegate_mc_11_42_14_4_stop:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_MainDelegate_mc_11_26_14_4_stop:
     }
     [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/MainDelegate.mc"; @line = 17; @symbol_functiondef = [onSelect,17,13,21]; @symbol_return<0> = [Boolean,17,27,34]; ]
     function onSelect() as Boolean {

@@ -209,6 +209,13 @@ class AlarmManager {
         isRunning   = true;
         snoozing    = true;
 
+        // Persist running state so background can cover the snooze deadline
+        // if the user exits the app (KEY_RUNNING was cleared when alarm fired).
+        Application.Storage.setValue(KEY_RUNNING, true);
+        if (Background has :registerForTemporalEvent) {
+            Background.registerForTemporalEvent(new Time.Duration(60));
+        }
+
         _resetSensorState();
         Sensor.enableSensorEvents(method(:onSensorData));
         _pollTimer = new Timer.Timer();
@@ -367,7 +374,8 @@ class AlarmManager {
     function onDeadlineCheckpoint() as Void {
         if (!isRunning || alarmFired) { return; }
         var minsLeft = (targetMinutes - _nowMinutes() + 1440) % 1440;
-        if (minsLeft == 0) {
+        // <= 1: at or 1 min early. >= 1439: 1 min overshoot (timer drift wrap).
+        if (minsLeft <= 1 || minsLeft >= 1439) {
             _fireAlarm(snoozing ? "Snooze" : "Target time");
         } else {
             _scheduleDeadline(minsLeft);
