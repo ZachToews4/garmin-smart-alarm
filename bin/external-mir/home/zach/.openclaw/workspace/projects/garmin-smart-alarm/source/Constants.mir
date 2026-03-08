@@ -1,0 +1,69 @@
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 7; @position = 6; @symbol_constdef = [KEY_TARGET,7,6,16]; ]
+const KEY_TARGET = "targetMinutes";
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 8; @position = 6; @symbol_constdef = [KEY_WINDOW,8,6,16]; ]
+const KEY_WINDOW = "windowMinutes";
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 9; @position = 6; @symbol_constdef = [KEY_SNOOZE,9,6,16]; ]
+const KEY_SNOOZE = "snoozeMinutes";
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 10; @position = 6; @symbol_constdef = [KEY_RUNNING,10,6,17]; ]
+const KEY_RUNNING = "isRunning";
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 11; @position = 6; @symbol_constdef = [KEY_START_MINS,11,6,20]; ]
+const KEY_START_MINS = "startMinutes";
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 12; @position = 6; @symbol_constdef = [KEY_SLEEP_ONSET,12,6,21]; ]
+const KEY_SLEEP_ONSET = "sleepOnsetMins";
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 13; @position = 6; @symbol_constdef = [KEY_ONSET_COUNT,13,6,21]; ]
+const KEY_ONSET_COUNT = "onsetConfirmCount";
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 14; @position = 6; @symbol_constdef = [KEY_SNOOZE_MODE,14,6,21]; ]
+const KEY_SNOOZE_MODE = "snoozeMode";
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 15; @position = 6; @symbol_constdef = [KEY_SNOOZE_TARGET,15,6,23]; ]
+const KEY_SNOOZE_TARGET = "snoozeTarget";
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 16; @position = 6; @symbol_constdef = [KEY_BG_FIRED,16,6,18]; ]
+const KEY_BG_FIRED = "bgFired";
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 17; @position = 6; @symbol_constdef = [KEY_BG_FIRED_MINS,17,6,23]; ]
+const KEY_BG_FIRED_MINS = "bgFiredTimeMins";
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 18; @position = 6; @symbol_constdef = [KEY_BG_FIRED_REASON,18,6,25]; ]
+const KEY_BG_FIRED_REASON = "bgFiredReason";
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 22; background = true; @symbol_moduledef = [Thresholds,22,7,17]; ]
+module Thresholds {
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 22; ]
+    <init> {
+    }
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 23; @position = 10; @symbol_constdef = [HR_SLEEP_MIN,23,10,22]; ]
+    const HR_SLEEP_MIN = 40;
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 24; @position = 10; @symbol_constdef = [HR_SLEEP_MAX,24,10,22]; ]
+    const HR_SLEEP_MAX = 70;
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 25; @position = 10; @symbol_constdef = [HRV_LIGHT_MIN,25,10,23]; ]
+    const HRV_LIGHT_MIN = 20;
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 26; @position = 10; @symbol_constdef = [HRV_LIGHT_MAX,26,10,23]; ]
+    const HRV_LIGHT_MAX = 75;
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 27; @position = 10; @symbol_constdef = [HRV_DEEP_THRESH,27,10,25]; ]
+    const HRV_DEEP_THRESH = 80;
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 28; @position = 10; @symbol_constdef = [RESP_SLEEP_MIN,28,10,24]; ]
+    const RESP_SLEEP_MIN = 8.0f;
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 29; @position = 10; @symbol_constdef = [RESP_SLEEP_MAX,29,10,24]; ]
+    const RESP_SLEEP_MAX = 16.0f;
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 30; @position = 10; @symbol_constdef = [CYCLE_MIN,30,10,19]; ]
+    const CYCLE_MIN = 90;
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 31; @position = 10; @symbol_constdef = [CYCLE_WINDOW_MIN,31,10,26]; ]
+    const CYCLE_WINDOW_MIN = 15;
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 32; @position = 10; @symbol_constdef = [ONSET_CONFIRM_BG,32,10,26]; ]
+    const ONSET_CONFIRM_BG = 3;
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 33; @position = 10; @symbol_constdef = [PRE_MONITOR_DELAY_MIN,33,10,31]; ]
+    const PRE_MONITOR_DELAY_MIN = 30;
+}
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 38; background = true; @symbol_moduledef = [Vibe,38,7,11]; ]
+module Vibe {
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 38; ]
+    <init> {
+    }
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 39; @position = 10; @symbol_constdef = [DUTY,39,10,14]; ]
+    const DUTY = 100;
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 40; @position = 10; @symbol_constdef = [ON_MS,40,10,15]; ]
+    const ON_MS = 500;
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 41; @position = 10; @symbol_constdef = [OFF_MS,41,10,16]; ]
+    const OFF_MS = 300;
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 42; @position = 10; @symbol_constdef = [REPEATS,42,10,17]; ]
+    const REPEATS = 8;
+}
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 7; ]
+<init> {
+}

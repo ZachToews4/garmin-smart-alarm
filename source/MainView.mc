@@ -67,19 +67,6 @@ class MainView extends WatchUi.View {
             Graphics.TEXT_JUSTIFY_CENTER);
     }
 
-    // Formats minutes-of-day respecting the device's 12/24h setting.
-    private function _formatTime(totalMins as Number) as String {
-        var h = totalMins / 60;
-        var m = totalMins % 60;
-        if (!System.getDeviceSettings().is24Hour) {
-            var ampm = (h >= 12) ? "PM" : "AM";
-            if (h > 12)  { h -= 12; }
-            if (h == 0)  { h  = 12; }
-            return h.format("%d") + ":" + m.format("%02d") + " " + ampm;
-        }
-        return h.format("%02d") + ":" + m.format("%02d");
-    }
-
     // Draws battery percentage in the top-right corner.
     // Shown in orange when below 20 % as a low-battery warning.
     private function _drawBattery(dc as Graphics.Dc, width as Number) as Void {
@@ -160,7 +147,7 @@ class MainView extends WatchUi.View {
         dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
         dc.drawText(cx, height - (height * 0.14).toNumber(),
             Graphics.FONT_TINY,
-            _formatTime(nowMins), Graphics.TEXT_JUSTIFY_CENTER);
+            _alarmMgr.formatMinutes(nowMins), Graphics.TEXT_JUSTIFY_CENTER);
 
         // Subtle hint: Back is blocked, menu is the only way to cancel
         dc.setColor(0x333333, Graphics.COLOR_TRANSPARENT);
