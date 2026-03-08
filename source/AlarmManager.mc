@@ -256,15 +256,51 @@ class AlarmManager {
     }
 
     // Public so the timer callback can resolve it via method(:onDisplayRefresh).
+    // Reads SensorHistory directly — does NOT call SleepDetector ((:background) only).
     function onDisplayRefresh() as Void {
-        var hr = SleepDetector.readHR();
-        if (hr >= 0) { _lastHR = hr; _hrAvailable = true; }
+        if (SensorHistory has :getHeartRateHistory) {
+            var hrIter = SensorHistory.getHeartRateHistory(
+                {:period => 2, :order => SensorHistory.ORDER_NEWEST_FIRST});
+            if (hrIter != null) {
+                var s = hrIter.next();
+                if (s != null && s.data != null) {
+                    _lastHR = s.data as Number;
+                    _hrAvailable = true;
+                }
+            }
+        }
 
-        var hrv = SleepDetector.readHRV();
-        if (hrv >= 0) { _lastHRV = hrv; _hrvAvailable = true; }
+        if (SensorHistory has :getHeartRateVariabilityHistory) {
+            var hrvIter = SensorHistory.getHeartRateVariabilityHistory(
+                {:period => 2, :order => SensorHistory.ORDER_NEWEST_FIRST});
+            if (hrvIter != null) {
+                var s = hrvIter.next();
+                if (s != null && s.data != null) {
+                    if (s.data instanceof Float) {
+                        _lastHRV = (s.data as Float).toNumber();
+                    } else {
+                        _lastHRV = s.data as Number;
+                    }
+                    _hrvAvailable = true;
+                }
+            }
+        }
 
-        var resp = SleepDetector.readResp();
-        if (resp >= 0.0f) { _lastResp = resp; _respAvailable = true; }
+        if (SensorHistory has :getRespirationRateHistory) {
+            var respIter = SensorHistory.getRespirationRateHistory(
+                {:period => 2, :order => SensorHistory.ORDER_NEWEST_FIRST});
+            if (respIter != null) {
+                var s = respIter.next();
+                if (s != null && s.data != null) {
+                    if (s.data instanceof Float) {
+                        _lastResp = s.data as Float;
+                    } else {
+                        _lastResp = (s.data as Number).toFloat();
+                    }
+                    _respAvailable = true;
+                }
+            }
+        }
 
         WatchUi.requestUpdate();
     }

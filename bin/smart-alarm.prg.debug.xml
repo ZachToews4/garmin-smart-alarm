@@ -487,10 +487,10 @@
         <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/TimePickerView.mc" id="76" lineNum="20" parent="globals/TimePickerFactory" pc="268442748" symbol="initialize"/>
         <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/TimePickerView.mc" id="76" lineNum="21" parent="globals/TimePickerFactory" pc="268442760" symbol="initialize"/>
         <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/TimePickerView.mc" id="76" lineNum="22" parent="globals/TimePickerFactory" pc="268442769" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="77" lineNum="306" parent="globals/AlarmManager" pc="268442779" symbol="formatTargetTime"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="77" lineNum="307" parent="globals/AlarmManager" pc="268442781" symbol="formatTargetTime"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="77" lineNum="307" parent="globals/AlarmManager" pc="268442790" symbol="formatTargetTime"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="77" lineNum="308" parent="globals/AlarmManager" pc="268442799" symbol="formatTargetTime"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="77" lineNum="342" parent="globals/AlarmManager" pc="268442779" symbol="formatTargetTime"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="77" lineNum="343" parent="globals/AlarmManager" pc="268442781" symbol="formatTargetTime"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="77" lineNum="343" parent="globals/AlarmManager" pc="268442790" symbol="formatTargetTime"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="77" lineNum="344" parent="globals/AlarmManager" pc="268442799" symbol="formatTargetTime"/>
         <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="78" lineNum="251" parent="globals/AlarmManager" pc="268442813" symbol="&lt;globals/AlarmManager/&lt;&gt;_stopDisplayTimer&gt;"/>
         <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="78" lineNum="252" parent="globals/AlarmManager" pc="268442815" symbol="&lt;globals/AlarmManager/&lt;&gt;_stopDisplayTimer&gt;"/>
         <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="78" lineNum="253" parent="globals/AlarmManager" pc="268442824" symbol="&lt;globals/AlarmManager/&lt;&gt;_stopDisplayTimer&gt;"/>
@@ -569,17 +569,17 @@
         <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="88" lineNum="111" parent="globals/AlarmManager" pc="268443738" symbol="start"/>
         <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="88" lineNum="112" parent="globals/AlarmManager" pc="268443745" symbol="start"/>
         <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="88" lineNum="113" parent="globals/AlarmManager" pc="268443752" symbol="start"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="89" lineNum="294" parent="globals/AlarmManager" pc="268443764" symbol="formatMinutes"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="89" lineNum="295" parent="globals/AlarmManager" pc="268443767" symbol="formatMinutes"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="89" lineNum="296" parent="globals/AlarmManager" pc="268443774" symbol="formatMinutes"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="89" lineNum="297" parent="globals/AlarmManager" pc="268443781" symbol="formatMinutes"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="89" lineNum="298" parent="globals/AlarmManager" pc="268443800" symbol="formatMinutes"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="89" lineNum="299" parent="globals/AlarmManager" pc="268443823" symbol="formatMinutes"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="89" lineNum="299" parent="globals/AlarmManager" pc="268443831" symbol="formatMinutes"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="89" lineNum="300" parent="globals/AlarmManager" pc="268443841" symbol="formatMinutes"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="89" lineNum="300" parent="globals/AlarmManager" pc="268443848" symbol="formatMinutes"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="89" lineNum="301" parent="globals/AlarmManager" pc="268443855" symbol="formatMinutes"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="89" lineNum="303" parent="globals/AlarmManager" pc="268443903" symbol="formatMinutes"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="89" lineNum="330" parent="globals/AlarmManager" pc="268443764" symbol="formatMinutes"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="89" lineNum="331" parent="globals/AlarmManager" pc="268443767" symbol="formatMinutes"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="89" lineNum="332" parent="globals/AlarmManager" pc="268443774" symbol="formatMinutes"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="89" lineNum="333" parent="globals/AlarmManager" pc="268443781" symbol="formatMinutes"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="89" lineNum="334" parent="globals/AlarmManager" pc="268443800" symbol="formatMinutes"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="89" lineNum="335" parent="globals/AlarmManager" pc="268443823" symbol="formatMinutes"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="89" lineNum="335" parent="globals/AlarmManager" pc="268443831" symbol="formatMinutes"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="89" lineNum="336" parent="globals/AlarmManager" pc="268443841" symbol="formatMinutes"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="89" lineNum="336" parent="globals/AlarmManager" pc="268443848" symbol="formatMinutes"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="89" lineNum="337" parent="globals/AlarmManager" pc="268443855" symbol="formatMinutes"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="89" lineNum="339" parent="globals/AlarmManager" pc="268443903" symbol="formatMinutes"/>
         <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="90" lineNum="131" parent="globals/AlarmManager" pc="268443939" symbol="dismiss"/>
         <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="90" lineNum="132" parent="globals/AlarmManager" pc="268443941" symbol="dismiss"/>
         <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="90" lineNum="133" parent="globals/AlarmManager" pc="268443949" symbol="dismiss"/>
@@ -588,12 +588,12 @@
         <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="91" lineNum="78" parent="globals/AlarmManager" pc="268443985" symbol="setWindow"/>
         <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="91" lineNum="79" parent="globals/AlarmManager" pc="268443987" symbol="setWindow"/>
         <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="91" lineNum="80" parent="globals/AlarmManager" pc="268443996" symbol="setWindow"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="92" lineNum="274" parent="globals/AlarmManager" pc="268444020" symbol="&lt;globals/AlarmManager/&lt;&gt;_registerBackground&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="92" lineNum="275" parent="globals/AlarmManager" pc="268444022" symbol="&lt;globals/AlarmManager/&lt;&gt;_registerBackground&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="92" lineNum="276" parent="globals/AlarmManager" pc="268444037" symbol="&lt;globals/AlarmManager/&lt;&gt;_registerBackground&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="93" lineNum="280" parent="globals/AlarmManager" pc="268444078" symbol="&lt;globals/AlarmManager/&lt;&gt;_cancelBackground&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="93" lineNum="281" parent="globals/AlarmManager" pc="268444080" symbol="&lt;globals/AlarmManager/&lt;&gt;_cancelBackground&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="93" lineNum="282" parent="globals/AlarmManager" pc="268444095" symbol="&lt;globals/AlarmManager/&lt;&gt;_cancelBackground&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="92" lineNum="310" parent="globals/AlarmManager" pc="268444020" symbol="&lt;globals/AlarmManager/&lt;&gt;_registerBackground&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="92" lineNum="311" parent="globals/AlarmManager" pc="268444022" symbol="&lt;globals/AlarmManager/&lt;&gt;_registerBackground&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="92" lineNum="312" parent="globals/AlarmManager" pc="268444037" symbol="&lt;globals/AlarmManager/&lt;&gt;_registerBackground&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="93" lineNum="316" parent="globals/AlarmManager" pc="268444078" symbol="&lt;globals/AlarmManager/&lt;&gt;_cancelBackground&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="93" lineNum="317" parent="globals/AlarmManager" pc="268444080" symbol="&lt;globals/AlarmManager/&lt;&gt;_cancelBackground&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="93" lineNum="318" parent="globals/AlarmManager" pc="268444095" symbol="&lt;globals/AlarmManager/&lt;&gt;_cancelBackground&gt;"/>
         <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="94" lineNum="63" parent="globals/AlarmManager" pc="268444110" symbol="&lt;globals/AlarmManager/&lt;&gt;_loadSettings&gt;"/>
         <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="94" lineNum="64" parent="globals/AlarmManager" pc="268444113" symbol="&lt;globals/AlarmManager/&lt;&gt;_loadSettings&gt;"/>
         <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="94" lineNum="65" parent="globals/AlarmManager" pc="268444132" symbol="&lt;globals/AlarmManager/&lt;&gt;_loadSettings&gt;"/>
@@ -618,138 +618,151 @@
         <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="96" lineNum="126" parent="globals/AlarmManager" pc="268444349" symbol="stop"/>
         <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="96" lineNum="127" parent="globals/AlarmManager" pc="268444356" symbol="stop"/>
         <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="96" lineNum="128" parent="globals/AlarmManager" pc="268444363" symbol="stop"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="259" parent="globals/AlarmManager" pc="268444375" symbol="onDisplayRefresh"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="260" parent="globals/AlarmManager" pc="268444378" symbol="onDisplayRefresh"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="261" parent="globals/AlarmManager" pc="268444391" symbol="onDisplayRefresh"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="261" parent="globals/AlarmManager" pc="268444398" symbol="onDisplayRefresh"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="261" parent="globals/AlarmManager" pc="268444407" symbol="onDisplayRefresh"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="263" parent="globals/AlarmManager" pc="268444418" symbol="onDisplayRefresh"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="264" parent="globals/AlarmManager" pc="268444431" symbol="onDisplayRefresh"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="264" parent="globals/AlarmManager" pc="268444438" symbol="onDisplayRefresh"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="264" parent="globals/AlarmManager" pc="268444447" symbol="onDisplayRefresh"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="266" parent="globals/AlarmManager" pc="268444458" symbol="onDisplayRefresh"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="267" parent="globals/AlarmManager" pc="268444471" symbol="onDisplayRefresh"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="267" parent="globals/AlarmManager" pc="268444478" symbol="onDisplayRefresh"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="267" parent="globals/AlarmManager" pc="268444487" symbol="onDisplayRefresh"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="269" parent="globals/AlarmManager" pc="268444498" symbol="onDisplayRefresh"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="98" lineNum="167" parent="globals/AlarmManager" pc="268444510" symbol="testFire"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="98" lineNum="168" parent="globals/AlarmManager" pc="268444512" symbol="testFire"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="98" lineNum="168" parent="globals/AlarmManager" pc="268444521" symbol="testFire"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="98" lineNum="169" parent="globals/AlarmManager" pc="268444525" symbol="testFire"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="99" lineNum="89" parent="globals/AlarmManager" pc="268444540" symbol="getLastHR"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="99" lineNum="89" parent="globals/AlarmManager" pc="268444542" symbol="getLastHR"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="100" lineNum="56" parent="globals/AlarmManager" pc="268444548" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="100" lineNum="57" parent="globals/AlarmManager" pc="268444550" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="100" lineNum="58" parent="globals/AlarmManager" pc="268444557" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="101" lineNum="26" parent="globals/AlarmManager" pc="268444565" symbol="getInstance"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="101" lineNum="27" parent="globals/AlarmManager" pc="268444567" symbol="getInstance"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="101" lineNum="27" parent="globals/AlarmManager" pc="268444576" symbol="getInstance"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="101" lineNum="28" parent="globals/AlarmManager" pc="268444604" symbol="getInstance"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="209" parent="globals/AlarmManager" pc="268444610" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="211" parent="globals/AlarmManager" pc="268444613" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="212" parent="globals/AlarmManager" pc="268444632" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="213" parent="globals/AlarmManager" pc="268444643" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="214" parent="globals/AlarmManager" pc="268444662" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="215" parent="globals/AlarmManager" pc="268444681" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="216" parent="globals/AlarmManager" pc="268444689" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="217" parent="globals/AlarmManager" pc="268444720" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="218" parent="globals/AlarmManager" pc="268444743" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="219" parent="globals/AlarmManager" pc="268444761" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="220" parent="globals/AlarmManager" pc="268444779" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="221" parent="globals/AlarmManager" pc="268444797" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="225" parent="globals/AlarmManager" pc="268444801" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="226" parent="globals/AlarmManager" pc="268444820" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="226" parent="globals/AlarmManager" pc="268444832" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="227" parent="globals/AlarmManager" pc="268444836" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="228" parent="globals/AlarmManager" pc="268444845" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="229" parent="globals/AlarmManager" pc="268444863" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="232" parent="globals/AlarmManager" pc="268444867" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="233" parent="globals/AlarmManager" pc="268444886" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="234" parent="globals/AlarmManager" pc="268444894" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="237" parent="globals/AlarmManager" pc="268444912" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="238" parent="globals/AlarmManager" pc="268444919" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="103" lineNum="91" parent="globals/AlarmManager" pc="268444927" symbol="getLastHRV"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="103" lineNum="91" parent="globals/AlarmManager" pc="268444929" symbol="getLastHRV"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="104" lineNum="288" parent="globals/AlarmManager" pc="268444935" symbol="&lt;globals/AlarmManager/&lt;&gt;_nowMinutes&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="104" lineNum="289" parent="globals/AlarmManager" pc="268444938" symbol="&lt;globals/AlarmManager/&lt;&gt;_nowMinutes&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="104" lineNum="290" parent="globals/AlarmManager" pc="268444950" symbol="&lt;globals/AlarmManager/&lt;&gt;_nowMinutes&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="105" lineNum="107" parent="globals/SnoozePickerDelegate" pc="268444967" symbol="onBack"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="105" lineNum="108" parent="globals/SnoozePickerDelegate" pc="268444969" symbol="onBack"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="105" lineNum="109" parent="globals/SnoozePickerDelegate" pc="268444984" symbol="onBack"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="106" lineNum="101" parent="globals/SnoozePickerDelegate" pc="268444986" symbol="onPreviousPage"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="106" lineNum="102" parent="globals/SnoozePickerDelegate" pc="268444988" symbol="onPreviousPage"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="106" lineNum="103" parent="globals/SnoozePickerDelegate" pc="268445000" symbol="onPreviousPage"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="106" lineNum="104" parent="globals/SnoozePickerDelegate" pc="268445011" symbol="onPreviousPage"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="107" lineNum="81" parent="globals/SnoozePickerDelegate" pc="268445013" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="107" lineNum="82" parent="globals/SnoozePickerDelegate" pc="268445015" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="107" lineNum="83" parent="globals/SnoozePickerDelegate" pc="268445027" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="107" lineNum="84" parent="globals/SnoozePickerDelegate" pc="268445045" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="108" lineNum="87" parent="globals/SnoozePickerDelegate" pc="268445055" symbol="onSelect"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="108" lineNum="88" parent="globals/SnoozePickerDelegate" pc="268445058" symbol="onSelect"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="108" lineNum="89" parent="globals/SnoozePickerDelegate" pc="268445071" symbol="onSelect"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="108" lineNum="90" parent="globals/SnoozePickerDelegate" pc="268445084" symbol="onSelect"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="108" lineNum="91" parent="globals/SnoozePickerDelegate" pc="268445103" symbol="onSelect"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="108" lineNum="92" parent="globals/SnoozePickerDelegate" pc="268445118" symbol="onSelect"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="109" lineNum="95" parent="globals/SnoozePickerDelegate" pc="268445120" symbol="onNextPage"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="109" lineNum="96" parent="globals/SnoozePickerDelegate" pc="268445122" symbol="onNextPage"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="109" lineNum="97" parent="globals/SnoozePickerDelegate" pc="268445134" symbol="onNextPage"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="109" lineNum="98" parent="globals/SnoozePickerDelegate" pc="268445145" symbol="onNextPage"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="110" lineNum="30" parent="globals/WindowPickerView" pc="268445147" symbol="getSelected"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="110" lineNum="30" parent="globals/WindowPickerView" pc="268445149" symbol="getSelected"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="111" lineNum="34" parent="globals/WindowPickerView" pc="268445155" symbol="scrollDown"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="111" lineNum="34" parent="globals/WindowPickerView" pc="268445157" symbol="scrollDown"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="111" lineNum="34" parent="globals/WindowPickerView" pc="268445180" symbol="scrollDown"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="112" lineNum="18" parent="globals/WindowPickerView" pc="268445199" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="112" lineNum="19" parent="globals/WindowPickerView" pc="268445202" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="112" lineNum="20" parent="globals/WindowPickerView" pc="268445214" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="112" lineNum="22" parent="globals/WindowPickerView" pc="268445232" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="112" lineNum="23" parent="globals/WindowPickerView" pc="268445252" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="112" lineNum="24" parent="globals/WindowPickerView" pc="268445274" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="112" lineNum="25" parent="globals/WindowPickerView" pc="268445283" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="113" lineNum="31" parent="globals/WindowPickerView" pc="268445300" symbol="getOptions"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="113" lineNum="31" parent="globals/WindowPickerView" pc="268445302" symbol="getOptions"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="36" parent="globals/WindowPickerView" pc="268445308" symbol="onUpdate"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="37" parent="globals/WindowPickerView" pc="268445311" symbol="onUpdate"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="38" parent="globals/WindowPickerView" pc="268445320" symbol="onUpdate"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="39" parent="globals/WindowPickerView" pc="268445329" symbol="onUpdate"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="41" parent="globals/WindowPickerView" pc="268445336" symbol="onUpdate"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="42" parent="globals/WindowPickerView" pc="268445348" symbol="onUpdate"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="45" parent="globals/WindowPickerView" pc="268445356" symbol="onUpdate"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="46" parent="globals/WindowPickerView" pc="268445372" symbol="onUpdate"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="50" parent="globals/WindowPickerView" pc="268445407" symbol="onUpdate"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="51" parent="globals/WindowPickerView" pc="268445423" symbol="onUpdate"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="52" parent="globals/WindowPickerView" pc="268445439" symbol="onUpdate"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="53" parent="globals/WindowPickerView" pc="268445459" symbol="onUpdate"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="54" parent="globals/WindowPickerView" pc="268445469" symbol="onUpdate"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="55" parent="globals/WindowPickerView" pc="268445480" symbol="onUpdate"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="56" parent="globals/WindowPickerView" pc="268445498" symbol="onUpdate"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="57" parent="globals/WindowPickerView" pc="268445522" symbol="onUpdate"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="59" parent="globals/WindowPickerView" pc="268445542" symbol="onUpdate"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="61" parent="globals/WindowPickerView" pc="268445559" symbol="onUpdate"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="66" parent="globals/WindowPickerView" pc="268445604" symbol="onUpdate"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="67" parent="globals/WindowPickerView" pc="268445620" symbol="onUpdate"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="115" lineNum="33" parent="globals/WindowPickerView" pc="268445659" symbol="scrollUp"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="115" lineNum="33" parent="globals/WindowPickerView" pc="268445661" symbol="scrollUp"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="115" lineNum="33" parent="globals/WindowPickerView" pc="268445671" symbol="scrollUp"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="116" lineNum="13" parent="globals/Rez/Layouts" pc="268445690" symbol="MainLayout"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="116" lineNum="14" parent="globals/Rez/Layouts" pc="268445700" symbol="MainLayout"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="117" lineNum="30" parent="globals/Rez/Menus/WindowMenu" pc="268445703" symbol="&lt;init&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="118" lineNum="19" parent="globals/Rez/Menus/MainMenu" pc="268445715" symbol="&lt;init&gt;"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="119" lineNum="31" parent="globals/Rez/Menus/WindowMenu" pc="268445727" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="119" lineNum="32" parent="globals/Rez/Menus/WindowMenu" pc="268445729" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="119" lineNum="33" parent="globals/Rez/Menus/WindowMenu" pc="268445741" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="119" lineNum="34" parent="globals/Rez/Menus/WindowMenu" pc="268445786" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="119" lineNum="35" parent="globals/Rez/Menus/WindowMenu" pc="268445831" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="119" lineNum="36" parent="globals/Rez/Menus/WindowMenu" pc="268445876" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="119" lineNum="37" parent="globals/Rez/Menus/WindowMenu" pc="268445921" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="119" lineNum="38" parent="globals/Rez/Menus/WindowMenu" pc="268445966" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="120" lineNum="20" parent="globals/Rez/Menus/MainMenu" pc="268446012" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="120" lineNum="21" parent="globals/Rez/Menus/MainMenu" pc="268446014" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="120" lineNum="22" parent="globals/Rez/Menus/MainMenu" pc="268446026" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="120" lineNum="23" parent="globals/Rez/Menus/MainMenu" pc="268446071" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="120" lineNum="24" parent="globals/Rez/Menus/MainMenu" pc="268446116" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="120" lineNum="25" parent="globals/Rez/Menus/MainMenu" pc="268446161" symbol="initialize"/>
-        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="120" lineNum="26" parent="globals/Rez/Menus/MainMenu" pc="268446206" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="260" parent="globals/AlarmManager" pc="268444375" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="261" parent="globals/AlarmManager" pc="268444378" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="262" parent="globals/AlarmManager" pc="268444393" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="264" parent="globals/AlarmManager" pc="268444427" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="265" parent="globals/AlarmManager" pc="268444433" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="266" parent="globals/AlarmManager" pc="268444443" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="267" parent="globals/AlarmManager" pc="268444460" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="268" parent="globals/AlarmManager" pc="268444474" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="273" parent="globals/AlarmManager" pc="268444491" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="274" parent="globals/AlarmManager" pc="268444495" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="276" parent="globals/AlarmManager" pc="268444529" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="277" parent="globals/AlarmManager" pc="268444535" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="278" parent="globals/AlarmManager" pc="268444545" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="279" parent="globals/AlarmManager" pc="268444562" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="280" parent="globals/AlarmManager" pc="268444582" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="282" parent="globals/AlarmManager" pc="268444605" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="284" parent="globals/AlarmManager" pc="268444619" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="289" parent="globals/AlarmManager" pc="268444636" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="290" parent="globals/AlarmManager" pc="268444640" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="292" parent="globals/AlarmManager" pc="268444674" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="293" parent="globals/AlarmManager" pc="268444680" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="294" parent="globals/AlarmManager" pc="268444690" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="295" parent="globals/AlarmManager" pc="268444707" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="296" parent="globals/AlarmManager" pc="268444727" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="298" parent="globals/AlarmManager" pc="268444744" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="300" parent="globals/AlarmManager" pc="268444764" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="97" lineNum="305" parent="globals/AlarmManager" pc="268444781" symbol="onDisplayRefresh"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="98" lineNum="167" parent="globals/AlarmManager" pc="268444793" symbol="testFire"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="98" lineNum="168" parent="globals/AlarmManager" pc="268444795" symbol="testFire"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="98" lineNum="168" parent="globals/AlarmManager" pc="268444804" symbol="testFire"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="98" lineNum="169" parent="globals/AlarmManager" pc="268444808" symbol="testFire"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="99" lineNum="89" parent="globals/AlarmManager" pc="268444823" symbol="getLastHR"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="99" lineNum="89" parent="globals/AlarmManager" pc="268444825" symbol="getLastHR"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="100" lineNum="56" parent="globals/AlarmManager" pc="268444831" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="100" lineNum="57" parent="globals/AlarmManager" pc="268444833" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="100" lineNum="58" parent="globals/AlarmManager" pc="268444840" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="101" lineNum="26" parent="globals/AlarmManager" pc="268444848" symbol="getInstance"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="101" lineNum="27" parent="globals/AlarmManager" pc="268444850" symbol="getInstance"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="101" lineNum="27" parent="globals/AlarmManager" pc="268444859" symbol="getInstance"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="101" lineNum="28" parent="globals/AlarmManager" pc="268444887" symbol="getInstance"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="209" parent="globals/AlarmManager" pc="268444893" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="211" parent="globals/AlarmManager" pc="268444896" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="212" parent="globals/AlarmManager" pc="268444915" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="213" parent="globals/AlarmManager" pc="268444926" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="214" parent="globals/AlarmManager" pc="268444945" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="215" parent="globals/AlarmManager" pc="268444964" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="216" parent="globals/AlarmManager" pc="268444972" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="217" parent="globals/AlarmManager" pc="268445003" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="218" parent="globals/AlarmManager" pc="268445026" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="219" parent="globals/AlarmManager" pc="268445044" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="220" parent="globals/AlarmManager" pc="268445062" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="221" parent="globals/AlarmManager" pc="268445080" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="225" parent="globals/AlarmManager" pc="268445084" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="226" parent="globals/AlarmManager" pc="268445103" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="226" parent="globals/AlarmManager" pc="268445115" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="227" parent="globals/AlarmManager" pc="268445119" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="228" parent="globals/AlarmManager" pc="268445128" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="229" parent="globals/AlarmManager" pc="268445146" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="232" parent="globals/AlarmManager" pc="268445150" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="233" parent="globals/AlarmManager" pc="268445169" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="234" parent="globals/AlarmManager" pc="268445177" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="237" parent="globals/AlarmManager" pc="268445195" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="102" lineNum="238" parent="globals/AlarmManager" pc="268445202" symbol="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="103" lineNum="91" parent="globals/AlarmManager" pc="268445210" symbol="getLastHRV"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="103" lineNum="91" parent="globals/AlarmManager" pc="268445212" symbol="getLastHRV"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="104" lineNum="324" parent="globals/AlarmManager" pc="268445218" symbol="&lt;globals/AlarmManager/&lt;&gt;_nowMinutes&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="104" lineNum="325" parent="globals/AlarmManager" pc="268445221" symbol="&lt;globals/AlarmManager/&lt;&gt;_nowMinutes&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/AlarmManager.mc" id="104" lineNum="326" parent="globals/AlarmManager" pc="268445233" symbol="&lt;globals/AlarmManager/&lt;&gt;_nowMinutes&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="105" lineNum="107" parent="globals/SnoozePickerDelegate" pc="268445250" symbol="onBack"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="105" lineNum="108" parent="globals/SnoozePickerDelegate" pc="268445252" symbol="onBack"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="105" lineNum="109" parent="globals/SnoozePickerDelegate" pc="268445267" symbol="onBack"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="106" lineNum="101" parent="globals/SnoozePickerDelegate" pc="268445269" symbol="onPreviousPage"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="106" lineNum="102" parent="globals/SnoozePickerDelegate" pc="268445271" symbol="onPreviousPage"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="106" lineNum="103" parent="globals/SnoozePickerDelegate" pc="268445283" symbol="onPreviousPage"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="106" lineNum="104" parent="globals/SnoozePickerDelegate" pc="268445294" symbol="onPreviousPage"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="107" lineNum="81" parent="globals/SnoozePickerDelegate" pc="268445296" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="107" lineNum="82" parent="globals/SnoozePickerDelegate" pc="268445298" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="107" lineNum="83" parent="globals/SnoozePickerDelegate" pc="268445310" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="107" lineNum="84" parent="globals/SnoozePickerDelegate" pc="268445328" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="108" lineNum="87" parent="globals/SnoozePickerDelegate" pc="268445338" symbol="onSelect"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="108" lineNum="88" parent="globals/SnoozePickerDelegate" pc="268445341" symbol="onSelect"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="108" lineNum="89" parent="globals/SnoozePickerDelegate" pc="268445354" symbol="onSelect"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="108" lineNum="90" parent="globals/SnoozePickerDelegate" pc="268445367" symbol="onSelect"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="108" lineNum="91" parent="globals/SnoozePickerDelegate" pc="268445386" symbol="onSelect"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="108" lineNum="92" parent="globals/SnoozePickerDelegate" pc="268445401" symbol="onSelect"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="109" lineNum="95" parent="globals/SnoozePickerDelegate" pc="268445403" symbol="onNextPage"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="109" lineNum="96" parent="globals/SnoozePickerDelegate" pc="268445405" symbol="onNextPage"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="109" lineNum="97" parent="globals/SnoozePickerDelegate" pc="268445417" symbol="onNextPage"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SnoozePickerView.mc" id="109" lineNum="98" parent="globals/SnoozePickerDelegate" pc="268445428" symbol="onNextPage"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="110" lineNum="30" parent="globals/WindowPickerView" pc="268445430" symbol="getSelected"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="110" lineNum="30" parent="globals/WindowPickerView" pc="268445432" symbol="getSelected"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="111" lineNum="34" parent="globals/WindowPickerView" pc="268445438" symbol="scrollDown"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="111" lineNum="34" parent="globals/WindowPickerView" pc="268445440" symbol="scrollDown"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="111" lineNum="34" parent="globals/WindowPickerView" pc="268445463" symbol="scrollDown"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="112" lineNum="18" parent="globals/WindowPickerView" pc="268445482" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="112" lineNum="19" parent="globals/WindowPickerView" pc="268445485" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="112" lineNum="20" parent="globals/WindowPickerView" pc="268445497" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="112" lineNum="22" parent="globals/WindowPickerView" pc="268445515" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="112" lineNum="23" parent="globals/WindowPickerView" pc="268445535" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="112" lineNum="24" parent="globals/WindowPickerView" pc="268445557" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="112" lineNum="25" parent="globals/WindowPickerView" pc="268445566" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="113" lineNum="31" parent="globals/WindowPickerView" pc="268445583" symbol="getOptions"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="113" lineNum="31" parent="globals/WindowPickerView" pc="268445585" symbol="getOptions"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="36" parent="globals/WindowPickerView" pc="268445591" symbol="onUpdate"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="37" parent="globals/WindowPickerView" pc="268445594" symbol="onUpdate"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="38" parent="globals/WindowPickerView" pc="268445603" symbol="onUpdate"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="39" parent="globals/WindowPickerView" pc="268445612" symbol="onUpdate"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="41" parent="globals/WindowPickerView" pc="268445619" symbol="onUpdate"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="42" parent="globals/WindowPickerView" pc="268445631" symbol="onUpdate"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="45" parent="globals/WindowPickerView" pc="268445639" symbol="onUpdate"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="46" parent="globals/WindowPickerView" pc="268445655" symbol="onUpdate"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="50" parent="globals/WindowPickerView" pc="268445690" symbol="onUpdate"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="51" parent="globals/WindowPickerView" pc="268445706" symbol="onUpdate"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="52" parent="globals/WindowPickerView" pc="268445722" symbol="onUpdate"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="53" parent="globals/WindowPickerView" pc="268445742" symbol="onUpdate"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="54" parent="globals/WindowPickerView" pc="268445752" symbol="onUpdate"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="55" parent="globals/WindowPickerView" pc="268445763" symbol="onUpdate"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="56" parent="globals/WindowPickerView" pc="268445781" symbol="onUpdate"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="57" parent="globals/WindowPickerView" pc="268445805" symbol="onUpdate"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="59" parent="globals/WindowPickerView" pc="268445825" symbol="onUpdate"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="61" parent="globals/WindowPickerView" pc="268445842" symbol="onUpdate"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="66" parent="globals/WindowPickerView" pc="268445887" symbol="onUpdate"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="114" lineNum="67" parent="globals/WindowPickerView" pc="268445903" symbol="onUpdate"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="115" lineNum="33" parent="globals/WindowPickerView" pc="268445942" symbol="scrollUp"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="115" lineNum="33" parent="globals/WindowPickerView" pc="268445944" symbol="scrollUp"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/WindowPickerView.mc" id="115" lineNum="33" parent="globals/WindowPickerView" pc="268445954" symbol="scrollUp"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="116" lineNum="13" parent="globals/Rez/Layouts" pc="268445973" symbol="MainLayout"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="116" lineNum="14" parent="globals/Rez/Layouts" pc="268445983" symbol="MainLayout"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="117" lineNum="30" parent="globals/Rez/Menus/WindowMenu" pc="268445986" symbol="&lt;init&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="118" lineNum="19" parent="globals/Rez/Menus/MainMenu" pc="268445998" symbol="&lt;init&gt;"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="119" lineNum="31" parent="globals/Rez/Menus/WindowMenu" pc="268446010" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="119" lineNum="32" parent="globals/Rez/Menus/WindowMenu" pc="268446012" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="119" lineNum="33" parent="globals/Rez/Menus/WindowMenu" pc="268446024" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="119" lineNum="34" parent="globals/Rez/Menus/WindowMenu" pc="268446069" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="119" lineNum="35" parent="globals/Rez/Menus/WindowMenu" pc="268446114" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="119" lineNum="36" parent="globals/Rez/Menus/WindowMenu" pc="268446159" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="119" lineNum="37" parent="globals/Rez/Menus/WindowMenu" pc="268446204" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="119" lineNum="38" parent="globals/Rez/Menus/WindowMenu" pc="268446249" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="120" lineNum="20" parent="globals/Rez/Menus/MainMenu" pc="268446295" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="120" lineNum="21" parent="globals/Rez/Menus/MainMenu" pc="268446297" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="120" lineNum="22" parent="globals/Rez/Menus/MainMenu" pc="268446309" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="120" lineNum="23" parent="globals/Rez/Menus/MainMenu" pc="268446354" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="120" lineNum="24" parent="globals/Rez/Menus/MainMenu" pc="268446399" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="120" lineNum="25" parent="globals/Rez/Menus/MainMenu" pc="268446444" symbol="initialize"/>
+        <entry filename="/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/bin/gen/006-B3703-00/source/Rez.mcgen" id="120" lineNum="26" parent="globals/Rez/Menus/MainMenu" pc="268446489" symbol="initialize"/>
     </pcToLineNum>
     <symbolTable>
         <entry id="2" module="true" symbol="globals/AlarmManager/&lt;statics&gt;"/>
@@ -1119,28 +1132,31 @@
         <entry endPc="268444231" name="t" stackId="1" startPc="268444113"/>
         <entry endPc="268444231" name="w" stackId="2" startPc="268444113"/>
         <entry endPc="268444231" name="s" stackId="3" startPc="268444113"/>
-        <entry endPc="268444508" name="hr" stackId="1" startPc="268444378"/>
-        <entry endPc="268444508" name="hrv" stackId="2" startPc="268444378"/>
-        <entry endPc="268444508" name="resp" stackId="3" startPc="268444378"/>
-        <entry endPc="268444925" name="bgFired" stackId="1" startPc="268444613"/>
-        <entry endPc="268444797" name="minsVal" stackId="2" startPc="268444643"/>
-        <entry endPc="268444797" name="reasonVal" stackId="3" startPc="268444643"/>
-        <entry endPc="268444925" name="running" stackId="4" startPc="268444613"/>
-        <entry endPc="268444925" name="snoozeMode" stackId="5" startPc="268444613"/>
-        <entry endPc="268444966" name="t" stackId="1" startPc="268444938"/>
-        <entry arg="true" endPc="268445054" name="view" stackId="1" startPc="268445013"/>
-        <entry endPc="268445119" name="idx" stackId="1" startPc="268445058"/>
-        <entry endPc="268445119" name="opts" stackId="2" startPc="268445058"/>
-        <entry endPc="268445298" name="i" stackId="1" startPc="268445252"/>
-        <entry arg="true" endPc="268445658" name="dc" stackId="1" startPc="268445308"/>
-        <entry endPc="268445657" name="width" stackId="2" startPc="268445311"/>
-        <entry endPc="268445657" name="height" stackId="3" startPc="268445311"/>
-        <entry endPc="268445657" name="cx" stackId="4" startPc="268445311"/>
-        <entry endPc="268445657" name="startY" stackId="5" startPc="268445311"/>
-        <entry endPc="268445657" name="rowH" stackId="6" startPc="268445311"/>
-        <entry endPc="268445603" name="i" stackId="7" startPc="268445459"/>
-        <entry endPc="268445593" name="y" stackId="8" startPc="268445459"/>
-        <entry arg="true" endPc="268445702" name="dc" stackId="1" startPc="268445690"/>
+        <entry endPc="268444487" name="hrIter" stackId="1" startPc="268444393"/>
+        <entry endPc="268444484" name="s" stackId="2" startPc="268444433"/>
+        <entry endPc="268444632" name="hrvIter" stackId="3" startPc="268444495"/>
+        <entry endPc="268444629" name="s" stackId="4" startPc="268444535"/>
+        <entry endPc="268444777" name="respIter" stackId="5" startPc="268444640"/>
+        <entry endPc="268444774" name="s" stackId="6" startPc="268444680"/>
+        <entry endPc="268445208" name="bgFired" stackId="1" startPc="268444896"/>
+        <entry endPc="268445080" name="minsVal" stackId="2" startPc="268444926"/>
+        <entry endPc="268445080" name="reasonVal" stackId="3" startPc="268444926"/>
+        <entry endPc="268445208" name="running" stackId="4" startPc="268444896"/>
+        <entry endPc="268445208" name="snoozeMode" stackId="5" startPc="268444896"/>
+        <entry endPc="268445249" name="t" stackId="1" startPc="268445221"/>
+        <entry arg="true" endPc="268445337" name="view" stackId="1" startPc="268445296"/>
+        <entry endPc="268445402" name="idx" stackId="1" startPc="268445341"/>
+        <entry endPc="268445402" name="opts" stackId="2" startPc="268445341"/>
+        <entry endPc="268445581" name="i" stackId="1" startPc="268445535"/>
+        <entry arg="true" endPc="268445941" name="dc" stackId="1" startPc="268445591"/>
+        <entry endPc="268445940" name="width" stackId="2" startPc="268445594"/>
+        <entry endPc="268445940" name="height" stackId="3" startPc="268445594"/>
+        <entry endPc="268445940" name="cx" stackId="4" startPc="268445594"/>
+        <entry endPc="268445940" name="startY" stackId="5" startPc="268445594"/>
+        <entry endPc="268445940" name="rowH" stackId="6" startPc="268445594"/>
+        <entry endPc="268445886" name="i" stackId="7" startPc="268445742"/>
+        <entry endPc="268445876" name="y" stackId="8" startPc="268445742"/>
+        <entry arg="true" endPc="268445985" name="dc" stackId="1" startPc="268445973"/>
     </localVars>
     <deviceInfo deviceVersion="8fc30743a4191ec19bcafa28e3ffcc2b5a958a17" partNumber="006-B3703-00"/>
     <annotations>
@@ -1606,79 +1622,79 @@
         <functionEntry accessMode="public" endPc="268444374" name="stop" parent="AlarmManager" startPc="268444241">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268444509" name="onDisplayRefresh" parent="AlarmManager" startPc="268444375">
+        <functionEntry accessMode="public" endPc="268444792" name="onDisplayRefresh" parent="AlarmManager" startPc="268444375">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268444539" name="testFire" parent="AlarmManager" startPc="268444510">
+        <functionEntry accessMode="public" endPc="268444822" name="testFire" parent="AlarmManager" startPc="268444793">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268444547" name="getLastHR" parent="AlarmManager" startPc="268444540">
+        <functionEntry accessMode="public" endPc="268444830" name="getLastHR" parent="AlarmManager" startPc="268444823">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268444564" name="initialize" parent="AlarmManager" startPc="268444548">
+        <functionEntry accessMode="public" endPc="268444847" name="initialize" parent="AlarmManager" startPc="268444831">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268444609" name="getInstance" parent="AlarmManager" startPc="268444565">
+        <functionEntry accessMode="public" endPc="268444892" name="getInstance" parent="AlarmManager" startPc="268444848">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="private" endPc="268444926" name="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;" parent="AlarmManager" startPc="268444610">
+        <functionEntry accessMode="private" endPc="268445209" name="&lt;globals/AlarmManager/&lt;&gt;_restoreState&gt;" parent="AlarmManager" startPc="268444893">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268444934" name="getLastHRV" parent="AlarmManager" startPc="268444927">
+        <functionEntry accessMode="public" endPc="268445217" name="getLastHRV" parent="AlarmManager" startPc="268445210">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="private" endPc="268444966" name="&lt;globals/AlarmManager/&lt;&gt;_nowMinutes&gt;" parent="AlarmManager" startPc="268444935">
+        <functionEntry accessMode="private" endPc="268445249" name="&lt;globals/AlarmManager/&lt;&gt;_nowMinutes&gt;" parent="AlarmManager" startPc="268445218">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268444985" name="onBack" parent="SnoozePickerDelegate" startPc="268444967">
+        <functionEntry accessMode="public" endPc="268445268" name="onBack" parent="SnoozePickerDelegate" startPc="268445250">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268445012" name="onPreviousPage" parent="SnoozePickerDelegate" startPc="268444986">
+        <functionEntry accessMode="public" endPc="268445295" name="onPreviousPage" parent="SnoozePickerDelegate" startPc="268445269">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268445054" name="initialize" parent="SnoozePickerDelegate" startPc="268445013">
+        <functionEntry accessMode="public" endPc="268445337" name="initialize" parent="SnoozePickerDelegate" startPc="268445296">
             <param id="view"/>
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268445119" name="onSelect" parent="SnoozePickerDelegate" startPc="268445055">
+        <functionEntry accessMode="public" endPc="268445402" name="onSelect" parent="SnoozePickerDelegate" startPc="268445338">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268445146" name="onNextPage" parent="SnoozePickerDelegate" startPc="268445120">
+        <functionEntry accessMode="public" endPc="268445429" name="onNextPage" parent="SnoozePickerDelegate" startPc="268445403">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268445154" name="getSelected" parent="WindowPickerView" startPc="268445147">
+        <functionEntry accessMode="public" endPc="268445437" name="getSelected" parent="WindowPickerView" startPc="268445430">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268445198" name="scrollDown" parent="WindowPickerView" startPc="268445155">
+        <functionEntry accessMode="public" endPc="268445481" name="scrollDown" parent="WindowPickerView" startPc="268445438">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268445299" name="initialize" parent="WindowPickerView" startPc="268445199">
+        <functionEntry accessMode="public" endPc="268445582" name="initialize" parent="WindowPickerView" startPc="268445482">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268445307" name="getOptions" parent="WindowPickerView" startPc="268445300">
+        <functionEntry accessMode="public" endPc="268445590" name="getOptions" parent="WindowPickerView" startPc="268445583">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268445658" name="onUpdate" parent="WindowPickerView" startPc="268445308">
+        <functionEntry accessMode="public" endPc="268445941" name="onUpdate" parent="WindowPickerView" startPc="268445591">
             <param id="dc"/>
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268445689" name="scrollUp" parent="WindowPickerView" startPc="268445659">
+        <functionEntry accessMode="public" endPc="268445972" name="scrollUp" parent="WindowPickerView" startPc="268445942">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268445702" name="MainLayout" parent="Layouts" startPc="268445690">
+        <functionEntry accessMode="public" endPc="268445985" name="MainLayout" parent="Layouts" startPc="268445973">
             <param id="dc"/>
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268445714" name="&lt;init&gt;" parent="WindowMenu" startPc="268445703">
+        <functionEntry accessMode="public" endPc="268445997" name="&lt;init&gt;" parent="WindowMenu" startPc="268445986">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268445726" name="&lt;init&gt;" parent="MainMenu" startPc="268445715">
+        <functionEntry accessMode="public" endPc="268446009" name="&lt;init&gt;" parent="MainMenu" startPc="268445998">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268446011" name="initialize" parent="WindowMenu" startPc="268445727">
+        <functionEntry accessMode="public" endPc="268446294" name="initialize" parent="WindowMenu" startPc="268446010">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268446251" name="initialize" parent="MainMenu" startPc="268446012">
+        <functionEntry accessMode="public" endPc="268446534" name="initialize" parent="MainMenu" startPc="268446295">
             <documentation/>
         </functionEntry>
     </functions>
