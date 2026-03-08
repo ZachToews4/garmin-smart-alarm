@@ -15,7 +15,6 @@ class MainMenuDelegate extends WatchUi.Menu2InputDelegate {
 
     function onSelect(item as WatchUi.MenuItem) as Void {
         var id = item.getId();
-
         if (id == :setWakeTime) {
             WatchUi.popView(WatchUi.SLIDE_DOWN);
             _pushTimePickerView();

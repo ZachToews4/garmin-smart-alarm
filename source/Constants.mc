@@ -34,7 +34,8 @@ const ONSET_CONFIRM_BG      = 3;
 const PRE_MONITOR_DELAY_MIN = 30;
 
 // ── Vibration pattern ─────────────────────────────────────────────────────────
-const VIBE_DUTY    = 100;
-const VIBE_ON_MS   = 500;
-const VIBE_OFF_MS  = 300;
-const VIBE_REPEATS = 8;
+const VIBE_DUTY         = 100;
+const VIBE_ON_MS        = 500;
+const VIBE_OFF_MS       = 300;
+const VIBE_MAX_SEGMENTS = 8;   // Attention.vibrate() accepts at most 8 VibeProfiles per call
+const VIBE_REPEATS      = 8;   // Requested pulses — truncated as needed to meet the segment cap

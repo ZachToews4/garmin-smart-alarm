@@ -144,12 +144,17 @@ class AlarmBackground extends System.ServiceDelegate {
 
         // Vibrate
         if (Attention has :vibrate) {
-            var patternSize = VIBE_REPEATS * 2 - 1;
+            var desiredSegments = VIBE_REPEATS * 2 - 1;
+            var patternSize = desiredSegments;
+            if (patternSize < 1) { patternSize = 1; }
+            if (patternSize > VIBE_MAX_SEGMENTS) { patternSize = VIBE_MAX_SEGMENTS; }
+
             var pattern = new[patternSize] as Array<Attention.VibeProfile>;
             for (var i = 0; i < patternSize; i++) {
+                var isOn = (i % 2 == 0);
                 pattern[i] = new Attention.VibeProfile(
-                    i % 2 == 0 ? VIBE_DUTY : 0,
-                    i % 2 == 0 ? VIBE_ON_MS : VIBE_OFF_MS
+                    isOn ? VIBE_DUTY : 0,
+                    isOn ? VIBE_ON_MS : VIBE_OFF_MS
                 );
             }
             Attention.vibrate(pattern);
@@ -176,7 +181,8 @@ class AlarmBackground extends System.ServiceDelegate {
     // ── Helpers ───────────────────────────────────────────────────────────────
 
     private function _reschedule() as Void {
-        Background.registerForTemporalEvent(new Time.Duration(60));
+        // Minimum temporal event period is 5 minutes (300 seconds).
+        Background.registerForTemporalEvent(new Time.Duration(300));
     }
 
     private function _nowMinutes() as Number {

@@ -50,7 +50,9 @@ const VIBE_DUTY = 100;
 const VIBE_ON_MS = 500;
 [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 39; @position = 6; @symbol_constdef = [VIBE_OFF_MS,39,6,17]; ]
 const VIBE_OFF_MS = 300;
-[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 40; @position = 6; @symbol_constdef = [VIBE_REPEATS,40,6,18]; ]
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 40; @position = 6; @symbol_constdef = [VIBE_MAX_SEGMENTS,40,6,23]; ]
+const VIBE_MAX_SEGMENTS = 8;
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 41; @position = 6; @symbol_constdef = [VIBE_REPEATS,41,6,18]; ]
 const VIBE_REPEATS = 8;
 [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/Constants.mc"; @line = 10; ]
 <init> {

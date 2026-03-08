@@ -2,760 +2,760 @@
 import Toybox.Lang;
 [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc"; @line = 9; @symbol_importdef<0> = [Toybox,9,7,13]; @symbol_importdef<1> = [SensorHistory,9,14,27]; ]
 import Toybox.SensorHistory;
-[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc"; @line = 11; @symbol_classdef = [SleepDetector,11,6,19]; ]
+[ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc"; @line = 12; background = true; @symbol_classdef = [SleepDetector,12,6,19]; ]
 class SleepDetector {
-    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc"; @line = 11; ]
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc"; @line = 12; ]
     <init> {
     }
-    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc"; @line = 11; ]
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc"; @line = 12; ]
     static
     <init> {
     }
-    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc"; @line = 17; @symbol_functiondef = [readHR,17,20,26]; @symbol_return<0> = [Number,17,32,38]; ]
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc"; @line = 18; @symbol_functiondef = [readHR,18,20,26]; @symbol_return<0> = [Number,18,32,38]; ]
     static
     function readHR() as Number {
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_17_39_25_4_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 18 8 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_18_8_18_68_if_stmt:
-        symbol [ SensorHistory %tmp.1 18 14 27 ];
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_18_39_26_4_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 19 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_19_8_19_68_if_stmt:
+        symbol [ SensorHistory %tmp.1 19 14 27 ];
         %tmp.1 = getm $.Toybox.SensorHistory;
         %tmp.3 = const :getHeartRateHistory;
-        symbol [ getHeartRateHistory %tmp.3 18 33 52 const ];
+        symbol [ getHeartRateHistory %tmp.3 19 33 52 const ];
         %tmp.4 = canhazplz %tmp.1 %tmp.3;
         %tmp.5 = not %tmp.4;
-        bf %tmp.5 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_18_8_18_68_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_18_8_18_68_if_true:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_18_55_18_68_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 18 57 ]
+        bf %tmp.5 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_19_8_19_68_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_19_8_19_68_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_19_55_19_68_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 19 57 ]
         %tmp.6 = -1;
         ret %tmp.6;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_18_55_18_68_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_18_8_18_68_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_18_8_18_68_if_end:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 19 8 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_17_39_25_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_17_39_25_4_stop" ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_19_55_19_68_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_19_8_19_68_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_19_8_19_68_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 20 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_18_39_26_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_18_39_26_4_stop" ]
         %iter.1 = local;
-        symbol [ iter %iter.1 19 12 16 ];
-        symbol [ SensorHistory %tmp.7 19 19 32 ];
+        symbol [ iter %iter.1 20 12 16 ];
+        symbol [ SensorHistory %tmp.7 20 19 32 ];
         %tmp.7 = getm $.Toybox.SensorHistory;
-        symbol [ getHeartRateHistory %tmp.8 19 33 52 ];
+        symbol [ getHeartRateHistory %tmp.8 20 33 52 ];
         %tmp.8 = getv function %tmp.7 :getHeartRateHistory;
         %tmp.9 = newd 2;
         %tmp.11 = const :period;
-        symbol [ period %tmp.11 20 14 20 const ];
+        symbol [ period %tmp.11 21 14 20 const ];
         %tmp.12 = 2;
         %tmp.13 = dup %tmp.9;
         %tmp.14 = aputv %tmp.13 %tmp.11 %tmp.12;
         %tmp.16 = const :order;
-        symbol [ order %tmp.16 20 28 33 const ];
-        symbol [ SensorHistory %tmp.17 20 37 50 ];
+        symbol [ order %tmp.16 21 28 33 const ];
+        symbol [ SensorHistory %tmp.17 21 37 50 ];
         %tmp.17 = getm $.Toybox.SensorHistory;
-        symbol [ ORDER_NEWEST_FIRST %tmp.18 20 51 69 ];
+        symbol [ ORDER_NEWEST_FIRST %tmp.18 21 51 69 ];
         %tmp.18 = getv %tmp.17 :ORDER_NEWEST_FIRST;
         %tmp.19 = dup %tmp.14;
         %tmp.20 = aputv %tmp.19 %tmp.16 %tmp.18;
         %tmp.21 = invoke %tmp.7 %tmp.8(%tmp.20);
         lputv %iter.1 %tmp.21;
-        symbol [ iter %iter.1 19 12 16 ];
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 21 8 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_21_8_21_39_if_stmt:
+        symbol [ iter %iter.1 20 12 16 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 22 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_22_8_22_39_if_stmt:
         %tmp.22 = lgetv %iter.1;
-        symbol [ iter %tmp.22 21 12 16 ];
+        symbol [ iter %tmp.22 22 12 16 ];
         %tmp.23 = null;
         %tmp.24 = eq %tmp.22 %tmp.23;
-        bf %tmp.24 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_21_8_21_39_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_21_8_21_39_if_true:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_21_26_21_39_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 21 28 ]
+        bf %tmp.24 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_22_8_22_39_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_22_8_22_39_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_22_26_22_39_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 22 28 ]
         %tmp.25 = -1;
         ret %tmp.25;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_21_26_21_39_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_21_8_21_39_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_21_8_21_39_if_end:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 22 8 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_17_39_25_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_17_39_25_4_stop" ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_22_26_22_39_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_22_8_22_39_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_22_8_22_39_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 23 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_18_39_26_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_18_39_26_4_stop" ]
         %s.2 = local;
-        symbol [ s %s.2 22 12 13 ];
+        symbol [ s %s.2 23 12 13 ];
         %tmp.26 = lgetv %iter.1;
-        symbol [ iter %tmp.26 22 16 20 ];
-        symbol [ next %tmp.27 22 21 25 ];
+        symbol [ iter %tmp.26 23 16 20 ];
+        symbol [ next %tmp.27 23 21 25 ];
         %tmp.27 = getv function %tmp.26 :next;
         %tmp.28 = invoke %tmp.26 %tmp.27();
         lputv %s.2 %tmp.28;
-        symbol [ s %s.2 22 12 13 ];
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 23 8 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_23_8_23_54_if_stmt:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_23_12_23_35_begin:
+        symbol [ s %s.2 23 12 13 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 24 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_24_8_24_54_if_stmt:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_24_12_24_35_begin:
         %tmp.29 = lgetv %s.2;
-        symbol [ s %tmp.29 23 12 13 ];
+        symbol [ s %tmp.29 24 12 13 ];
         %tmp.30 = null;
         %tmp.31 = eq %tmp.29 %tmp.30;
-        bt %tmp.31 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_23_8_23_54_if_true;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_23_25_23_35_false:
+        bt %tmp.31 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_24_8_24_54_if_true;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_24_25_24_35_false:
         %tmp.32 = lgetv %s.2;
-        symbol [ s %tmp.32 23 25 26 ];
+        symbol [ s %tmp.32 24 25 26 ];
         %tmp.33 = as %tmp.32 { (!Null) };
-        symbol [ data %tmp.34 23 27 31 ];
+        symbol [ data %tmp.34 24 27 31 ];
         %tmp.34 = getv %tmp.33 :data;
         %tmp.35 = null;
         %tmp.36 = eq %tmp.34 %tmp.35;
         push %tmp.36;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_23_25_23_35_end:
-        %tmp.37 = phi [%tmp.31 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_23_12_23_35_begin] [%tmp.36 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_23_25_23_35_false] [%tmp.37 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_23_25_23_35_end];
-        bf %tmp.37 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_23_8_23_54_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_23_8_23_54_if_true:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_23_41_23_54_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 23 43 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_24_25_24_35_end:
+        %tmp.37 = phi [%tmp.31 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_24_12_24_35_begin] [%tmp.36 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_24_25_24_35_false] [%tmp.37 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_24_25_24_35_end];
+        bf %tmp.37 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_24_8_24_54_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_24_8_24_54_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_24_41_24_54_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 24 43 ]
         %tmp.38 = -1;
         ret %tmp.38;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_23_41_23_54_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_23_8_23_54_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_23_8_23_54_if_end:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 24 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_24_41_24_54_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_24_8_24_54_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_24_8_24_54_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 25 8 ]
         %tmp.39 = lgetv %s.2;
-        symbol [ s %tmp.39 24 15 16 ];
-        symbol [ data %tmp.40 24 17 21 ];
+        symbol [ s %tmp.39 25 15 16 ];
+        symbol [ data %tmp.40 25 17 21 ];
         %tmp.40 = getv %tmp.39 :data;
         %tmp.41 = as %tmp.40 Number;
-        symbol [ Number %tmp.41 24 25 31 ];
+        symbol [ Number %tmp.41 25 25 31 ];
         ret %tmp.41;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_17_39_25_4_stop:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_18_39_26_4_stop:
     }
-    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc"; @line = 27; @symbol_functiondef = [readHRV,27,20,27]; @symbol_return<0> = [Number,27,33,39]; ]
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc"; @line = 28; @symbol_functiondef = [readHRV,28,20,27]; @symbol_return<0> = [Number,28,33,39]; ]
     static
     function readHRV() as Number {
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_27_40_36_4_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 28 8 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_28_8_28_79_if_stmt:
-        symbol [ SensorHistory %tmp.1 28 14 27 ];
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_28_40_37_4_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 29 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_29_8_29_79_if_stmt:
+        symbol [ SensorHistory %tmp.1 29 14 27 ];
         %tmp.1 = getm $.Toybox.SensorHistory;
         %tmp.3 = const :getHeartRateVariabilityHistory;
-        symbol [ getHeartRateVariabilityHistory %tmp.3 28 33 63 const ];
+        symbol [ getHeartRateVariabilityHistory %tmp.3 29 33 63 const ];
         %tmp.4 = canhazplz %tmp.1 %tmp.3;
         %tmp.5 = not %tmp.4;
-        bf %tmp.5 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_28_8_28_79_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_28_8_28_79_if_true:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_28_66_28_79_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 28 68 ]
+        bf %tmp.5 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_29_8_29_79_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_29_8_29_79_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_29_66_29_79_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 29 68 ]
         %tmp.6 = -1;
         ret %tmp.6;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_28_66_28_79_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_28_8_28_79_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_28_8_28_79_if_end:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 29 8 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_27_40_36_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_27_40_36_4_stop" ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_29_66_29_79_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_29_8_29_79_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_29_8_29_79_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 30 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_28_40_37_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_28_40_37_4_stop" ]
         %iter.1 = local;
-        symbol [ iter %iter.1 29 12 16 ];
-        symbol [ SensorHistory %tmp.7 29 19 32 ];
+        symbol [ iter %iter.1 30 12 16 ];
+        symbol [ SensorHistory %tmp.7 30 19 32 ];
         %tmp.7 = getm $.Toybox.SensorHistory;
-        symbol [ getHeartRateVariabilityHistory %tmp.8 29 33 63 ];
+        symbol [ getHeartRateVariabilityHistory %tmp.8 30 33 63 ];
         %tmp.8 = getv function %tmp.7 :getHeartRateVariabilityHistory;
         %tmp.9 = newd 2;
         %tmp.11 = const :period;
-        symbol [ period %tmp.11 30 14 20 const ];
+        symbol [ period %tmp.11 31 14 20 const ];
         %tmp.12 = 2;
         %tmp.13 = dup %tmp.9;
         %tmp.14 = aputv %tmp.13 %tmp.11 %tmp.12;
         %tmp.16 = const :order;
-        symbol [ order %tmp.16 30 28 33 const ];
-        symbol [ SensorHistory %tmp.17 30 37 50 ];
+        symbol [ order %tmp.16 31 28 33 const ];
+        symbol [ SensorHistory %tmp.17 31 37 50 ];
         %tmp.17 = getm $.Toybox.SensorHistory;
-        symbol [ ORDER_NEWEST_FIRST %tmp.18 30 51 69 ];
+        symbol [ ORDER_NEWEST_FIRST %tmp.18 31 51 69 ];
         %tmp.18 = getv %tmp.17 :ORDER_NEWEST_FIRST;
         %tmp.19 = dup %tmp.14;
         %tmp.20 = aputv %tmp.19 %tmp.16 %tmp.18;
         %tmp.21 = invoke %tmp.7 %tmp.8(%tmp.20);
         lputv %iter.1 %tmp.21;
-        symbol [ iter %iter.1 29 12 16 ];
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 31 8 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_31_8_31_39_if_stmt:
+        symbol [ iter %iter.1 30 12 16 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 32 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_32_8_32_39_if_stmt:
         %tmp.22 = lgetv %iter.1;
-        symbol [ iter %tmp.22 31 12 16 ];
+        symbol [ iter %tmp.22 32 12 16 ];
         %tmp.23 = null;
         %tmp.24 = eq %tmp.22 %tmp.23;
-        bf %tmp.24 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_31_8_31_39_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_31_8_31_39_if_true:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_31_26_31_39_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 31 28 ]
+        bf %tmp.24 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_32_8_32_39_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_32_8_32_39_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_32_26_32_39_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 32 28 ]
         %tmp.25 = -1;
         ret %tmp.25;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_31_26_31_39_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_31_8_31_39_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_31_8_31_39_if_end:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 32 8 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_27_40_36_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_27_40_36_4_stop" ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_32_26_32_39_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_32_8_32_39_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_32_8_32_39_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 33 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_28_40_37_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_28_40_37_4_stop" ]
         %s.2 = local;
-        symbol [ s %s.2 32 12 13 ];
+        symbol [ s %s.2 33 12 13 ];
         %tmp.26 = lgetv %iter.1;
-        symbol [ iter %tmp.26 32 16 20 ];
-        symbol [ next %tmp.27 32 21 25 ];
+        symbol [ iter %tmp.26 33 16 20 ];
+        symbol [ next %tmp.27 33 21 25 ];
         %tmp.27 = getv function %tmp.26 :next;
         %tmp.28 = invoke %tmp.26 %tmp.27();
         lputv %s.2 %tmp.28;
-        symbol [ s %s.2 32 12 13 ];
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 33 8 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_33_8_33_54_if_stmt:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_33_12_33_35_begin:
+        symbol [ s %s.2 33 12 13 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 34 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_34_8_34_54_if_stmt:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_34_12_34_35_begin:
         %tmp.29 = lgetv %s.2;
-        symbol [ s %tmp.29 33 12 13 ];
+        symbol [ s %tmp.29 34 12 13 ];
         %tmp.30 = null;
         %tmp.31 = eq %tmp.29 %tmp.30;
-        bt %tmp.31 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_33_8_33_54_if_true;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_33_25_33_35_false:
+        bt %tmp.31 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_34_8_34_54_if_true;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_34_25_34_35_false:
         %tmp.32 = lgetv %s.2;
-        symbol [ s %tmp.32 33 25 26 ];
+        symbol [ s %tmp.32 34 25 26 ];
         %tmp.33 = as %tmp.32 { (!Null) };
-        symbol [ data %tmp.34 33 27 31 ];
+        symbol [ data %tmp.34 34 27 31 ];
         %tmp.34 = getv %tmp.33 :data;
         %tmp.35 = null;
         %tmp.36 = eq %tmp.34 %tmp.35;
         push %tmp.36;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_33_25_33_35_end:
-        %tmp.37 = phi [%tmp.31 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_33_12_33_35_begin] [%tmp.36 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_33_25_33_35_false] [%tmp.37 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_33_25_33_35_end];
-        bf %tmp.37 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_33_8_33_54_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_33_8_33_54_if_true:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_33_41_33_54_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 33 43 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_34_25_34_35_end:
+        %tmp.37 = phi [%tmp.31 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_34_12_34_35_begin] [%tmp.36 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_34_25_34_35_false] [%tmp.37 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_34_25_34_35_end];
+        bf %tmp.37 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_34_8_34_54_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_34_8_34_54_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_34_41_34_54_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 34 43 ]
         %tmp.38 = -1;
         ret %tmp.38;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_33_41_33_54_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_33_8_33_54_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_33_8_33_54_if_end:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 34 8 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_34_8_34_76_if_stmt:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_34_41_34_54_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_34_8_34_54_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_34_8_34_54_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 35 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_35_8_35_76_if_stmt:
         %tmp.39 = lgetv %s.2;
-        symbol [ s %tmp.39 34 12 13 ];
-        symbol [ data %tmp.40 34 14 18 ];
+        symbol [ s %tmp.39 35 12 13 ];
+        symbol [ data %tmp.40 35 14 18 ];
         %tmp.40 = getv %tmp.39 :data;
-        symbol [ Float %tmp.42 34 30 35 ];
+        symbol [ Float %tmp.42 35 30 35 ];
         %tmp.42 = getv ? :Float;
         %tmp.43 = isa %tmp.40 %tmp.42;
-        bf %tmp.43 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_34_8_34_76_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_34_8_34_76_if_true:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_34_37_34_76_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 34 39 ]
+        bf %tmp.43 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_35_8_35_76_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_35_8_35_76_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_35_37_35_76_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 35 39 ]
         %tmp.44 = lgetv %s.2;
-        symbol [ s %tmp.44 34 47 48 ];
-        symbol [ data %tmp.45 34 49 53 ];
+        symbol [ s %tmp.44 35 47 48 ];
+        symbol [ data %tmp.45 35 49 53 ];
         %tmp.45 = getv %tmp.44 :data;
         %tmp.46 = as %tmp.45 Float;
-        symbol [ Float %tmp.46 34 57 62 ];
-        symbol [ toNumber %tmp.47 34 64 72 ];
+        symbol [ Float %tmp.46 35 57 62 ];
+        symbol [ toNumber %tmp.47 35 64 72 ];
         %tmp.47 = getv function %tmp.46 :toNumber;
         %tmp.48 = invoke %tmp.46 %tmp.47();
         ret %tmp.48;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_34_37_34_76_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_34_8_34_76_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_34_8_34_76_if_end:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 35 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_35_37_35_76_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_35_8_35_76_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_35_8_35_76_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 36 8 ]
         %tmp.49 = lgetv %s.2;
-        symbol [ s %tmp.49 35 15 16 ];
-        symbol [ data %tmp.50 35 17 21 ];
+        symbol [ s %tmp.49 36 15 16 ];
+        symbol [ data %tmp.50 36 17 21 ];
         %tmp.50 = getv %tmp.49 :data;
         %tmp.51 = as %tmp.50 Number;
-        symbol [ Number %tmp.51 35 25 31 ];
+        symbol [ Number %tmp.51 36 25 31 ];
         ret %tmp.51;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_27_40_36_4_stop:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_28_40_37_4_stop:
     }
-    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc"; @line = 38; @symbol_functiondef = [readResp,38,20,28]; @symbol_return<0> = [Float,38,34,39]; ]
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc"; @line = 39; @symbol_functiondef = [readResp,39,20,28]; @symbol_return<0> = [Float,39,34,39]; ]
     static
     function readResp() as Float {
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_38_40_47_4_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 39 8 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_39_8_39_77_if_stmt:
-        symbol [ SensorHistory %tmp.1 39 14 27 ];
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_39_40_48_4_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 40 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_40_8_40_77_if_stmt:
+        symbol [ SensorHistory %tmp.1 40 14 27 ];
         %tmp.1 = getm $.Toybox.SensorHistory;
         %tmp.3 = const :getRespirationRateHistory;
-        symbol [ getRespirationRateHistory %tmp.3 39 33 58 const ];
+        symbol [ getRespirationRateHistory %tmp.3 40 33 58 const ];
         %tmp.4 = canhazplz %tmp.1 %tmp.3;
         %tmp.5 = not %tmp.4;
-        bf %tmp.5 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_39_8_39_77_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_39_8_39_77_if_true:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_39_61_39_77_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 39 63 ]
+        bf %tmp.5 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_40_8_40_77_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_40_8_40_77_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_40_61_40_77_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 40 63 ]
         %tmp.6 = -1.0f;
         ret %tmp.6;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_39_61_39_77_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_39_8_39_77_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_39_8_39_77_if_end:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 40 8 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_38_40_47_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_38_40_47_4_stop" ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_40_61_40_77_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_40_8_40_77_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_40_8_40_77_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 41 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_39_40_48_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_39_40_48_4_stop" ]
         %iter.1 = local;
-        symbol [ iter %iter.1 40 12 16 ];
-        symbol [ SensorHistory %tmp.7 40 19 32 ];
+        symbol [ iter %iter.1 41 12 16 ];
+        symbol [ SensorHistory %tmp.7 41 19 32 ];
         %tmp.7 = getm $.Toybox.SensorHistory;
-        symbol [ getRespirationRateHistory %tmp.8 40 33 58 ];
+        symbol [ getRespirationRateHistory %tmp.8 41 33 58 ];
         %tmp.8 = getv function %tmp.7 :getRespirationRateHistory;
         %tmp.9 = newd 2;
         %tmp.11 = const :period;
-        symbol [ period %tmp.11 41 14 20 const ];
+        symbol [ period %tmp.11 42 14 20 const ];
         %tmp.12 = 2;
         %tmp.13 = dup %tmp.9;
         %tmp.14 = aputv %tmp.13 %tmp.11 %tmp.12;
         %tmp.16 = const :order;
-        symbol [ order %tmp.16 41 28 33 const ];
-        symbol [ SensorHistory %tmp.17 41 37 50 ];
+        symbol [ order %tmp.16 42 28 33 const ];
+        symbol [ SensorHistory %tmp.17 42 37 50 ];
         %tmp.17 = getm $.Toybox.SensorHistory;
-        symbol [ ORDER_NEWEST_FIRST %tmp.18 41 51 69 ];
+        symbol [ ORDER_NEWEST_FIRST %tmp.18 42 51 69 ];
         %tmp.18 = getv %tmp.17 :ORDER_NEWEST_FIRST;
         %tmp.19 = dup %tmp.14;
         %tmp.20 = aputv %tmp.19 %tmp.16 %tmp.18;
         %tmp.21 = invoke %tmp.7 %tmp.8(%tmp.20);
         lputv %iter.1 %tmp.21;
-        symbol [ iter %iter.1 40 12 16 ];
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 42 8 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_42_8_42_42_if_stmt:
+        symbol [ iter %iter.1 41 12 16 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 43 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_43_8_43_42_if_stmt:
         %tmp.22 = lgetv %iter.1;
-        symbol [ iter %tmp.22 42 12 16 ];
+        symbol [ iter %tmp.22 43 12 16 ];
         %tmp.23 = null;
         %tmp.24 = eq %tmp.22 %tmp.23;
-        bf %tmp.24 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_42_8_42_42_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_42_8_42_42_if_true:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_42_26_42_42_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 42 28 ]
+        bf %tmp.24 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_43_8_43_42_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_43_8_43_42_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_43_26_43_42_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 43 28 ]
         %tmp.25 = -1.0f;
         ret %tmp.25;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_42_26_42_42_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_42_8_42_42_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_42_8_42_42_if_end:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 43 8 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_38_40_47_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_38_40_47_4_stop" ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_43_26_43_42_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_43_8_43_42_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_43_8_43_42_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 44 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_39_40_48_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_39_40_48_4_stop" ]
         %s.2 = local;
-        symbol [ s %s.2 43 12 13 ];
+        symbol [ s %s.2 44 12 13 ];
         %tmp.26 = lgetv %iter.1;
-        symbol [ iter %tmp.26 43 16 20 ];
-        symbol [ next %tmp.27 43 21 25 ];
+        symbol [ iter %tmp.26 44 16 20 ];
+        symbol [ next %tmp.27 44 21 25 ];
         %tmp.27 = getv function %tmp.26 :next;
         %tmp.28 = invoke %tmp.26 %tmp.27();
         lputv %s.2 %tmp.28;
-        symbol [ s %s.2 43 12 13 ];
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 44 8 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_44_8_44_57_if_stmt:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_44_12_44_35_begin:
+        symbol [ s %s.2 44 12 13 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 45 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_45_8_45_57_if_stmt:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_45_12_45_35_begin:
         %tmp.29 = lgetv %s.2;
-        symbol [ s %tmp.29 44 12 13 ];
+        symbol [ s %tmp.29 45 12 13 ];
         %tmp.30 = null;
         %tmp.31 = eq %tmp.29 %tmp.30;
-        bt %tmp.31 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_44_8_44_57_if_true;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_44_25_44_35_false:
+        bt %tmp.31 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_45_8_45_57_if_true;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_45_25_45_35_false:
         %tmp.32 = lgetv %s.2;
-        symbol [ s %tmp.32 44 25 26 ];
+        symbol [ s %tmp.32 45 25 26 ];
         %tmp.33 = as %tmp.32 { (!Null) };
-        symbol [ data %tmp.34 44 27 31 ];
+        symbol [ data %tmp.34 45 27 31 ];
         %tmp.34 = getv %tmp.33 :data;
         %tmp.35 = null;
         %tmp.36 = eq %tmp.34 %tmp.35;
         push %tmp.36;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_44_25_44_35_end:
-        %tmp.37 = phi [%tmp.31 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_44_12_44_35_begin] [%tmp.36 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_44_25_44_35_false] [%tmp.37 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_44_25_44_35_end];
-        bf %tmp.37 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_44_8_44_57_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_44_8_44_57_if_true:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_44_41_44_57_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 44 43 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_45_25_45_35_end:
+        %tmp.37 = phi [%tmp.31 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_45_12_45_35_begin] [%tmp.36 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_45_25_45_35_false] [%tmp.37 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_45_25_45_35_end];
+        bf %tmp.37 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_45_8_45_57_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_45_8_45_57_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_45_41_45_57_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 45 43 ]
         %tmp.38 = -1.0f;
         ret %tmp.38;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_44_41_44_57_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_44_8_44_57_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_44_8_44_57_if_end:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 45 8 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_45_8_45_63_if_stmt:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_45_41_45_57_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_45_8_45_57_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_45_8_45_57_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 46 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_46_8_46_63_if_stmt:
         %tmp.39 = lgetv %s.2;
-        symbol [ s %tmp.39 45 12 13 ];
-        symbol [ data %tmp.40 45 14 18 ];
+        symbol [ s %tmp.39 46 12 13 ];
+        symbol [ data %tmp.40 46 14 18 ];
         %tmp.40 = getv %tmp.39 :data;
-        symbol [ Float %tmp.42 45 30 35 ];
+        symbol [ Float %tmp.42 46 30 35 ];
         %tmp.42 = getv ? :Float;
         %tmp.43 = isa %tmp.40 %tmp.42;
-        bf %tmp.43 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_45_8_45_63_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_45_8_45_63_if_true:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_45_37_45_63_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 45 39 ]
+        bf %tmp.43 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_46_8_46_63_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_46_8_46_63_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_46_37_46_63_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 46 39 ]
         %tmp.44 = lgetv %s.2;
-        symbol [ s %tmp.44 45 46 47 ];
-        symbol [ data %tmp.45 45 48 52 ];
+        symbol [ s %tmp.44 46 46 47 ];
+        symbol [ data %tmp.45 46 48 52 ];
         %tmp.45 = getv %tmp.44 :data;
         %tmp.46 = as %tmp.45 Float;
-        symbol [ Float %tmp.46 45 56 61 ];
+        symbol [ Float %tmp.46 46 56 61 ];
         ret %tmp.46;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_45_37_45_63_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_45_8_45_63_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_45_8_45_63_if_end:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 46 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_46_37_46_63_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_46_8_46_63_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_46_8_46_63_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 47 8 ]
         %tmp.47 = lgetv %s.2;
-        symbol [ s %tmp.47 46 16 17 ];
-        symbol [ data %tmp.48 46 18 22 ];
+        symbol [ s %tmp.47 47 16 17 ];
+        symbol [ data %tmp.48 47 18 22 ];
         %tmp.48 = getv %tmp.47 :data;
         %tmp.49 = as %tmp.48 Number;
-        symbol [ Number %tmp.49 46 26 32 ];
-        symbol [ toFloat %tmp.50 46 34 41 ];
+        symbol [ Number %tmp.49 47 26 32 ];
+        symbol [ toFloat %tmp.50 47 34 41 ];
         %tmp.50 = getv function %tmp.49 :toFloat;
         %tmp.51 = invoke %tmp.49 %tmp.50();
         ret %tmp.51;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_38_40_47_4_stop:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_39_40_48_4_stop:
     }
-    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc"; @line = 57; @symbol_functiondef = [isLightSleep,57,20,32]; @symbol_param<0> = [sleepOnsetMins,58,8,22]; @symbol_param<0>_type<0> = [Number,58,26,32]; @symbol_param<1> = [nowMins,59,8,15]; @symbol_param<1>_type<0> = [Number,59,26,32]; @symbol_param<2> = [snoozeMode,60,8,18]; @symbol_param<2>_type<0> = [Boolean,60,26,33]; @symbol_return<0> = [Boolean,60,38,45]; ]
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc"; @line = 58; @symbol_functiondef = [isLightSleep,58,20,32]; @symbol_param<0> = [sleepOnsetMins,59,8,22]; @symbol_param<0>_type<0> = [Number,59,26,32]; @symbol_param<1> = [nowMins,60,8,15]; @symbol_param<1>_type<0> = [Number,60,26,32]; @symbol_param<2> = [snoozeMode,61,8,18]; @symbol_param<2>_type<0> = [Boolean,61,26,33]; @symbol_return<0> = [Boolean,61,38,45]; ]
     static
     function isLightSleep(sleepOnsetMins as Number, nowMins as Number, snoozeMode as Boolean) as Boolean {
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_60_46_104_4_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 62 8 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_60_46_104_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_60_46_104_4_stop" ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_61_46_105_4_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 63 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_61_46_105_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_61_46_105_4_stop" ]
         %hr.1 = local;
-        symbol [ hr %hr.1 62 12 14 ];
+        symbol [ hr %hr.1 63 12 14 ];
         %tmp.1 = self;
-        symbol [ readHR %tmp.2 62 19 25 ];
+        symbol [ readHR %tmp.2 63 19 25 ];
         %tmp.2 = getv function %tmp.1 :readHR;
         %tmp.3 = invoke %tmp.1 %tmp.2();
         lputv %hr.1 %tmp.3;
-        symbol [ hr %hr.1 62 12 14 ];
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 63 8 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_60_46_104_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_60_46_104_4_stop" ]
+        symbol [ hr %hr.1 63 12 14 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 64 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_61_46_105_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_61_46_105_4_stop" ]
         %hrv.2 = local;
-        symbol [ hrv %hrv.2 63 12 15 ];
+        symbol [ hrv %hrv.2 64 12 15 ];
         %tmp.4 = self;
-        symbol [ readHRV %tmp.5 63 19 26 ];
+        symbol [ readHRV %tmp.5 64 19 26 ];
         %tmp.5 = getv function %tmp.4 :readHRV;
         %tmp.6 = invoke %tmp.4 %tmp.5();
         lputv %hrv.2 %tmp.6;
-        symbol [ hrv %hrv.2 63 12 15 ];
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 64 8 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_60_46_104_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_60_46_104_4_stop" ]
+        symbol [ hrv %hrv.2 64 12 15 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 65 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_61_46_105_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_61_46_105_4_stop" ]
         %resp.3 = local;
-        symbol [ resp %resp.3 64 12 16 ];
+        symbol [ resp %resp.3 65 12 16 ];
         %tmp.7 = self;
-        symbol [ readResp %tmp.8 64 19 27 ];
+        symbol [ readResp %tmp.8 65 19 27 ];
         %tmp.8 = getv function %tmp.7 :readResp;
         %tmp.9 = invoke %tmp.7 %tmp.8();
         lputv %resp.3 %tmp.9;
-        symbol [ resp %resp.3 64 12 16 ];
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 67 8 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_67_8_67_63_if_stmt:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_67_12_67_30_begin:
+        symbol [ resp %resp.3 65 12 16 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 68 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_68_8_68_63_if_stmt:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_68_12_68_30_begin:
         %tmp.10 = lgetv %hrv.2;
-        symbol [ hrv %tmp.10 67 12 15 ];
+        symbol [ hrv %tmp.10 68 12 15 ];
         %tmp.11 = 0;
         %tmp.12 = gte %tmp.10 %tmp.11;
-        bf %tmp.12 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_67_8_67_63_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_67_24_67_30_true:
+        bf %tmp.12 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_68_8_68_63_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_68_24_68_30_true:
         %tmp.13 = lgetv %hrv.2;
-        symbol [ hrv %tmp.13 67 24 27 ];
-        symbol [ HRV_DEEP_THRESH %tmp.15 67 30 45 ];
+        symbol [ hrv %tmp.13 68 24 27 ];
+        symbol [ HRV_DEEP_THRESH %tmp.15 68 30 45 ];
         %tmp.15 = getv ? :HRV_DEEP_THRESH;
         %tmp.16 = gt %tmp.13 %tmp.15;
         push %tmp.16;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_67_24_67_30_end:
-        %tmp.17 = phi [%tmp.12 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_67_12_67_30_begin] [%tmp.16 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_67_24_67_30_true] [%tmp.17 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_67_24_67_30_end];
-        bf %tmp.17 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_67_8_67_63_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_67_8_67_63_if_true:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_67_47_67_63_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 67 49 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_68_24_68_30_end:
+        %tmp.17 = phi [%tmp.12 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_68_12_68_30_begin] [%tmp.16 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_68_24_68_30_true] [%tmp.17 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_68_24_68_30_end];
+        bf %tmp.17 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_68_8_68_63_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_68_8_68_63_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_68_47_68_63_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 68 49 ]
         %tmp.18 = false;
         ret %tmp.18;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_67_47_67_63_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_67_8_67_63_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_67_8_67_63_if_end:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 70 8 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_60_46_104_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_60_46_104_4_stop" ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_68_47_68_63_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_68_8_68_63_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_68_8_68_63_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 71 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_61_46_105_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_61_46_105_4_stop" ]
         %signals.4 = local;
-        symbol [ signals %signals.4 70 12 19 ];
+        symbol [ signals %signals.4 71 12 19 ];
         %tmp.19 = 0;
         lputv %signals.4 %tmp.19;
-        symbol [ signals %signals.4 70 12 19 ];
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 71 8 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_60_46_104_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_60_46_104_4_stop" ]
+        symbol [ signals %signals.4 71 12 19 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 72 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_61_46_105_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_61_46_105_4_stop" ]
         %confirmed.5 = local;
-        symbol [ confirmed %confirmed.5 71 12 21 ];
+        symbol [ confirmed %confirmed.5 72 12 21 ];
         %tmp.20 = 0;
         lputv %confirmed.5 %tmp.20;
-        symbol [ confirmed %confirmed.5 71 12 21 ];
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 73 8 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_73_8_78_8_if_stmt:
+        symbol [ confirmed %confirmed.5 72 12 21 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 74 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_74_8_79_8_if_stmt:
         %tmp.21 = lgetv %hr.1;
-        symbol [ hr %tmp.21 73 12 14 ];
+        symbol [ hr %tmp.21 74 12 14 ];
         %tmp.22 = 0;
         %tmp.23 = gte %tmp.21 %tmp.22;
-        bf %tmp.23 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_73_8_78_8_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_73_8_78_8_if_true:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_73_21_78_8_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 74 12 ]
+        bf %tmp.23 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_74_8_79_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_74_8_79_8_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_74_21_79_8_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 75 12 ]
         %tmp.26 = lgetv %signals.4;
-        symbol [ signals %tmp.26 74 12 19 ];
+        symbol [ signals %tmp.26 75 12 19 ];
         %tmp.27 = add %tmp.26 1;
         lputv %signals.4 %tmp.27;
-        symbol [ signals %signals.4 74 12 19 ];
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 75 12 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_75_12_77_12_if_stmt:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_75_16_75_44_begin:
+        symbol [ signals %signals.4 75 12 19 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 76 12 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_76_12_78_12_if_stmt:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_76_16_76_44_begin:
         %tmp.28 = lgetv %hr.1;
-        symbol [ hr %tmp.28 75 16 18 ];
-        symbol [ HR_SLEEP_MIN %tmp.30 75 22 34 ];
+        symbol [ hr %tmp.28 76 16 18 ];
+        symbol [ HR_SLEEP_MIN %tmp.30 76 22 34 ];
         %tmp.30 = getv ? :HR_SLEEP_MIN;
         %tmp.31 = gte %tmp.28 %tmp.30;
-        bf %tmp.31 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_75_12_77_12_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_75_38_75_44_true:
+        bf %tmp.31 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_76_12_78_12_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_76_38_76_44_true:
         %tmp.32 = lgetv %hr.1;
-        symbol [ hr %tmp.32 75 38 40 ];
-        symbol [ HR_SLEEP_MAX %tmp.34 75 44 56 ];
+        symbol [ hr %tmp.32 76 38 40 ];
+        symbol [ HR_SLEEP_MAX %tmp.34 76 44 56 ];
         %tmp.34 = getv ? :HR_SLEEP_MAX;
         %tmp.35 = lte %tmp.32 %tmp.34;
         push %tmp.35;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_75_38_75_44_end:
-        %tmp.36 = phi [%tmp.31 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_75_16_75_44_begin] [%tmp.35 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_75_38_75_44_true] [%tmp.36 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_75_38_75_44_end];
-        bf %tmp.36 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_75_12_77_12_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_75_12_77_12_if_true:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_75_58_77_12_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 76 16 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_76_38_76_44_end:
+        %tmp.36 = phi [%tmp.31 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_76_16_76_44_begin] [%tmp.35 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_76_38_76_44_true] [%tmp.36 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_76_38_76_44_end];
+        bf %tmp.36 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_76_12_78_12_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_76_12_78_12_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_76_58_78_12_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 77 16 ]
         %tmp.39 = lgetv %confirmed.5;
-        symbol [ confirmed %tmp.39 76 16 25 ];
+        symbol [ confirmed %tmp.39 77 16 25 ];
         %tmp.40 = add %tmp.39 1;
         lputv %confirmed.5 %tmp.40;
-        symbol [ confirmed %confirmed.5 76 16 25 ];
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_75_58_77_12_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_75_12_77_12_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_75_12_77_12_if_end:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_73_21_78_8_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_73_8_78_8_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_73_8_78_8_if_end:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 79 8 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_79_8_84_8_if_stmt:
+        symbol [ confirmed %confirmed.5 77 16 25 ];
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_76_58_78_12_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_76_12_78_12_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_76_12_78_12_if_end:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_74_21_79_8_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_74_8_79_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_74_8_79_8_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 80 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_80_8_85_8_if_stmt:
         %tmp.41 = lgetv %hrv.2;
-        symbol [ hrv %tmp.41 79 12 15 ];
+        symbol [ hrv %tmp.41 80 12 15 ];
         %tmp.42 = 0;
         %tmp.43 = gte %tmp.41 %tmp.42;
-        bf %tmp.43 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_79_8_84_8_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_79_8_84_8_if_true:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_79_22_84_8_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 80 12 ]
+        bf %tmp.43 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_80_8_85_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_80_8_85_8_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_80_22_85_8_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 81 12 ]
         %tmp.46 = lgetv %signals.4;
-        symbol [ signals %tmp.46 80 12 19 ];
+        symbol [ signals %tmp.46 81 12 19 ];
         %tmp.47 = add %tmp.46 1;
         lputv %signals.4 %tmp.47;
-        symbol [ signals %signals.4 80 12 19 ];
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 81 12 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_81_12_83_12_if_stmt:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_81_16_81_47_begin:
+        symbol [ signals %signals.4 81 12 19 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 82 12 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_82_12_84_12_if_stmt:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_82_16_82_47_begin:
         %tmp.48 = lgetv %hrv.2;
-        symbol [ hrv %tmp.48 81 16 19 ];
-        symbol [ HRV_LIGHT_MIN %tmp.50 81 23 36 ];
+        symbol [ hrv %tmp.48 82 16 19 ];
+        symbol [ HRV_LIGHT_MIN %tmp.50 82 23 36 ];
         %tmp.50 = getv ? :HRV_LIGHT_MIN;
         %tmp.51 = gte %tmp.48 %tmp.50;
-        bf %tmp.51 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_81_12_83_12_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_81_40_81_47_true:
+        bf %tmp.51 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_82_12_84_12_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_82_40_82_47_true:
         %tmp.52 = lgetv %hrv.2;
-        symbol [ hrv %tmp.52 81 40 43 ];
-        symbol [ HRV_LIGHT_MAX %tmp.54 81 47 60 ];
+        symbol [ hrv %tmp.52 82 40 43 ];
+        symbol [ HRV_LIGHT_MAX %tmp.54 82 47 60 ];
         %tmp.54 = getv ? :HRV_LIGHT_MAX;
         %tmp.55 = lte %tmp.52 %tmp.54;
         push %tmp.55;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_81_40_81_47_end:
-        %tmp.56 = phi [%tmp.51 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_81_16_81_47_begin] [%tmp.55 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_81_40_81_47_true] [%tmp.56 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_81_40_81_47_end];
-        bf %tmp.56 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_81_12_83_12_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_81_12_83_12_if_true:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_81_62_83_12_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 82 16 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_82_40_82_47_end:
+        %tmp.56 = phi [%tmp.51 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_82_16_82_47_begin] [%tmp.55 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_82_40_82_47_true] [%tmp.56 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_82_40_82_47_end];
+        bf %tmp.56 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_82_12_84_12_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_82_12_84_12_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_82_62_84_12_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 83 16 ]
         %tmp.59 = lgetv %confirmed.5;
-        symbol [ confirmed %tmp.59 82 16 25 ];
+        symbol [ confirmed %tmp.59 83 16 25 ];
         %tmp.60 = add %tmp.59 1;
         lputv %confirmed.5 %tmp.60;
-        symbol [ confirmed %confirmed.5 82 16 25 ];
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_81_62_83_12_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_81_12_83_12_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_81_12_83_12_if_end:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_79_22_84_8_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_79_8_84_8_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_79_8_84_8_if_end:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 85 8 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_85_8_90_8_if_stmt:
+        symbol [ confirmed %confirmed.5 83 16 25 ];
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_82_62_84_12_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_82_12_84_12_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_82_12_84_12_if_end:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_80_22_85_8_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_80_8_85_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_80_8_85_8_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 86 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_86_8_91_8_if_stmt:
         %tmp.61 = lgetv %resp.3;
-        symbol [ resp %tmp.61 85 12 16 ];
+        symbol [ resp %tmp.61 86 12 16 ];
         %tmp.62 = 0.0f;
         %tmp.63 = gte %tmp.61 %tmp.62;
-        bf %tmp.63 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_85_8_90_8_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_85_8_90_8_if_true:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_85_26_90_8_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 86 12 ]
+        bf %tmp.63 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_86_8_91_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_86_8_91_8_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_86_26_91_8_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 87 12 ]
         %tmp.66 = lgetv %signals.4;
-        symbol [ signals %tmp.66 86 12 19 ];
+        symbol [ signals %tmp.66 87 12 19 ];
         %tmp.67 = add %tmp.66 1;
         lputv %signals.4 %tmp.67;
-        symbol [ signals %signals.4 86 12 19 ];
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 87 12 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_87_12_89_12_if_stmt:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_87_16_87_50_begin:
+        symbol [ signals %signals.4 87 12 19 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 88 12 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_88_12_90_12_if_stmt:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_88_16_88_50_begin:
         %tmp.68 = lgetv %resp.3;
-        symbol [ resp %tmp.68 87 16 20 ];
-        symbol [ RESP_SLEEP_MIN %tmp.70 87 24 38 ];
+        symbol [ resp %tmp.68 88 16 20 ];
+        symbol [ RESP_SLEEP_MIN %tmp.70 88 24 38 ];
         %tmp.70 = getv ? :RESP_SLEEP_MIN;
         %tmp.71 = gte %tmp.68 %tmp.70;
-        bf %tmp.71 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_87_12_89_12_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_87_42_87_50_true:
+        bf %tmp.71 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_88_12_90_12_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_88_42_88_50_true:
         %tmp.72 = lgetv %resp.3;
-        symbol [ resp %tmp.72 87 42 46 ];
-        symbol [ RESP_SLEEP_MAX %tmp.74 87 50 64 ];
+        symbol [ resp %tmp.72 88 42 46 ];
+        symbol [ RESP_SLEEP_MAX %tmp.74 88 50 64 ];
         %tmp.74 = getv ? :RESP_SLEEP_MAX;
         %tmp.75 = lte %tmp.72 %tmp.74;
         push %tmp.75;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_87_42_87_50_end:
-        %tmp.76 = phi [%tmp.71 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_87_16_87_50_begin] [%tmp.75 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_87_42_87_50_true] [%tmp.76 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_87_42_87_50_end];
-        bf %tmp.76 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_87_12_89_12_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_87_12_89_12_if_true:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_87_66_89_12_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 88 16 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_88_42_88_50_end:
+        %tmp.76 = phi [%tmp.71 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_88_16_88_50_begin] [%tmp.75 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_88_42_88_50_true] [%tmp.76 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_88_42_88_50_end];
+        bf %tmp.76 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_88_12_90_12_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_88_12_90_12_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_88_66_90_12_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 89 16 ]
         %tmp.79 = lgetv %confirmed.5;
-        symbol [ confirmed %tmp.79 88 16 25 ];
+        symbol [ confirmed %tmp.79 89 16 25 ];
         %tmp.80 = add %tmp.79 1;
         lputv %confirmed.5 %tmp.80;
-        symbol [ confirmed %confirmed.5 88 16 25 ];
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_87_66_89_12_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_87_12_89_12_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_87_12_89_12_if_end:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_85_26_90_8_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_85_8_90_8_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_85_8_90_8_if_end:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 93 8 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_93_8_93_42_if_stmt:
+        symbol [ confirmed %confirmed.5 89 16 25 ];
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_88_66_90_12_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_88_12_90_12_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_88_12_90_12_if_end:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_86_26_91_8_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_86_8_91_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_86_8_91_8_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 94 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_94_8_94_42_if_stmt:
         %tmp.81 = lgetv %signals.4;
-        symbol [ signals %tmp.81 93 12 19 ];
+        symbol [ signals %tmp.81 94 12 19 ];
         %tmp.82 = 0;
         %tmp.83 = eq %tmp.81 %tmp.82;
-        bf %tmp.83 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_93_8_93_42_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_93_8_93_42_if_true:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_93_26_93_42_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 93 28 ]
+        bf %tmp.83 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_94_8_94_42_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_94_8_94_42_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_94_26_94_42_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 94 28 ]
         %tmp.84 = false;
         ret %tmp.84;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_93_26_93_42_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_93_8_93_42_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_93_8_93_42_if_end:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 95 8 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_60_46_104_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_60_46_104_4_stop" ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_94_26_94_42_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_94_8_94_42_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_94_8_94_42_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 96 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_61_46_105_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_61_46_105_4_stop" ]
         %inWindow.6 = local;
-        symbol [ inWindow %inWindow.6 95 12 20 ];
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_95_23_95_81_begin:
+        symbol [ inWindow %inWindow.6 96 12 20 ];
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_96_23_96_81_begin:
         %tmp.85 = lgetv %snoozeMode;
-        symbol [ snoozeMode %tmp.85 95 23 33 ];
-        bf %tmp.85 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_95_23_95_81_else_false;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_95_23_95_81_true:
+        symbol [ snoozeMode %tmp.85 96 23 33 ];
+        bf %tmp.85 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_96_23_96_81_else_false;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_96_23_96_81_true:
         %tmp.86 = true;
         push %tmp.86;
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_95_23_95_81_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_95_23_95_81_else_false:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_96_23_96_81_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_96_23_96_81_else_false:
         %tmp.87 = self;
-        symbol [ _inCycleWindow %tmp.88 95 43 57 ];
+        symbol [ _inCycleWindow %tmp.88 96 43 57 ];
         %tmp.88 = getv function %tmp.87 :_inCycleWindow;
         %tmp.89 = lgetv %sleepOnsetMins;
-        symbol [ sleepOnsetMins %tmp.89 95 58 72 ];
+        symbol [ sleepOnsetMins %tmp.89 96 58 72 ];
         %tmp.90 = lgetv %nowMins;
-        symbol [ nowMins %tmp.90 95 74 81 ];
+        symbol [ nowMins %tmp.90 96 74 81 ];
         %tmp.91 = invoke %tmp.87 %tmp.88(%tmp.89, %tmp.90);
         push %tmp.91;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_95_23_95_81_end:
-        %tmp.92 = phi [%tmp.85 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_95_23_95_81_begin] [%tmp.86 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_95_23_95_81_true] [%tmp.91 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_95_23_95_81_else_false] [%tmp.92 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_95_23_95_81_end];
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_96_23_96_81_end:
+        %tmp.92 = phi [%tmp.85 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_96_23_96_81_begin] [%tmp.86 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_96_23_96_81_true] [%tmp.91 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_96_23_96_81_else_false] [%tmp.92 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_96_23_96_81_end];
         lputv %inWindow.6 %tmp.92;
-        symbol [ inWindow %inWindow.6 95 12 20 ];
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 97 8 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_97_8_103_8_if_stmt:
+        symbol [ inWindow %inWindow.6 96 12 20 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 98 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_98_8_104_8_if_stmt:
         %tmp.93 = lgetv %inWindow.6;
-        symbol [ inWindow %tmp.93 97 12 20 ];
-        bf %tmp.93 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_97_8_103_8_if_else_false;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_97_8_103_8_if_true:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_97_22_100_8_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 99 12 ]
+        symbol [ inWindow %tmp.93 98 12 20 ];
+        bf %tmp.93 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_98_8_104_8_if_else_false;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_98_8_104_8_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_98_22_101_8_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 100 12 ]
         %tmp.94 = lgetv %confirmed.5;
-        symbol [ confirmed %tmp.94 99 19 28 ];
+        symbol [ confirmed %tmp.94 100 19 28 ];
         %tmp.95 = 2;
         %tmp.96 = mul %tmp.94 %tmp.95;
         %tmp.97 = lgetv %signals.4;
-        symbol [ signals %tmp.97 99 36 43 ];
+        symbol [ signals %tmp.97 100 36 43 ];
         %tmp.98 = gte %tmp.96 %tmp.97;
         ret %tmp.98;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_97_22_100_8_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_97_8_103_8_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_97_8_103_8_if_else_false:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_100_15_103_8_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 102 12 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_98_22_101_8_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_98_8_104_8_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_98_8_104_8_if_else_false:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_101_15_104_8_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 103 12 ]
         %tmp.99 = lgetv %confirmed.5;
-        symbol [ confirmed %tmp.99 102 19 28 ];
+        symbol [ confirmed %tmp.99 103 19 28 ];
         %tmp.100 = 4;
         %tmp.101 = mul %tmp.99 %tmp.100;
         %tmp.102 = lgetv %signals.4;
-        symbol [ signals %tmp.102 102 36 43 ];
+        symbol [ signals %tmp.102 103 36 43 ];
         %tmp.103 = 3;
         %tmp.104 = mul %tmp.102 %tmp.103;
         %tmp.105 = gte %tmp.101 %tmp.104;
         ret %tmp.105;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_100_15_103_8_stop:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_97_8_103_8_if_end:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_60_46_104_4_stop:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_101_15_104_8_stop:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_98_8_104_8_if_end:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_61_46_105_4_stop:
     }
-    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc"; @line = 110; @symbol_functiondef = [_inCycleWindow,110,28,42]; @symbol_param<0> = [sleepOnsetMins,111,8,22]; @symbol_param<0>_type<0> = [Number,111,26,32]; @symbol_param<1> = [nowMins,112,8,15]; @symbol_param<1>_type<0> = [Number,112,26,32]; @symbol_return<0> = [Boolean,112,37,44]; ]
+    [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc"; @line = 111; @symbol_functiondef = [_inCycleWindow,111,28,42]; @symbol_param<0> = [sleepOnsetMins,112,8,22]; @symbol_param<0>_type<0> = [Number,112,26,32]; @symbol_param<1> = [nowMins,113,8,15]; @symbol_param<1>_type<0> = [Number,113,26,32]; @symbol_return<0> = [Boolean,113,37,44]; ]
     private static
     function _inCycleWindow(sleepOnsetMins as Number, nowMins as Number) as Boolean {
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_112_45_121_4_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 114 8 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_114_8_114_47_if_stmt:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_113_45_122_4_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 115 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_115_8_115_47_if_stmt:
         %tmp.1 = lgetv %sleepOnsetMins;
-        symbol [ sleepOnsetMins %tmp.1 114 12 26 ];
+        symbol [ sleepOnsetMins %tmp.1 115 12 26 ];
         %tmp.2 = 0;
         %tmp.3 = lt %tmp.1 %tmp.2;
-        bf %tmp.3 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_114_8_114_47_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_114_8_114_47_if_true:
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_114_32_114_47_start:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 114 34 ]
+        bf %tmp.3 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_115_8_115_47_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_115_8_115_47_if_true:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_115_32_115_47_start:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 115 34 ]
         %tmp.4 = true;
         ret %tmp.4;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_114_32_114_47_stop:
-        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_114_8_114_47_if_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_114_8_114_47_if_end:
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 116 8 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_112_45_121_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_112_45_121_4_stop" ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_115_32_115_47_stop:
+        goto @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_115_8_115_47_if_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_115_8_115_47_if_end:
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 117 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_113_45_122_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_113_45_122_4_stop" ]
         %elapsed.1 = local;
-        symbol [ elapsed %elapsed.1 116 12 19 ];
+        symbol [ elapsed %elapsed.1 117 12 19 ];
         %tmp.5 = lgetv %nowMins;
-        symbol [ nowMins %tmp.5 116 24 31 ];
+        symbol [ nowMins %tmp.5 117 24 31 ];
         %tmp.6 = lgetv %sleepOnsetMins;
-        symbol [ sleepOnsetMins %tmp.6 116 34 48 ];
+        symbol [ sleepOnsetMins %tmp.6 117 34 48 ];
         %tmp.7 = sub %tmp.5 %tmp.6;
         %tmp.8 = 1440;
         %tmp.9 = add %tmp.7 %tmp.8;
         %tmp.10 = 1440;
         %tmp.11 = mod %tmp.9 %tmp.10;
         lputv %elapsed.1 %tmp.11;
-        symbol [ elapsed %elapsed.1 116 12 19 ];
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 117 8 ]
-        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_112_45_121_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_112_45_121_4_stop" ]
+        symbol [ elapsed %elapsed.1 117 12 19 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 118 8 ]
+        [ "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_113_45_122_4_start" "_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_113_45_122_4_stop" ]
         %cyclePos.2 = local;
-        symbol [ cyclePos %cyclePos.2 117 12 20 ];
+        symbol [ cyclePos %cyclePos.2 118 12 20 ];
         %tmp.12 = lgetv %elapsed.1;
-        symbol [ elapsed %tmp.12 117 23 30 ];
-        symbol [ CYCLE_MIN %tmp.14 117 33 42 ];
+        symbol [ elapsed %tmp.12 118 23 30 ];
+        symbol [ CYCLE_MIN %tmp.14 118 33 42 ];
         %tmp.14 = getv ? :CYCLE_MIN;
         %tmp.15 = mod %tmp.12 %tmp.14;
         lputv %cyclePos.2 %tmp.15;
-        symbol [ cyclePos %cyclePos.2 117 12 20 ];
-[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 119 8 ]
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_119_15_120_56_begin:
+        symbol [ cyclePos %cyclePos.2 118 12 20 ];
+[ "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc" 120 8 ]
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_120_15_121_56_begin:
         %tmp.16 = lgetv %cyclePos.2;
-        symbol [ cyclePos %tmp.16 119 15 23 ];
-        symbol [ CYCLE_WINDOW_MIN %tmp.18 119 27 43 ];
+        symbol [ cyclePos %tmp.16 120 15 23 ];
+        symbol [ CYCLE_WINDOW_MIN %tmp.18 120 27 43 ];
         %tmp.18 = getv ? :CYCLE_WINDOW_MIN;
         %tmp.19 = lte %tmp.16 %tmp.18;
         %tmp.20 = dup %tmp.19;
-        bt %tmp.20 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_120_15_120_56_end;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_120_15_120_56_false:
+        bt %tmp.20 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_121_15_121_56_end;
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_121_15_121_56_false:
         %tmp.21 = lgetv %cyclePos.2;
-        symbol [ cyclePos %tmp.21 120 15 23 ];
-        symbol [ CYCLE_MIN %tmp.23 120 28 37 ];
+        symbol [ cyclePos %tmp.21 121 15 23 ];
+        symbol [ CYCLE_MIN %tmp.23 121 28 37 ];
         %tmp.23 = getv ? :CYCLE_MIN;
-        symbol [ CYCLE_WINDOW_MIN %tmp.25 120 40 56 ];
+        symbol [ CYCLE_WINDOW_MIN %tmp.25 121 40 56 ];
         %tmp.25 = getv ? :CYCLE_WINDOW_MIN;
         %tmp.26 = sub %tmp.23 %tmp.25;
         %tmp.27 = gte %tmp.21 %tmp.26;
         %tmp.28 = or %tmp.19 %tmp.27;
         push %tmp.28;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_120_15_120_56_end:
-        %tmp.29 = phi [%tmp.20 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_119_15_120_56_begin] [%tmp.28 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_120_15_120_56_false] [%tmp.29 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_120_15_120_56_end];
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_121_15_121_56_end:
+        %tmp.29 = phi [%tmp.20 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_120_15_121_56_begin] [%tmp.28 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_121_15_121_56_false] [%tmp.29 @_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_121_15_121_56_end];
         ret %tmp.29;
-_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_112_45_121_4_stop:
+_home_zach__openclaw_workspace_projects_garmin_smart_alarm_source_SleepDetector_mc_113_45_122_4_stop:
     }
 }
 [ @file = "/home/zach/.openclaw/workspace/projects/garmin-smart-alarm/source/SleepDetector.mc"; @line = 8; ]

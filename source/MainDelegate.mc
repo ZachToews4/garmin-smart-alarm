@@ -45,15 +45,15 @@ class MainDelegate extends WatchUi.BehaviorDelegate {
 
     private function _openMenu() as Void {
         var menu = new WatchUi.Menu2({:title => "Smart Alarm"});
-        menu.addItem(new WatchUi.MenuItem("Set Wake Time", null, :setWakeTime, {}));
-        menu.addItem(new WatchUi.MenuItem("Set Window",    null, :setWindow,   {}));
-        menu.addItem(new WatchUi.MenuItem("Set Snooze",    null, :setSnooze,   {}));
         if (_alarmMgr.isRunning) {
-            menu.addItem(new WatchUi.MenuItem("Test Alarm",   null, :testAlarm,   {}));
             menu.addItem(new WatchUi.MenuItem("Cancel Alarm", null, :cancelAlarm, {}));
+            menu.addItem(new WatchUi.MenuItem("Test Alarm",   null, :testAlarm,   {}));
         } else {
             menu.addItem(new WatchUi.MenuItem("Start Alarm",  null, :startAlarm,  {}));
         }
+        menu.addItem(new WatchUi.MenuItem("Set Wake Time", null, :setWakeTime, {}));
+        menu.addItem(new WatchUi.MenuItem("Set Window",    null, :setWindow,   {}));
+        menu.addItem(new WatchUi.MenuItem("Set Snooze",    null, :setSnooze,   {}));
         WatchUi.pushView(menu, new MainMenuDelegate(), WatchUi.SLIDE_UP);
     }
 

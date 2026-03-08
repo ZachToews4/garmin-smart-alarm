@@ -8,6 +8,7 @@
 import Toybox.Lang;
 import Toybox.SensorHistory;
 
+(:background)
 class SleepDetector {
 
     // ── Biometric readers ─────────────────────────────────────────────────────
