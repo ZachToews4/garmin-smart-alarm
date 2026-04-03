@@ -23,7 +23,7 @@ and did **not** show `getHeartRateVariabilityHistory` or `getRespirationRateHist
 
 Implication: the original background smart-wake logic depended on signals that are unlikely to be available/reliable on the actual Venu 2 path being targeted.
 
-### 2. Public real sleep data pipeline is now working across multiple nights
+### 2. Public real sleep data pipeline is now working across 10 nights
 Dataset source:
 - PhysioNet Sleep-EDF Expanded
 
@@ -32,6 +32,12 @@ Processed nights so far:
 - `SC4011E0`
 - `SC4031E0`
 - `SC4041E0`
+- `SC4051E0`
+- `SC4061E0`
+- `SC4071E0`
+- `SC4081E0`
+- `SC4091E0`
+- `SC4101E0`
 
 Working local artifacts:
 - raw EDF/Hypnogram files in `data/raw/`
@@ -45,25 +51,33 @@ The replay datasets are built from EDF + hypnogram files and include:
 - derived proxy features for offline experimentation
 - scenario evaluation output using a Garmin-constrained 5-minute polling cadence
 
-### 4. Multi-night replay outcome
-Scenario style for each night:
-- target = 10 minutes before the end of the labeled sleep interval
-- wake window = 30 minutes
-- Garmin-constrained poll cadence = 5 minutes
+### 4. Wider multi-scenario replay outcome
+Scenario set per night:
+- `late_window`
+- `mid_window`
+- `tight_window`
 
-Batch result from `results/evaluation_batch.json`:
-- datasets evaluated: **4**
-- proposed Garmin-constrained exact match to oracle snapped-to-5-minute cadence: **4 / 4**
-- exact match rate: **1.0**
+Total scenarios evaluated:
+- **30** (10 nights × 3 scenario shapes)
 
-Per-night proposed trigger results:
-- `SC4001E0`: trigger 831, stage `Sleep stage R`
-- `SC4011E0`: trigger 814, stage `Sleep stage 2`
-- `SC4031E0`: trigger 812, stage `Sleep stage 2`
-- `SC4041E0`: trigger 926, stage `Sleep stage 2`
+Current aggregate result from `results/evaluation_batch.json`:
+- proposed exact trigger/stage match to oracle snapped-to-5-minute cadence: **21 / 30**
+- exact match rate: **0.70**
+- proposed trigger inside window: **30 / 30**
+- inside-window rate: **1.0**
 
 Interpretation:
-- the revised Garmin-constrained rule matched the earliest reachable good trigger in all four replayed nights under the 5-minute polling assumption used here.
+- the revised rule is reliably staying inside the intended wake window
+- but once the test set was widened, it stopped being perfectly aligned with the earliest oracle-reachable trigger
+- several misses are near-misses (same stage, 5–10 minutes later)
+- some misses are real quality failures, especially around certain mid-window and late-window nights
+
+### 5. Important failure case found
+The wider set surfaced real weaknesses.
+Example:
+- `SC4081E0` showed cases where the proposed logic fell back to target or delayed too long even though earlier reachable light sleep existed in-window.
+
+That is useful. It means the harness is now doing its job instead of just telling us flattering stories.
 
 ## Code changes made
 
@@ -80,34 +94,30 @@ Files changed:
 - `source/AlarmManager.mc`
 - `source/MainView.mc`
 
-### UI changes
-Monitoring screen now reports:
-- HR
-- Stress
-- Body Battery
-
-instead of:
-- HR
-- HRV
-- respiration
+### Validation/tooling work
+Added and expanded:
+- multi-night EDF download tooling
+- replay dataset generation
+- batch evaluator
+- scenario-shape comparisons
+- per-night plots
 
 ## Verification performed
 - app compiles successfully with `monkeyc`
-- replay harness executes successfully on four public real sleep nights
+- replay harness executes successfully on 10 public real sleep nights
 - batch evaluation JSON generated successfully
-- per-night plots generated successfully
-- revised rule matches oracle snapped to 5-minute cadence on 4/4 current nights
+- widened scenario testing now exposes failure cases instead of hiding them
 
 ## Blockers / incomplete
 1. The replay harness still uses proxy features derived from PSG channels, not raw Garmin watch exports.
 2. Simulator launch on this host currently fails with:
    - `libsoup-ERROR: libsoup2 symbols detected. Using libsoup2 and libsoup3 in the same process is not supported.`
 3. The app has not yet been validated on a physical Venu 2 with observed live sensor-history values.
-4. More nights should be added before declaring the algorithm robust.
+4. The current smart-wake heuristic still needs another refinement pass.
 5. Motion/accelerometer-informed logic is not yet wired into the actual app runtime.
 
 ## Next recommended steps
-1. Add a larger batch of Sleep-EDF nights and look for failure cases.
-2. Add scenario diversity (cases with weaker late-window light sleep and forced fallback-to-target behavior).
-3. Resolve simulator runtime issue or shift to direct watch-side validation.
-4. Add optional foreground motion sensing if Venu 2 runtime testing supports it.
+1. Analyze the 9 mismatch scenarios and cluster them into true failures vs cadence-near-misses.
+2. Refine the heuristic based on those failure modes.
+3. Re-run the full 30-scenario batch and look for improvement.
+4. Then move toward simulator/runtime or direct watch validation.

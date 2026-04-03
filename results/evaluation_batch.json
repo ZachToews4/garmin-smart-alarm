@@ -1,9 +1,10 @@
 {
-  "datasets_evaluated": 4,
+  "scenarios_evaluated": 30,
   "results": [
     {
       "dataset": "SC4001E0_replay.csv",
       "dataset_id": "SC4001E0",
+      "scenario_name": "late_window",
       "sleep_interval": {
         "start_minute": 511,
         "end_minute": 870
@@ -27,7 +28,7 @@
         {
           "algorithm": "proposed_garmin_constrained",
           "trigger_minute": 831,
-          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, light-like proxy trigger, else target",
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
           "stage_at_trigger": "Sleep stage R",
           "is_light_stage_at_trigger": true,
           "inside_window": true,
@@ -54,8 +55,115 @@
       ]
     },
     {
+      "dataset": "SC4001E0_replay.csv",
+      "dataset_id": "SC4001E0",
+      "scenario_name": "mid_window",
+      "sleep_interval": {
+        "start_minute": 511,
+        "end_minute": 870
+      },
+      "scenario": {
+        "target_minute": 845,
+        "window_minutes": 45,
+        "window_start": 800,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 800,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 45
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 801,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 44
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 800,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 45
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 801,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 44
+        }
+      ]
+    },
+    {
+      "dataset": "SC4001E0_replay.csv",
+      "dataset_id": "SC4001E0",
+      "scenario_name": "tight_window",
+      "sleep_interval": {
+        "start_minute": 511,
+        "end_minute": 870
+      },
+      "scenario": {
+        "target_minute": 865,
+        "window_minutes": 20,
+        "window_start": 845,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 853,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 1",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 12
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 865,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage W",
+          "is_light_stage_at_trigger": false,
+          "inside_window": true,
+          "minutes_before_target": 0
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 853,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 1",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 12
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 856,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage W",
+          "is_light_stage_at_trigger": false,
+          "inside_window": true,
+          "minutes_before_target": 9
+        }
+      ]
+    },
+    {
       "dataset": "SC4011E0_replay.csv",
       "dataset_id": "SC4011E0",
+      "scenario_name": "late_window",
       "sleep_interval": {
         "start_minute": 359,
         "end_minute": 850
@@ -78,12 +186,12 @@
         },
         {
           "algorithm": "proposed_garmin_constrained",
-          "trigger_minute": 814,
-          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, light-like proxy trigger, else target",
+          "trigger_minute": 819,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
           "stage_at_trigger": "Sleep stage 2",
           "is_light_stage_at_trigger": true,
           "inside_window": true,
-          "minutes_before_target": 26
+          "minutes_before_target": 21
         },
         {
           "algorithm": "oracle_ground_truth",
@@ -106,8 +214,115 @@
       ]
     },
     {
+      "dataset": "SC4011E0_replay.csv",
+      "dataset_id": "SC4011E0",
+      "scenario_name": "mid_window",
+      "sleep_interval": {
+        "start_minute": 359,
+        "end_minute": 850
+      },
+      "scenario": {
+        "target_minute": 825,
+        "window_minutes": 45,
+        "window_start": 780,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 780,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 45
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 784,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 41
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 780,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 45
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 784,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 41
+        }
+      ]
+    },
+    {
+      "dataset": "SC4011E0_replay.csv",
+      "dataset_id": "SC4011E0",
+      "scenario_name": "tight_window",
+      "sleep_interval": {
+        "start_minute": 359,
+        "end_minute": 850
+      },
+      "scenario": {
+        "target_minute": 845,
+        "window_minutes": 20,
+        "window_start": 825,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 825,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 20
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 829,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 16
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 825,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 20
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 829,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 16
+        }
+      ]
+    },
+    {
       "dataset": "SC4031E0_replay.csv",
       "dataset_id": "SC4031E0",
+      "scenario_name": "late_window",
       "sleep_interval": {
         "start_minute": 437,
         "end_minute": 851
@@ -131,7 +346,7 @@
         {
           "algorithm": "proposed_garmin_constrained",
           "trigger_minute": 812,
-          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, light-like proxy trigger, else target",
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
           "stage_at_trigger": "Sleep stage 2",
           "is_light_stage_at_trigger": true,
           "inside_window": true,
@@ -158,8 +373,115 @@
       ]
     },
     {
+      "dataset": "SC4031E0_replay.csv",
+      "dataset_id": "SC4031E0",
+      "scenario_name": "mid_window",
+      "sleep_interval": {
+        "start_minute": 437,
+        "end_minute": 851
+      },
+      "scenario": {
+        "target_minute": 826,
+        "window_minutes": 45,
+        "window_start": 781,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 781,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 45
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 787,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 39
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 781,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 45
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 782,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 44
+        }
+      ]
+    },
+    {
+      "dataset": "SC4031E0_replay.csv",
+      "dataset_id": "SC4031E0",
+      "scenario_name": "tight_window",
+      "sleep_interval": {
+        "start_minute": 437,
+        "end_minute": 851
+      },
+      "scenario": {
+        "target_minute": 846,
+        "window_minutes": 20,
+        "window_start": 826,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 826,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage R",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 20
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 827,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage R",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 19
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 826,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage R",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 20
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 827,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage R",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 19
+        }
+      ]
+    },
+    {
       "dataset": "SC4041E0_replay.csv",
       "dataset_id": "SC4041E0",
+      "scenario_name": "late_window",
       "sleep_interval": {
         "start_minute": 406,
         "end_minute": 963
@@ -183,7 +505,7 @@
         {
           "algorithm": "proposed_garmin_constrained",
           "trigger_minute": 926,
-          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, light-like proxy trigger, else target",
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
           "stage_at_trigger": "Sleep stage 2",
           "is_light_stage_at_trigger": true,
           "inside_window": true,
@@ -208,8 +530,1070 @@
           "minutes_before_target": 27
         }
       ]
+    },
+    {
+      "dataset": "SC4041E0_replay.csv",
+      "dataset_id": "SC4041E0",
+      "scenario_name": "mid_window",
+      "sleep_interval": {
+        "start_minute": 406,
+        "end_minute": 963
+      },
+      "scenario": {
+        "target_minute": 938,
+        "window_minutes": 45,
+        "window_start": 893,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 893,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 45
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 901,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 37
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 893,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 45
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 896,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 42
+        }
+      ]
+    },
+    {
+      "dataset": "SC4041E0_replay.csv",
+      "dataset_id": "SC4041E0",
+      "scenario_name": "tight_window",
+      "sleep_interval": {
+        "start_minute": 406,
+        "end_minute": 963
+      },
+      "scenario": {
+        "target_minute": 958,
+        "window_minutes": 20,
+        "window_start": 938,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 938,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 20
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 941,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage W",
+          "is_light_stage_at_trigger": false,
+          "inside_window": true,
+          "minutes_before_target": 17
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 938,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 20
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 941,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage W",
+          "is_light_stage_at_trigger": false,
+          "inside_window": true,
+          "minutes_before_target": 17
+        }
+      ]
+    },
+    {
+      "dataset": "SC4051E0_replay.csv",
+      "dataset_id": "SC4051E0",
+      "scenario_name": "late_window",
+      "sleep_interval": {
+        "start_minute": 645,
+        "end_minute": 920
+      },
+      "scenario": {
+        "target_minute": 910,
+        "window_minutes": 30,
+        "window_start": 880,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 880,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 30
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 880,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 30
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 880,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 30
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 880,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 30
+        }
+      ]
+    },
+    {
+      "dataset": "SC4051E0_replay.csv",
+      "dataset_id": "SC4051E0",
+      "scenario_name": "mid_window",
+      "sleep_interval": {
+        "start_minute": 645,
+        "end_minute": 920
+      },
+      "scenario": {
+        "target_minute": 895,
+        "window_minutes": 45,
+        "window_start": 850,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 853,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 42
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 850,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage 3",
+          "is_light_stage_at_trigger": false,
+          "inside_window": true,
+          "minutes_before_target": 45
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 853,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 42
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 855,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage 3",
+          "is_light_stage_at_trigger": false,
+          "inside_window": true,
+          "minutes_before_target": 40
+        }
+      ]
+    },
+    {
+      "dataset": "SC4051E0_replay.csv",
+      "dataset_id": "SC4051E0",
+      "scenario_name": "tight_window",
+      "sleep_interval": {
+        "start_minute": 645,
+        "end_minute": 920
+      },
+      "scenario": {
+        "target_minute": 915,
+        "window_minutes": 20,
+        "window_start": 895,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 895,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 20
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 895,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 20
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 895,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 20
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 895,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 20
+        }
+      ]
+    },
+    {
+      "dataset": "SC4061E0_replay.csv",
+      "dataset_id": "SC4061E0",
+      "scenario_name": "late_window",
+      "sleep_interval": {
+        "start_minute": 468,
+        "end_minute": 828
+      },
+      "scenario": {
+        "target_minute": 818,
+        "window_minutes": 30,
+        "window_start": 788,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 788,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage R",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 30
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 788,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage R",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 30
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 788,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage R",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 30
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 788,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage R",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 30
+        }
+      ]
+    },
+    {
+      "dataset": "SC4061E0_replay.csv",
+      "dataset_id": "SC4061E0",
+      "scenario_name": "mid_window",
+      "sleep_interval": {
+        "start_minute": 468,
+        "end_minute": 828
+      },
+      "scenario": {
+        "target_minute": 803,
+        "window_minutes": 45,
+        "window_start": 758,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 758,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 45
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 768,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage R",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 35
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 758,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 45
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 758,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 45
+        }
+      ]
+    },
+    {
+      "dataset": "SC4061E0_replay.csv",
+      "dataset_id": "SC4061E0",
+      "scenario_name": "tight_window",
+      "sleep_interval": {
+        "start_minute": 468,
+        "end_minute": 828
+      },
+      "scenario": {
+        "target_minute": 823,
+        "window_minutes": 20,
+        "window_start": 803,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 803,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 20
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 803,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 20
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 803,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 20
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 803,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 20
+        }
+      ]
+    },
+    {
+      "dataset": "SC4071E0_replay.csv",
+      "dataset_id": "SC4071E0",
+      "scenario_name": "late_window",
+      "sleep_interval": {
+        "start_minute": 467,
+        "end_minute": 894
+      },
+      "scenario": {
+        "target_minute": 884,
+        "window_minutes": 30,
+        "window_start": 854,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 854,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 30
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 867,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 17
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 854,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 30
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 857,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 27
+        }
+      ]
+    },
+    {
+      "dataset": "SC4071E0_replay.csv",
+      "dataset_id": "SC4071E0",
+      "scenario_name": "mid_window",
+      "sleep_interval": {
+        "start_minute": 467,
+        "end_minute": 894
+      },
+      "scenario": {
+        "target_minute": 869,
+        "window_minutes": 45,
+        "window_start": 824,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 824,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage R",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 45
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 827,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage R",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 42
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 824,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage R",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 45
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 827,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage R",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 42
+        }
+      ]
+    },
+    {
+      "dataset": "SC4071E0_replay.csv",
+      "dataset_id": "SC4071E0",
+      "scenario_name": "tight_window",
+      "sleep_interval": {
+        "start_minute": 467,
+        "end_minute": 894
+      },
+      "scenario": {
+        "target_minute": 889,
+        "window_minutes": 20,
+        "window_start": 869,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 869,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 20
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 872,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 17
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 869,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 20
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 872,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 17
+        }
+      ]
+    },
+    {
+      "dataset": "SC4081E0_replay.csv",
+      "dataset_id": "SC4081E0",
+      "scenario_name": "late_window",
+      "sleep_interval": {
+        "start_minute": 402,
+        "end_minute": 908
+      },
+      "scenario": {
+        "target_minute": 898,
+        "window_minutes": 30,
+        "window_start": 868,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 868,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 30
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 872,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 26
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 868,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 30
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 872,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 26
+        }
+      ]
+    },
+    {
+      "dataset": "SC4081E0_replay.csv",
+      "dataset_id": "SC4081E0",
+      "scenario_name": "mid_window",
+      "sleep_interval": {
+        "start_minute": 402,
+        "end_minute": 908
+      },
+      "scenario": {
+        "target_minute": 883,
+        "window_minutes": 45,
+        "window_start": 838,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 838,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 45
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 842,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 41
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 838,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 45
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 842,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 41
+        }
+      ]
+    },
+    {
+      "dataset": "SC4081E0_replay.csv",
+      "dataset_id": "SC4081E0",
+      "scenario_name": "tight_window",
+      "sleep_interval": {
+        "start_minute": 402,
+        "end_minute": 908
+      },
+      "scenario": {
+        "target_minute": 903,
+        "window_minutes": 20,
+        "window_start": 883,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 883,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 20
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 887,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 16
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 883,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 20
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 887,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 16
+        }
+      ]
+    },
+    {
+      "dataset": "SC4091E0_replay.csv",
+      "dataset_id": "SC4091E0",
+      "scenario_name": "late_window",
+      "sleep_interval": {
+        "start_minute": 403,
+        "end_minute": 913
+      },
+      "scenario": {
+        "target_minute": 903,
+        "window_minutes": 30,
+        "window_start": 873,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 874,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 29
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 878,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 25
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 874,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 29
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 878,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 25
+        }
+      ]
+    },
+    {
+      "dataset": "SC4091E0_replay.csv",
+      "dataset_id": "SC4091E0",
+      "scenario_name": "mid_window",
+      "sleep_interval": {
+        "start_minute": 403,
+        "end_minute": 913
+      },
+      "scenario": {
+        "target_minute": 888,
+        "window_minutes": 45,
+        "window_start": 843,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 843,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 45
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 843,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 45
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 843,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 45
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 843,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 45
+        }
+      ]
+    },
+    {
+      "dataset": "SC4091E0_replay.csv",
+      "dataset_id": "SC4091E0",
+      "scenario_name": "tight_window",
+      "sleep_interval": {
+        "start_minute": 403,
+        "end_minute": 913
+      },
+      "scenario": {
+        "target_minute": 908,
+        "window_minutes": 20,
+        "window_start": 888,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 888,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage R",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 20
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 888,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage R",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 20
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 888,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage R",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 20
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 888,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage R",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 20
+        }
+      ]
+    },
+    {
+      "dataset": "SC4101E0_replay.csv",
+      "dataset_id": "SC4101E0",
+      "scenario_name": "late_window",
+      "sleep_interval": {
+        "start_minute": 381,
+        "end_minute": 873
+      },
+      "scenario": {
+        "target_minute": 863,
+        "window_minutes": 30,
+        "window_start": 833,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 833,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 30
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 846,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage 1",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 17
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 833,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 30
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 836,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage 1",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 27
+        }
+      ]
+    },
+    {
+      "dataset": "SC4101E0_replay.csv",
+      "dataset_id": "SC4101E0",
+      "scenario_name": "mid_window",
+      "sleep_interval": {
+        "start_minute": 381,
+        "end_minute": 873
+      },
+      "scenario": {
+        "target_minute": 848,
+        "window_minutes": 45,
+        "window_start": 803,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 803,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 45
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 816,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 32
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 803,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 45
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 806,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 42
+        }
+      ]
+    },
+    {
+      "dataset": "SC4101E0_replay.csv",
+      "dataset_id": "SC4101E0",
+      "scenario_name": "tight_window",
+      "sleep_interval": {
+        "start_minute": 381,
+        "end_minute": 873
+      },
+      "scenario": {
+        "target_minute": 868,
+        "window_minutes": 20,
+        "window_start": 848,
+        "poll_cadence_minutes": 5
+      },
+      "algorithms": [
+        {
+          "algorithm": "baseline_current_style",
+          "trigger_minute": 848,
+          "reason": "first non-deep sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 20
+        },
+        {
+          "algorithm": "proposed_garmin_constrained",
+          "trigger_minute": 851,
+          "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 17
+        },
+        {
+          "algorithm": "oracle_ground_truth",
+          "trigger_minute": 848,
+          "reason": "first labeled light-sleep minute in window, else target",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 20
+        },
+        {
+          "algorithm": "oracle_ground_truth_snapped_to_5min",
+          "trigger_minute": 851,
+          "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+          "stage_at_trigger": "Sleep stage 2",
+          "is_light_stage_at_trigger": true,
+          "inside_window": true,
+          "minutes_before_target": 17
+        }
+      ]
     }
   ],
-  "proposed_exact_match_count": 4,
-  "proposed_exact_match_rate": 1.0
+  "proposed_exact_match_count": 21,
+  "proposed_exact_match_rate": 0.7,
+  "proposed_inside_window_count": 30,
+  "proposed_inside_window_rate": 1.0
 }
