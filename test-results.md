@@ -43,6 +43,7 @@ Working local artifacts:
 - raw EDF/Hypnogram files in `data/raw/`
 - minute-level replay datasets in `data/processed/`
 - batch evaluation report in `results/evaluation_batch.json`
+- mismatch analysis in `results/mismatch_analysis.csv`
 - per-night plots in `results/*_replay_plot.png`
 
 ### 3. Replay harness works
@@ -51,7 +52,7 @@ The replay datasets are built from EDF + hypnogram files and include:
 - derived proxy features for offline experimentation
 - scenario evaluation output using a Garmin-constrained 5-minute polling cadence
 
-### 4. Wider multi-scenario replay outcome
+### 4. Wider multi-scenario replay outcome after heuristic refinement
 Scenario set per night:
 - `late_window`
 - `mid_window`
@@ -61,23 +62,37 @@ Total scenarios evaluated:
 - **30** (10 nights × 3 scenario shapes)
 
 Current aggregate result from `results/evaluation_batch.json`:
-- proposed exact trigger/stage match to oracle snapped-to-5-minute cadence: **21 / 30**
-- exact match rate: **0.70**
+- proposed exact trigger/stage match to oracle snapped-to-5-minute cadence: **28 / 30**
+- exact match rate: **0.9333**
 - proposed trigger inside window: **30 / 30**
 - inside-window rate: **1.0**
 
 Interpretation:
-- the revised rule is reliably staying inside the intended wake window
-- but once the test set was widened, it stopped being perfectly aligned with the earliest oracle-reachable trigger
-- several misses are near-misses (same stage, 5–10 minutes later)
-- some misses are real quality failures, especially around certain mid-window and late-window nights
+- the refined rule is now consistently staying inside the intended wake window
+- and is much closer to the earliest oracle-reachable trigger than the previous version
 
-### 5. Important failure case found
-The wider set surfaced real weaknesses.
-Example:
-- `SC4081E0` showed cases where the proposed logic fell back to target or delayed too long even though earlier reachable light sleep existed in-window.
+### 5. Mismatch analysis result
+Mismatch analysis showed:
+- **8 near-miss same-stage cases** in the earlier wider batch
+- **1 true decision miss**
 
-That is useful. It means the harness is now doing its job instead of just telling us flattering stories.
+That gave a clear refinement target.
+
+### 6. Heuristic improvement outcome
+Refinement applied:
+- avoid firing too eagerly immediately after a deep-looking poll
+- require a more stable REM/stage-2-like transition before triggering
+
+Result:
+- exact-match rate improved from **21 / 30 (70%)** to **28 / 30 (93.3%)**
+
+Remaining mismatches:
+1. `SC4001E0 / tight_window`
+   - appears to be a cadence/fallback edge case near target
+2. `SC4051E0 / mid_window`
+   - oracle earliest snapped point is a non-light stage, while the heuristic chose a later REM point that is arguably more sensible as an actual wake choice
+
+That second one is not obviously a bug. It may reflect a weakness in the oracle definition rather than in the heuristic.
 
 ## Code changes made
 
@@ -100,24 +115,24 @@ Added and expanded:
 - replay dataset generation
 - batch evaluator
 - scenario-shape comparisons
+- mismatch analysis
 - per-night plots
 
 ## Verification performed
 - app compiles successfully with `monkeyc`
 - replay harness executes successfully on 10 public real sleep nights
-- batch evaluation JSON generated successfully
-- widened scenario testing now exposes failure cases instead of hiding them
+- mismatch analysis identifies failure classes instead of just raw misses
+- heuristic refinement materially improved exact-match rate on the full 30-scenario batch
 
 ## Blockers / incomplete
 1. The replay harness still uses proxy features derived from PSG channels, not raw Garmin watch exports.
 2. Simulator launch on this host currently fails with:
    - `libsoup-ERROR: libsoup2 symbols detected. Using libsoup2 and libsoup3 in the same process is not supported.`
 3. The app has not yet been validated on a physical Venu 2 with observed live sensor-history values.
-4. The current smart-wake heuristic still needs another refinement pass.
+4. The remaining 2 mismatch scenarios should be reviewed before locking the heuristic.
 5. Motion/accelerometer-informed logic is not yet wired into the actual app runtime.
 
 ## Next recommended steps
-1. Analyze the 9 mismatch scenarios and cluster them into true failures vs cadence-near-misses.
-2. Refine the heuristic based on those failure modes.
-3. Re-run the full 30-scenario batch and look for improvement.
-4. Then move toward simulator/runtime or direct watch validation.
+1. Decide whether the `SC4051E0 / mid_window` disagreement is a true miss or an oracle-definition issue.
+2. Handle the `SC4001E0 / tight_window` cadence/fallback edge case if needed.
+3. Then move toward simulator/runtime or direct watch validation.

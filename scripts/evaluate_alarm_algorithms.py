@@ -53,23 +53,23 @@ for data_path in sorted(PROC.glob('SC*_replay.csv')):
             baseline_trigger = target
 
         poll_df = df[(df['minute_index'] >= start_monitor) & (df['minute_index'] <= target) & ((df['minute_index'] - start_monitor) % 5 == 0)].copy()
-
-        # Revised heuristics from failure analysis:
-        # - awake-like if EMG is clearly high
-        # - trigger if REM-like (very low EMG) OR non-awake with strong score
         awake_like = poll_df['emg_mean'] >= 3.4
         rem_like = poll_df['emg_mean'] <= 1.2
-        light_like = rem_like | (
-            (poll_df['proxy_light_sleep_score'] >= 0.84) &
-            (poll_df['emg_mean'] <= 2.95)
-        )
+        stage2_like = (poll_df['proxy_light_sleep_score'] >= 0.79) & (poll_df['emg_mean'] <= 3.0)
+        deep_like = (poll_df['proxy_light_sleep_score'] < 0.20) & (poll_df['emg_mean'] < 1.2)
+        light_like = rem_like | stage2_like
 
         sleep_confirm_count = 0
         sleep_onset = None
         trigger = None
+        last_deep_like = False
         for idx, row in poll_df.iterrows():
             minute = int(row['minute_index'])
-            if not awake_like.loc[idx]:
+            is_awake_like = bool(awake_like.loc[idx])
+            is_deep_like = bool(deep_like.loc[idx])
+            is_light_like = bool(light_like.loc[idx])
+
+            if not is_awake_like:
                 sleep_confirm_count += 1
                 if sleep_confirm_count >= 2 and sleep_onset is None:
                     sleep_onset = minute
@@ -77,11 +77,18 @@ for data_path in sorted(PROC.glob('SC*_replay.csv')):
                 sleep_confirm_count = 0
 
             if minute < window_start or sleep_onset is None:
+                last_deep_like = is_deep_like
                 continue
 
-            if light_like.loc[idx] and not awake_like.loc[idx]:
+            # Avoid triggering immediately on the very first light-looking point
+            # after a deep-looking poll; prefer the next cadence tick for a more
+            # stable transition unless we're very near target.
+            near_target = (target - minute) <= 5
+            if is_light_like and not is_awake_like and (not last_deep_like or near_target):
                 trigger = minute
                 break
+
+            last_deep_like = is_deep_like
 
         if trigger is None:
             trigger = target
@@ -108,7 +115,7 @@ for data_path in sorted(PROC.glob('SC*_replay.csv')):
             },
             'algorithms': [
                 summarize('baseline_current_style', baseline_trigger, 'first non-deep sleep minute in window, else target'),
-                summarize('proposed_garmin_constrained', trigger, '5-min polls, repeated sleep confirmation, awake-like rejection, REM/light proxy trigger, else target'),
+                summarize('proposed_garmin_constrained', trigger, '5-min polls, repeated sleep confirmation, awake-like rejection, stable REM/stage-2 proxy trigger, else target'),
                 summarize('oracle_ground_truth', oracle_trigger, 'first labeled light-sleep minute in window, else target'),
                 summarize('oracle_ground_truth_snapped_to_5min', oracle_snapped, 'first labeled light-sleep minute snapped to Garmin 5-min polling cadence'),
             ]

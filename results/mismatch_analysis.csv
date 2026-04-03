@@ -1,0 +1,10 @@
+dataset,scenario_name,proposed_trigger,oracle_trigger,delta_minutes,proposed_stage,oracle_stage,classification
+SC4001E0_replay.csv,tight_window,865,856,9,Sleep stage W,Sleep stage W,near_miss_same_stage
+SC4011E0_replay.csv,late_window,819,814,5,Sleep stage 2,Sleep stage 2,near_miss_same_stage
+SC4031E0_replay.csv,mid_window,787,782,5,Sleep stage 2,Sleep stage 2,near_miss_same_stage
+SC4041E0_replay.csv,mid_window,901,896,5,Sleep stage 2,Sleep stage 2,near_miss_same_stage
+SC4051E0_replay.csv,mid_window,850,855,-5,Sleep stage 3,Sleep stage 3,near_miss_same_stage
+SC4061E0_replay.csv,mid_window,768,758,10,Sleep stage R,Sleep stage 2,true_decision_miss
+SC4071E0_replay.csv,late_window,867,857,10,Sleep stage 2,Sleep stage 2,near_miss_same_stage
+SC4101E0_replay.csv,late_window,846,836,10,Sleep stage 1,Sleep stage 1,near_miss_same_stage
+SC4101E0_replay.csv,mid_window,816,806,10,Sleep stage 2,Sleep stage 2,near_miss_same_stage
