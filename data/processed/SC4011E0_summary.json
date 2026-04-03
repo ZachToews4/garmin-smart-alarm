@@ -1,0 +1,39 @@
+{
+  "source_psg": "SC4011E0-PSG.edf",
+  "source_hypnogram": "SC4011EH-Hypnogram.edf",
+  "minutes": 1401,
+  "stage_counts": {
+    "Sleep stage W": 926,
+    "Sleep stage 2": 286,
+    "Sleep stage R": 82,
+    "Sleep stage 1": 55,
+    "Sleep stage 3": 46,
+    "Sleep stage 4": 6
+  },
+  "columns": [
+    "minute_index",
+    "resp_mean",
+    "resp_std",
+    "resp_min",
+    "resp_max",
+    "emg_mean",
+    "emg_std",
+    "emg_min",
+    "emg_max",
+    "temp_mean",
+    "temp_std",
+    "temp_min",
+    "temp_max",
+    "stage",
+    "is_light_stage",
+    "is_deep_stage",
+    "is_sleep_stage",
+    "minutes_since_start",
+    "clock_minutes",
+    "dataset_id",
+    "proxy_stress",
+    "proxy_body_battery",
+    "proxy_motion",
+    "proxy_light_sleep_score"
+  ]
+}

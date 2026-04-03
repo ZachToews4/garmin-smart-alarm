@@ -30,14 +30,10 @@
     "is_sleep_stage",
     "minutes_since_start",
     "clock_minutes",
+    "dataset_id",
     "proxy_stress",
     "proxy_body_battery",
     "proxy_motion",
     "proxy_light_sleep_score"
-  ],
-  "notes": [
-    "Sleep stage labels are ground truth from hypnogram EDF annotations.",
-    "proxy_* columns are offline approximations for wearable-like features, not direct Garmin measurements.",
-    "This dataset currently uses one Sleep-EDF night as the first replay target."
   ]
 }
