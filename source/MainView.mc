@@ -142,6 +142,15 @@ class MainView extends WatchUi.View {
         dc.drawText(cx, cy + (height * 0.28).toNumber(),
             Graphics.FONT_TINY, recoveryStr, Graphics.TEXT_JUSTIFY_CENTER);
 
+        if (_alarmMgr.isDebugMode()) {
+            var accelStr = _alarmMgr.isAccelAvailable()
+                ? ("Accel |g|: " + _alarmMgr.getLiveAccelMag().format("%.2f"))
+                : "Accel |g|: --";
+            dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(cx, cy + (height * 0.35).toNumber(),
+                Graphics.FONT_TINY, accelStr, Graphics.TEXT_JUSTIFY_CENTER);
+        }
+
         // Current time (bottom) — respects device 12/24h setting
         var clk     = System.getClockTime();
         var nowMins = clk.hour * 60 + clk.min;

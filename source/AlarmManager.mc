@@ -12,6 +12,8 @@ import Toybox.Application;
 import Toybox.Attention;
 import Toybox.Background;
 import Toybox.Lang;
+import Toybox.Math;
+import Toybox.Sensor;
 import Toybox.SensorHistory;
 import Toybox.System;
 import Toybox.Time;
@@ -35,6 +37,7 @@ class AlarmManager {
     var firedTime   as String  = "";
     var firedReason as String  = "";
     var wakeTimeSet as Boolean = false;
+    var debugMode   as Boolean = false;
 
     // ── Settings ──────────────────────────────────────────────────────────────
     var targetMinutes as Number = 0;
@@ -48,9 +51,12 @@ class AlarmManager {
     private var _stressAvailable    as Boolean = false;
     private var _lastBodyBattery    as Number  = 0;
     private var _bodyBatteryAvail   as Boolean = false;
+    private var _liveAccelMag       as Float   = 0.0f;
+    private var _accelAvailable     as Boolean = false;
 
     private var _displayTimer as Timer.Timer? = null;
     private const DISPLAY_INTERVAL_MS = 30000;
+    private var _sensorEventsOn as Boolean = false;
 
     // ── Init ──────────────────────────────────────────────────────────────────
     function initialize() {
@@ -85,6 +91,11 @@ class AlarmManager {
         Application.Storage.setValue(KEY_SNOOZE, snoozeMinutes);
     }
 
+    function toggleDebugMode() as Void {
+        debugMode = !debugMode;
+        WatchUi.requestUpdate();
+    }
+
     // ── Display accessors ─────────────────────────────────────────────────────
     function getLastHR()              as Number  { return _lastHR; }
     function isHrAvailable()          as Boolean { return _hrAvailable; }
@@ -92,6 +103,9 @@ class AlarmManager {
     function isStressAvailable()      as Boolean { return _stressAvailable; }
     function getLastBodyBattery()     as Number  { return _lastBodyBattery; }
     function isBodyBatteryAvailable() as Boolean { return _bodyBatteryAvail; }
+    function getLiveAccelMag()        as Float   { return _liveAccelMag; }
+    function isAccelAvailable()       as Boolean { return _accelAvailable; }
+    function isDebugMode()            as Boolean { return debugMode; }
 
     // ── Public API ────────────────────────────────────────────────────────────
 
@@ -112,6 +126,7 @@ class AlarmManager {
 
         _registerBackground();
         _startDisplayTimer();
+        _enableLiveSensors();
         WatchUi.requestUpdate();
     }
 
@@ -127,6 +142,7 @@ class AlarmManager {
 
         _cancelBackground();
         _stopDisplayTimer();
+        _disableLiveSensors();
         // Note: no WatchUi.requestUpdate() here — callers that need a redraw
         // (e.g. menu cancel) will trigger it themselves. Calling requestUpdate()
         // from onStop() crashes because the view stack is already being torn down.
@@ -156,6 +172,7 @@ class AlarmManager {
 
         _registerBackground();
         _startDisplayTimer();
+        _enableLiveSensors();
         WatchUi.requestUpdate();
     }
 
@@ -164,6 +181,7 @@ class AlarmManager {
     // so AlarmBackground can continue monitoring.
     function suspendForeground() as Void {
         _stopDisplayTimer();
+        _disableLiveSensors();
     }
 
     // Bypasses all sleep-detection conditions and fires immediately.
@@ -189,6 +207,7 @@ class AlarmManager {
 
         _cancelBackground();
         _stopDisplayTimer();
+        _disableLiveSensors();
 
         if (Attention has :vibrate) {
             var desiredSegments = VIBE_REPEATS * 2 - 1;
@@ -245,6 +264,7 @@ class AlarmManager {
         // Re-register in case the background event expired while we were closed
         _registerBackground();
         _startDisplayTimer();
+        _enableLiveSensors();
     }
 
     // ── Display refresh timer ─────────────────────────────────────────────────
@@ -308,11 +328,56 @@ class AlarmManager {
         WatchUi.requestUpdate();
     }
 
+    // ── Live sensor hooks (foreground only) ───────────────────────────────────
+
+    private function _enableLiveSensors() as Void {
+        if (_sensorEventsOn) { return; }
+        if (!(Sensor has :registerSensorDataListener)) { return; }
+
+        try {
+            Sensor.registerSensorDataListener(method(:onSensorData), {
+                :period => 1,
+                :accelerometer => {
+                    :enabled => true,
+                    :sampleRate => 5,
+                    :includeTimestamps => false
+                }
+            });
+            _sensorEventsOn = true;
+        } catch(e) {
+            _sensorEventsOn = false;
+        }
+    }
+
+    private function _disableLiveSensors() as Void {
+        if (!_sensorEventsOn) { return; }
+        if (Sensor has :unregisterSensorDataListener) {
+            try {
+                Sensor.unregisterSensorDataListener();
+            } catch(e) {}
+        }
+        _sensorEventsOn = false;
+    }
+
+    function onSensorData(sensorData as Sensor.SensorData) as Void {
+        if (sensorData has :accelerometerData && sensorData.accelerometerData != null) {
+            var accel = sensorData.accelerometerData;
+            if (accel.x.size() > 0 && accel.y.size() > 0 && accel.z.size() > 0) {
+                var x = (accel.x[accel.x.size() - 1] as Number).toFloat() / 1000.0f;
+                var y = (accel.y[accel.y.size() - 1] as Number).toFloat() / 1000.0f;
+                var z = (accel.z[accel.z.size() - 1] as Number).toFloat() / 1000.0f;
+                _liveAccelMag = Math.sqrt(x * x + y * y + z * z);
+                _accelAvailable = true;
+            }
+        }
+    }
+
     // ── Background registration ───────────────────────────────────────────────
 
     private function _registerBackground() as Void {
         if (Background has :registerForTemporalEvent) {
-            // Minimum temporal event period is 5 minutes (300 seconds).
+            // Minimum temporal event period is 5 minutes (300 seconds) on the
+            // current device class, so smart wake decisions are cadence-limited.
             Background.registerForTemporalEvent(new Time.Duration(300));
         }
     }

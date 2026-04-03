@@ -42,6 +42,9 @@ class MainMenuDelegate extends WatchUi.Menu2InputDelegate {
             WatchUi.popView(WatchUi.SLIDE_DOWN);
             _alarmMgr.stop();
             WatchUi.requestUpdate();
+        } else if (id == :toggleDebug) {
+            WatchUi.popView(WatchUi.SLIDE_DOWN);
+            _alarmMgr.toggleDebugMode();
         }
     }
 

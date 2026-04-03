@@ -54,6 +54,12 @@ class MainDelegate extends WatchUi.BehaviorDelegate {
         menu.addItem(new WatchUi.MenuItem("Set Wake Time", null, :setWakeTime, {}));
         menu.addItem(new WatchUi.MenuItem("Set Window",    null, :setWindow,   {}));
         menu.addItem(new WatchUi.MenuItem("Set Snooze",    null, :setSnooze,   {}));
+        menu.addItem(new WatchUi.MenuItem(
+            _alarmMgr.isDebugMode() ? "Debug Overlay: On" : "Debug Overlay: Off",
+            null,
+            :toggleDebug,
+            {}
+        ));
         WatchUi.pushView(menu, new MainMenuDelegate(), WatchUi.SLIDE_UP);
     }
 
