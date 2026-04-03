@@ -1,0 +1,43 @@
+{
+  "source_psg": "SC4001E0-PSG.edf",
+  "source_hypnogram": "SC4001EC-Hypnogram.edf",
+  "minutes": 1325,
+  "stage_counts": {
+    "Sleep stage W": 999,
+    "Sleep stage 2": 123,
+    "Sleep stage R": 63,
+    "Sleep stage 4": 59,
+    "Sleep stage 3": 51,
+    "Sleep stage 1": 30
+  },
+  "columns": [
+    "minute_index",
+    "resp_mean",
+    "resp_std",
+    "resp_min",
+    "resp_max",
+    "emg_mean",
+    "emg_std",
+    "emg_min",
+    "emg_max",
+    "temp_mean",
+    "temp_std",
+    "temp_min",
+    "temp_max",
+    "stage",
+    "is_light_stage",
+    "is_deep_stage",
+    "is_sleep_stage",
+    "minutes_since_start",
+    "clock_minutes",
+    "proxy_stress",
+    "proxy_body_battery",
+    "proxy_motion",
+    "proxy_light_sleep_score"
+  ],
+  "notes": [
+    "Sleep stage labels are ground truth from hypnogram EDF annotations.",
+    "proxy_* columns are offline approximations for wearable-like features, not direct Garmin measurements.",
+    "This dataset currently uses one Sleep-EDF night as the first replay target."
+  ]
+}

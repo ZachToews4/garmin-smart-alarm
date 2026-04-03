@@ -118,13 +118,9 @@ class MainView extends WatchUi.View {
         _drawCommonInfo(dc, cx, cy, width, height);
 
         // ── Sensor status rows ────────────────────────────────────────────────
-        // Row 1: HR + HRV (both on one line if available)
         var hrStr = _alarmMgr.isHrAvailable()
-            ? ("HR:" + _alarmMgr.getLastHR() + " bpm")
+            ? ("HR: " + _alarmMgr.getLastHR() + " bpm")
             : "HR: --";
-        if (_alarmMgr.isHrvAvailable()) {
-            hrStr = hrStr + "  HRV:" + _alarmMgr.getLastHRV() + "ms";
-        }
         var hrColor = _alarmMgr.isHrAvailable()
             ? Graphics.COLOR_RED
             : Graphics.COLOR_DK_GRAY;
@@ -132,14 +128,19 @@ class MainView extends WatchUi.View {
         dc.drawText(cx, cy + (height * 0.21).toNumber(),
             Graphics.FONT_TINY, hrStr, Graphics.TEXT_JUSTIFY_CENTER);
 
-        // Row 2: Respiration (only shown when data is available)
-        if (_alarmMgr.isRespAvailable()) {
-            dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, cy + (height * 0.28).toNumber(),
-                Graphics.FONT_TINY,
-                "Resp: " + _alarmMgr.getLastResp().toNumber() + " /min",
-                Graphics.TEXT_JUSTIFY_CENTER);
+        var recoveryStr = "Stress: --   BB: --";
+        if (_alarmMgr.isStressAvailable() || _alarmMgr.isBodyBatteryAvailable()) {
+            var stressPart = _alarmMgr.isStressAvailable()
+                ? ("Stress: " + _alarmMgr.getLastStress())
+                : "Stress: --";
+            var bodyPart = _alarmMgr.isBodyBatteryAvailable()
+                ? ("BB: " + _alarmMgr.getLastBodyBattery())
+                : "BB: --";
+            recoveryStr = stressPart + "   " + bodyPart;
         }
+        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(cx, cy + (height * 0.28).toNumber(),
+            Graphics.FONT_TINY, recoveryStr, Graphics.TEXT_JUSTIFY_CENTER);
 
         // Current time (bottom) — respects device 12/24h setting
         var clk     = System.getClockTime();

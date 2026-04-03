@@ -21,17 +21,23 @@ const KEY_BG_FIRED_MINS   = "bgFiredTimeMins";
 const KEY_BG_FIRED_REASON = "bgFiredReason";
 
 // ── Sleep detection thresholds ────────────────────────────────────────────────
-const HR_SLEEP_MIN          = 40;
-const HR_SLEEP_MAX          = 70;
-const HRV_LIGHT_MIN         = 20;
-const HRV_LIGHT_MAX         = 75;
-const HRV_DEEP_THRESH       = 80;
-const RESP_SLEEP_MIN        = 8.0f;
-const RESP_SLEEP_MAX        = 16.0f;
-const CYCLE_MIN             = 90;
-const CYCLE_WINDOW_MIN      = 15;
-const ONSET_CONFIRM_BG      = 3;
-const PRE_MONITOR_DELAY_MIN = 30;
+// Garmin-plausible signal plan for Venu 2:
+// - Background path: rely on SensorHistory values known to exist broadly on-device
+//   (heart rate, stress, Body Battery)
+// - Foreground path can later add live motion sensing via Toybox.Sensor if desired
+// These thresholds are intentionally conservative and favor target-time fallback
+// over false early wakes.
+const HR_SLEEP_MIN                 = 45;
+const HR_SLEEP_MAX                 = 72;
+const STRESS_SLEEP_MAX             = 35;
+const STRESS_LIGHT_MAX             = 22;
+const BODY_BATTERY_RECOVERED_MIN   = 25;
+const ONSET_CONFIRM_BG             = 2;
+const PRE_MONITOR_DELAY_MIN        = 30;
+const MIN_WINDOW_TRIGGER_OFFSET    = 5;
+
+// ── Signal sentinels ──────────────────────────────────────────────────────────
+const SIGNAL_UNAVAILABLE_INT = -1;
 
 // ── Vibration pattern ─────────────────────────────────────────────────────────
 const VIBE_DUTY         = 100;

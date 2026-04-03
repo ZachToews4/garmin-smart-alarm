@@ -42,12 +42,12 @@ class AlarmManager {
     var snoozeMinutes as Number = 5;
 
     // ── Display data — refreshed from SensorHistory every 30 s ───────────────
-    private var _lastHR        as Number  = 0;
-    private var _hrAvailable   as Boolean = false;
-    private var _lastHRV       as Number  = 0;
-    private var _hrvAvailable  as Boolean = false;
-    private var _lastResp      as Float   = 0.0f;
-    private var _respAvailable as Boolean = false;
+    private var _lastHR             as Number  = 0;
+    private var _hrAvailable        as Boolean = false;
+    private var _lastStress         as Number  = 0;
+    private var _stressAvailable    as Boolean = false;
+    private var _lastBodyBattery    as Number  = 0;
+    private var _bodyBatteryAvail   as Boolean = false;
 
     private var _displayTimer as Timer.Timer? = null;
     private const DISPLAY_INTERVAL_MS = 30000;
@@ -86,12 +86,12 @@ class AlarmManager {
     }
 
     // ── Display accessors ─────────────────────────────────────────────────────
-    function getLastHR()       as Number  { return _lastHR; }
-    function isHrAvailable()   as Boolean { return _hrAvailable; }
-    function getLastHRV()      as Number  { return _lastHRV; }
-    function isHrvAvailable()  as Boolean { return _hrvAvailable; }
-    function getLastResp()     as Float   { return _lastResp; }
-    function isRespAvailable() as Boolean { return _respAvailable; }
+    function getLastHR()              as Number  { return _lastHR; }
+    function isHrAvailable()          as Boolean { return _hrAvailable; }
+    function getLastStress()          as Number  { return _lastStress; }
+    function isStressAvailable()      as Boolean { return _stressAvailable; }
+    function getLastBodyBattery()     as Number  { return _lastBodyBattery; }
+    function isBodyBatteryAvailable() as Boolean { return _bodyBatteryAvail; }
 
     // ── Public API ────────────────────────────────────────────────────────────
 
@@ -281,34 +281,26 @@ class AlarmManager {
             }
         }
 
-        if (SensorHistory has :getHeartRateVariabilityHistory) {
-            var hrvIter = SensorHistory.getHeartRateVariabilityHistory(
+        if (SensorHistory has :getStressHistory) {
+            var stressIter = SensorHistory.getStressHistory(
                 {:period => 2, :order => SensorHistory.ORDER_NEWEST_FIRST});
-            if (hrvIter != null) {
-                var s = hrvIter.next();
+            if (stressIter != null) {
+                var s = stressIter.next();
                 if (s != null && s.data != null) {
-                    if (s.data instanceof Float) {
-                        _lastHRV = (s.data as Float).toNumber();
-                    } else {
-                        _lastHRV = s.data as Number;
-                    }
-                    _hrvAvailable = true;
+                    _lastStress = s.data as Number;
+                    _stressAvailable = true;
                 }
             }
         }
 
-        if (SensorHistory has :getRespirationRateHistory) {
-            var respIter = SensorHistory.getRespirationRateHistory(
+        if (SensorHistory has :getBodyBatteryHistory) {
+            var bodyIter = SensorHistory.getBodyBatteryHistory(
                 {:period => 2, :order => SensorHistory.ORDER_NEWEST_FIRST});
-            if (respIter != null) {
-                var s = respIter.next();
+            if (bodyIter != null) {
+                var s = bodyIter.next();
                 if (s != null && s.data != null) {
-                    if (s.data instanceof Float) {
-                        _lastResp = s.data as Float;
-                    } else {
-                        _lastResp = (s.data as Number).toFloat();
-                    }
-                    _respAvailable = true;
+                    _lastBodyBattery = s.data as Number;
+                    _bodyBatteryAvail = true;
                 }
             }
         }

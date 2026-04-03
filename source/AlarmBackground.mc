@@ -72,10 +72,15 @@ class AlarmBackground extends System.ServiceDelegate {
         }
 
         // ── Smart wake: check biometrics ──────────────────────────────────────
-        var onsetMins = _getInt(KEY_SLEEP_ONSET);
         if (!isSnooze) { _updateOnsetTracking(nowMins); }
 
-        if (SleepDetector.isLightSleep(onsetMins, nowMins, isSnooze)) {
+        var minsIntoWindow = window - dist;
+        if (!isSnooze && minsIntoWindow < MIN_WINDOW_TRIGGER_OFFSET) {
+            _reschedule();
+            return;
+        }
+
+        if (SleepDetector.shouldTriggerSmartWake(isSnooze)) {
             _fireAlarm("Smart wake", isSnooze);
         } else {
             _reschedule();
@@ -89,27 +94,7 @@ class AlarmBackground extends System.ServiceDelegate {
     private function _updateOnsetTracking(nowMins as Number) as Void {
         if (_getInt(KEY_SLEEP_ONSET) >= 0) { return; }  // already confirmed
 
-        var hr   = SleepDetector.readHR();
-        var hrv  = SleepDetector.readHRV();
-        var resp = SleepDetector.readResp();
-
-        var signals = 0; var sleepSigs = 0;
-        if (hr >= 0) {
-            signals++;
-            if (hr >= HR_SLEEP_MIN && hr <= HR_SLEEP_MAX) { sleepSigs++; }
-        }
-        if (hrv >= 0) {
-            signals++;
-            if (hrv >= HRV_LIGHT_MIN && hrv <= HRV_LIGHT_MAX) { sleepSigs++; }
-        }
-        if (resp >= 0.0f) {
-            signals++;
-            if (resp >= RESP_SLEEP_MIN && resp <= RESP_SLEEP_MAX) { sleepSigs++; }
-        }
-
-        if (signals == 0) { return; }
-
-        if (sleepSigs * 2 >= signals) {
+        if (SleepDetector.looksAsleep()) {
             // Looks like sleep — increment confirmation counter
             var count = _getInt(KEY_ONSET_COUNT);
             var n     = (count >= 0 ? count : 0) + 1;
@@ -181,7 +166,8 @@ class AlarmBackground extends System.ServiceDelegate {
     // ── Helpers ───────────────────────────────────────────────────────────────
 
     private function _reschedule() as Void {
-        // Minimum temporal event period is 5 minutes (300 seconds).
+        // Minimum temporal event period is 5 minutes (300 seconds) on the
+        // current device class, so smart wake decisions are cadence-limited.
         Background.registerForTemporalEvent(new Time.Duration(300));
     }
 

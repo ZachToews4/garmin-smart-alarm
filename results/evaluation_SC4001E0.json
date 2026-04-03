@@ -1,0 +1,67 @@
+{
+  "dataset": "SC4001E0_replay.csv",
+  "sleep_interval": {
+    "start_minute": 511,
+    "end_minute": 870
+  },
+  "scenario": {
+    "target_minute": 860,
+    "window_minutes": 30,
+    "window_start": 830,
+    "poll_cadence_minutes": 5
+  },
+  "algorithms": [
+    {
+      "algorithm": "baseline_current_style",
+      "target_minute": 860,
+      "window_minutes": 30,
+      "monitor_start_minute": 496,
+      "triggered": true,
+      "trigger_minute": 830,
+      "reason": "first non-deep sleep minute in window, else target",
+      "inside_window": true,
+      "stage_at_trigger": "Sleep stage R",
+      "is_light_stage_at_trigger": true,
+      "minutes_before_target": 30
+    },
+    {
+      "algorithm": "proposed_garmin_constrained",
+      "target_minute": 860,
+      "window_minutes": 30,
+      "monitor_start_minute": 496,
+      "triggered": true,
+      "trigger_minute": 831,
+      "reason": "5-min polls, repeated sleep confirmation, awake-like rejection, light-like proxy trigger, else target",
+      "inside_window": true,
+      "stage_at_trigger": "Sleep stage R",
+      "is_light_stage_at_trigger": true,
+      "minutes_before_target": 29
+    },
+    {
+      "algorithm": "oracle_ground_truth",
+      "target_minute": 860,
+      "window_minutes": 30,
+      "monitor_start_minute": 496,
+      "triggered": true,
+      "trigger_minute": 830,
+      "reason": "first labeled light-sleep minute in window, else target",
+      "inside_window": true,
+      "stage_at_trigger": "Sleep stage R",
+      "is_light_stage_at_trigger": true,
+      "minutes_before_target": 30
+    },
+    {
+      "algorithm": "oracle_ground_truth_snapped_to_5min",
+      "target_minute": 860,
+      "window_minutes": 30,
+      "monitor_start_minute": 496,
+      "triggered": true,
+      "trigger_minute": 831,
+      "reason": "first labeled light-sleep minute snapped to Garmin 5-min polling cadence",
+      "inside_window": true,
+      "stage_at_trigger": "Sleep stage R",
+      "is_light_stage_at_trigger": true,
+      "minutes_before_target": 29
+    }
+  ]
+}

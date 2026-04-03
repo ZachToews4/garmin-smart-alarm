@@ -1,9 +1,9 @@
 // SleepDetector.mc
-// Reads biometric data from SensorHistory and determines sleep stage.
-// Called exclusively by AlarmBackground (background context).
+// Reads wearable-accessible data from SensorHistory and decides whether the
+// current background wake looks like a reasonable smart-alarm trigger point.
 //
-// Design: pure SensorHistory reads — no live sensor callbacks, no in-memory
-// state. All constants sourced from Constants.mc global declarations.
+// Design goal: stay compatible with Garmin Venu 2 constraints instead of
+// relying on signals that may not exist in background history.
 
 import Toybox.Lang;
 import Toybox.SensorHistory;
@@ -11,113 +11,110 @@ import Toybox.SensorHistory;
 (:background)
 class SleepDetector {
 
-    // ── Biometric readers ─────────────────────────────────────────────────────
-    // Each returns the most recent value from the last 2 minutes of SensorHistory,
-    // or a sentinel (-1 / -1.0f) if data is unavailable.
+    // ── SensorHistory readers ────────────────────────────────────────────────
 
     static function readHR() as Number {
-        if (!(SensorHistory has :getHeartRateHistory)) { return -1; }
+        if (!(SensorHistory has :getHeartRateHistory)) { return SIGNAL_UNAVAILABLE_INT; }
         var iter = SensorHistory.getHeartRateHistory(
             {:period => 2, :order => SensorHistory.ORDER_NEWEST_FIRST});
-        if (iter == null) { return -1; }
+        if (iter == null) { return SIGNAL_UNAVAILABLE_INT; }
         var s = iter.next();
-        if (s == null || s.data == null) { return -1; }
+        if (s == null || s.data == null) { return SIGNAL_UNAVAILABLE_INT; }
         return s.data as Number;
     }
 
-    static function readHRV() as Number {
-        if (!(SensorHistory has :getHeartRateVariabilityHistory)) { return -1; }
-        var iter = SensorHistory.getHeartRateVariabilityHistory(
+    static function readStress() as Number {
+        if (!(SensorHistory has :getStressHistory)) { return SIGNAL_UNAVAILABLE_INT; }
+        var iter = SensorHistory.getStressHistory(
             {:period => 2, :order => SensorHistory.ORDER_NEWEST_FIRST});
-        if (iter == null) { return -1; }
+        if (iter == null) { return SIGNAL_UNAVAILABLE_INT; }
         var s = iter.next();
-        if (s == null || s.data == null) { return -1; }
-        if (s.data instanceof Float) { return (s.data as Float).toNumber(); }
+        if (s == null || s.data == null) { return SIGNAL_UNAVAILABLE_INT; }
         return s.data as Number;
     }
 
-    static function readResp() as Float {
-        if (!(SensorHistory has :getRespirationRateHistory)) { return -1.0f; }
-        var iter = SensorHistory.getRespirationRateHistory(
+    static function readBodyBattery() as Number {
+        if (!(SensorHistory has :getBodyBatteryHistory)) { return SIGNAL_UNAVAILABLE_INT; }
+        var iter = SensorHistory.getBodyBatteryHistory(
             {:period => 2, :order => SensorHistory.ORDER_NEWEST_FIRST});
-        if (iter == null) { return -1.0f; }
+        if (iter == null) { return SIGNAL_UNAVAILABLE_INT; }
         var s = iter.next();
-        if (s == null || s.data == null) { return -1.0f; }
-        if (s.data instanceof Float) { return s.data as Float; }
-        return (s.data as Number).toFloat();
+        if (s == null || s.data == null) { return SIGNAL_UNAVAILABLE_INT; }
+        return s.data as Number;
     }
 
-    // ── Sleep stage inference ─────────────────────────────────────────────────
-    // Returns true if available biometrics suggest the user is in light sleep.
-    //
-    // sleepOnsetMins: confirmed sleep onset time (minutes-of-day), or -1 if
-    //   not yet detected. Used to calculate 90-min cycle position.
-    // nowMins: current time in minutes-of-day.
-    // snoozeMode: if true, skip cycle window constraint (snooze doesn't use it).
+    // ── Sleep-state inference ────────────────────────────────────────────────
 
-    static function isLightSleep(
-        sleepOnsetMins as Number,
-        nowMins        as Number,
-        snoozeMode     as Boolean) as Boolean {
+    static function looksAsleep() as Boolean {
+        var hr     = readHR();
+        var stress = readStress();
+        var body   = readBodyBattery();
 
-        var hr   = readHR();
-        var hrv  = readHRV();
-        var resp = readResp();
-
-        // Hard gate: strong HRV evidence of deep sleep → hold off
-        if (hrv >= 0 && hrv > HRV_DEEP_THRESH) { return false; }
-
-        // Score available signals
-        var signals   = 0;
-        var confirmed = 0;
+        var signals = 0;
+        var asleepSignals = 0;
 
         if (hr >= 0) {
             signals++;
             if (hr >= HR_SLEEP_MIN && hr <= HR_SLEEP_MAX) {
-                confirmed++;
-            }
-        }
-        if (hrv >= 0) {
-            signals++;
-            if (hrv >= HRV_LIGHT_MIN && hrv <= HRV_LIGHT_MAX) {
-                confirmed++;
-            }
-        }
-        if (resp >= 0.0f) {
-            signals++;
-            if (resp >= RESP_SLEEP_MIN && resp <= RESP_SLEEP_MAX) {
-                confirmed++;
+                asleepSignals++;
             }
         }
 
-        // No data available → don't false-fire
+        if (stress >= 0) {
+            signals++;
+            if (stress <= STRESS_SLEEP_MAX) {
+                asleepSignals++;
+            }
+        }
+
+        if (body >= 0) {
+            signals++;
+            if (body >= BODY_BATTERY_RECOVERED_MIN) {
+                asleepSignals++;
+            }
+        }
+
         if (signals == 0) { return false; }
-
-        var inWindow = snoozeMode ? true : _inCycleWindow(sleepOnsetMins, nowMins);
-
-        if (inWindow) {
-            // Near a 90-min cycle boundary: majority (≥ 50 %) must agree
-            return confirmed * 2 >= signals;
-        } else {
-            // Mid-cycle (likely deep sleep): require strong majority (≥ 75 %)
-            return confirmed * 4 >= signals * 3;
-        }
+        return asleepSignals * 2 >= signals;
     }
 
-    // ── Cycle window ──────────────────────────────────────────────────────────
-    // Returns true when we're near a 90-minute cycle boundary (±CYCLE_WINDOW_MIN).
-    // Light sleep naturally occurs at these transitions.
+    // Light-sleep-ish trigger point for smart wake.
+    // We deliberately keep this simple and conservative:
+    // - user must still broadly look asleep
+    // - low stress is preferred because Garmin exposes it reliably
+    // - body battery provides a weak recovery sanity check
+    static function shouldTriggerSmartWake(isSnooze as Boolean) as Boolean {
+        var hr     = readHR();
+        var stress = readStress();
+        var body   = readBodyBattery();
 
-    private static function _inCycleWindow(
-        sleepOnsetMins as Number,
-        nowMins        as Number) as Boolean {
+        if (!looksAsleep()) { return false; }
 
-        if (sleepOnsetMins < 0) { return true; }  // onset unknown → no constraint
+        // Snooze mode is intentionally more permissive.
+        if (isSnooze) {
+            if (stress >= 0 && stress <= STRESS_SLEEP_MAX) { return true; }
+            return hr >= 0 && hr <= HR_SLEEP_MAX;
+        }
 
-        var elapsed  = (nowMins - sleepOnsetMins + 1440) % 1440;
-        var cyclePos = elapsed % CYCLE_MIN;
+        var favorableSignals = 0;
+        var availableSignals = 0;
 
-        return cyclePos <= CYCLE_WINDOW_MIN ||
-               cyclePos >= (CYCLE_MIN - CYCLE_WINDOW_MIN);
+        if (stress >= 0) {
+            availableSignals++;
+            if (stress <= STRESS_LIGHT_MAX) { favorableSignals++; }
+        }
+
+        if (hr >= 0) {
+            availableSignals++;
+            if (hr >= HR_SLEEP_MIN && hr <= HR_SLEEP_MAX) { favorableSignals++; }
+        }
+
+        if (body >= 0) {
+            availableSignals++;
+            if (body >= BODY_BATTERY_RECOVERED_MIN) { favorableSignals++; }
+        }
+
+        if (availableSignals == 0) { return false; }
+        return favorableSignals * 2 >= availableSignals;
     }
 }
