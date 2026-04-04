@@ -4,6 +4,48 @@ Lessons learned the hard way so future-me doesn't repeat them.
 
 ---
 
+## 2026-04-03 progress snapshot
+
+### Alarm logic / validation
+- Reworked smart-wake logic away from unreliable HRV/respiration assumptions for Venu 2 background use.
+- Current watch-side logic is centered on Garmin-plausible `SensorHistory` signals:
+  - heart rate
+  - stress
+  - Body Battery
+- Built a replay/evaluation harness around public Sleep-EDF overnight data.
+- Current replay status after refinement:
+  - 10 nights
+  - 30 scenarios
+  - 28/30 exact matches to Garmin-snapped oracle
+  - 30/30 inside wake window
+
+### Real watch work
+- Venu 2 sideload path confirmed working over USB/MTP.
+- Added debug-oriented on-watch instrumentation:
+  - HR
+  - Stress
+  - Body Battery
+  - optional accelerometer debug overlay
+- Real-watch screenshots exposed layout collisions that were not obvious from code inspection alone.
+
+### Simulator / container work
+- Native simulator on Ubuntu 24.04 is broken by mixed `libsoup-2.4` and `libsoup-3.0` runtime conflict.
+- Built a clean Ubuntu 22.04 / Jammy GUI container for simulator work.
+- Container simulator progress:
+  - Xvfb/Openbox/dbus/GTK theme stack working
+  - Garmin simulator launches
+  - simulator listener on port `1234` confirmed
+  - stale simulator lock issue (`/root/Sim-root`) identified and handled
+- Remaining simulator weakness:
+  - app-load / MonkeyDoDeux control path is still flaky, so simulator is usable for visual iteration but not yet a perfectly clean fully automated launch pipeline.
+
+### Recommended working model right now
+- Use the Jammy simulator for faster UI/layout iteration.
+- Use the real Venu 2 for checkpoint truth and final validation.
+- Do not rely on the native host simulator path on Ubuntu 24.04.
+
+---
+
 ## Simulator (Garmin Connect IQ)
 
 ### Starting the simulator
