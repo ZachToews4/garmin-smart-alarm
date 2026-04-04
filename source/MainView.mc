@@ -128,26 +128,29 @@ class MainView extends WatchUi.View {
         dc.drawText(cx, cy + (height * 0.21).toNumber(),
             Graphics.FONT_TINY, hrStr, Graphics.TEXT_JUSTIFY_CENTER);
 
-        var recoveryStr = "Stress: --   BB: --";
-        if (_alarmMgr.isStressAvailable() || _alarmMgr.isBodyBatteryAvailable()) {
-            var stressPart = _alarmMgr.isStressAvailable()
-                ? ("Stress: " + _alarmMgr.getLastStress())
-                : "Stress: --";
-            var bodyPart = _alarmMgr.isBodyBatteryAvailable()
-                ? ("BB: " + _alarmMgr.getLastBodyBattery())
-                : "BB: --";
-            recoveryStr = stressPart + "   " + bodyPart;
-        }
+        var row2Y = cy + (height * 0.28).toNumber();
+        var row3Y = cy + (height * 0.34).toNumber();
+        var colPad = 26;
+
+        var stressPart = _alarmMgr.isStressAvailable()
+            ? ("Stress: " + _alarmMgr.getLastStress())
+            : "Stress: --";
+        var bodyPart = _alarmMgr.isBodyBatteryAvailable()
+            ? ("BB: " + _alarmMgr.getLastBodyBattery())
+            : "BB: --";
+
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, cy + (height * 0.28).toNumber(),
-            Graphics.FONT_TINY, recoveryStr, Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx - colPad, row2Y,
+            Graphics.FONT_TINY, stressPart, Graphics.TEXT_JUSTIFY_RIGHT);
+        dc.drawText(cx + colPad, row2Y,
+            Graphics.FONT_TINY, bodyPart, Graphics.TEXT_JUSTIFY_LEFT);
 
         if (_alarmMgr.isDebugMode()) {
             var accelStr = _alarmMgr.isAccelAvailable()
                 ? ("Accel |g|: " + _alarmMgr.getLiveAccelMag().format("%.2f"))
                 : "Accel |g|: --";
             dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, cy + (height * 0.35).toNumber(),
+            dc.drawText(cx, row3Y,
                 Graphics.FONT_TINY, accelStr, Graphics.TEXT_JUSTIFY_CENTER);
         }
 

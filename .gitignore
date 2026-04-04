@@ -1,0 +1,16 @@
+# Local Python env
+.venv/
+
+# Build cache / generated intermediates
+bin/external-mir/
+bin/gen/resources/cache/
+
+# OS/editor clutter
+.DS_Store
+*.swp
+*.swo
+
+# Accidental local scratch files
+/1
+/, data.hex())
+/print(pkt_hex, =
